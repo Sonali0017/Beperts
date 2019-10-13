@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="Xml.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<title>XML DOM</title>
+<style>
+@CHARSET "ISO-8859-1";
+
+.vertical-menu {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+ 
+  margin-top:48px;
+
+  margin-left:10px;
+}
+
+.vertical-menu a {
+  padding: 6px 8px 6px 2px;
+  text-decoration: none;
+  font-size: 17px;
+  color: #818181;
+  display: block;
+}
+
+.vertical-menu a:hover {
+  color: dark gray;
+}
+
+
+
+.vertical-menu a {
+
+  background-color: #eee;
+
+  color: black;
+
+  display: block;
+
+  padding: 10px;
+
+  text-decoration: none;
+
+}
+
+ 
+
+.vertical-menu a:hover {
+
+  background-color: #ccc;   
+
+}
+
+ 
+
+.vertical-menu a.active {
+
+  background-color: #4CAF50;
+
+  color: white;
+
+}
+
+ 
+
+form.example input[type=text] {
+
+  padding: 10px;
+
+  font-size: 17px;
+
+  border: 2px solid white;
+
+  float: left;
+
+  width: 75%;
+
+  background: #f1f1f1;
+
+}
+
+ 
+
+form.example button {
+
+  float: left;
+
+  width: 15%;
+
+  padding: 20px;
+
+  background: #2196F3;
+
+  color: white;
+
+  font-size: 17px;
+
+  border: 2px solid white;
+
+  border-left: none;
+
+  cursor: pointer;
+  
+
+}
+
+ 
+
+form.example button:hover {
+
+  background: #0b7dda;
+
+}
+
+ 
+
+form.example::after {
+
+  content: "";
+
+  clear: both;
+
+  display: table;
+
+}
+
+ 
+
+.new {
+
+       margin-left:350px;
+
+       margin-right:400px;
+
+       margin-top:50px;
+
+       marging-bottom:10px;
+
+       width:500px;
+
+}
+
+ 
+
+.column{
+
+  float: left;
+
+  padding: 0px;
+
+  height: 300px;
+
+  width:50%;
+
+  content: "";
+
+  display: table;
+
+  clear: both;
+
+  <!--font-family:elephant;-->
+
+ 
+
+}
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+body {
+  font-family: Arial;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+form.example input[type=text] {
+  padding: 10px;
+  font-size: 18px;
+ margin-top:50px;
+  float: left;
+  width: 80%;
+  background: #f1f1f1;
+}
+
+form.example button {
+  float: left;
+  width: 15%;
+  padding: 10px;
+  background: #2196F3;
+  color: white;
+  font-size: 17px;
+  
+  border-left: none;
+  cursor: pointer;
+  margin-top:50px;
+}
+
+form.example button:hover {
+  background: #0b7dda;
+}
+
+form.example::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.buttonN {
+  display: inline-block;
+  border-radius: 4px;
+  background-color:black;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  font-size: 18px;
+  padding: 10px;
+  width: 100px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin-left:750px;
+  margin-right:200px;
+  margin-top:50px;
+  marging-bottom:10px;
+}
+
+.buttonN span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.buttonN span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.buttonN:hover span {
+  padding-right: 25px;
+}
+
+.buttonN:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.buttonP {
+  display: inline-block;
+  border-radius: 4px;
+  background-color:black;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  font-size: 18px;
+  padding: 10px;
+  width: 120px;
+  transition: all 0.5s;
+  cursor: pointer-left;
+  margin-left:350px;
+  margin-right:750px;
+  margin-top:50px;
+  marging-bottom:10px;
+}
+
+.buttonP span {
+  cursor: pointer;
+  display: inline-block;
+  transition: 0.5s;
+}
+
+.buttonP span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.buttonP:hover span {
+  
+  padding-right: 25px;
+}
+
+.buttonP:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.navbar {
+  width: 100%;
+  background-color:black;
+  overflow: auto;
+  position:fixed;
+}
+
+.navbar a {
+  float:left;
+  padding: 10px;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+}
+.navbar a:hover {
+  background-color: #000;
+}
+
+.active {
+  background-color:black;
+}
+
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="navbar">
+
+  <a class="active" href="../index.jsp"><i class="fa fa-fw fa-home"></i> Home</a>  
+  <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
+
+</div>
+
+<form class="example" action="../keywordSearchServlet" style="margin:auto;max-width:650px"  method="post">
+  <input type="text" placeholder="Search.." name="search2">
+  <button type="submit"><i class="fa fa-search"></i></button>
+</form>
+
+<a href="schema.html"> <button class="buttonP" style="vertical-align:middle"><span>Previous </span></button></a>
+
+<div class="column">
+<div class="new">
+<h2 align="center">XML DOM</h2>
+
+<p>The DOM defines a standard for accessing and manipulating documents:</p>
+<div class="w3-panel w3-leftbar w3-light-grey">
+<p><i>&quot;The W3C Document Object Model (DOM) is a platform and language-neutral interface that allows programs and scripts to dynamically access and update the 
+content, structure, and style of a document.&quot;</i></p>
+</div>
+<p>The HTML DOM defines a standard way for accessing and manipulating HTML documents. 
+It presents an HTML document as a tree-structure.</p>
+<p>The XML DOM defines a standard way for accessing and manipulating XML documents. 
+It presents an XML document as a tree-structure.</p>
+<div class="w3-panel w3-note">
+ <p>Understanding the DOM is a must for anyone working with HTML or XML.</p>
+</div>
+
+<h2 align="center">The HTML DOM</h2>
+
+<p>All HTML elements can be accessed through the HTML DOM.</p>
+
+<p>This example changes the value of an HTML element with id=&quot;demo&quot;:</p>
+<div class="w3-example">
+<h3 align="center">Example</h3>
+<div class="w3-code notranslate htmlHigh">
+&lt;h1 id=&quot;demo&quot;&gt;This is a Heading&lt;/h1&gt;<br><br>
+ &lt;button type=&quot;button&quot;<br>onclick=&quot;document.getElementById('demo').innerHTML = 
+ 'Hello World!'&quot;&gt;Click Me!<br>&lt;/button&gt;
+</div>
+</div>
+
+<div class="w3-panel w3-note">
+</div>
+
+<div id="midcontentadcontainer" style="overflow:auto;text-align:center">
+<!-- MidContent -->
+
+  <!--<pre>mid_content, all: [300,250][336,280][728,90][970,250][970,90][320,50][468,60]</pre>-->
+  <div id="snhb-mid_content-0"></div>
+    
+</div>
+
+<h2 align="center">The XML DOM</h2>
+<p>All XML elements can be accessed through the XML DOM.</p>
+
+<div class="w3-example">
+<h3 align="center">Books.xml</h3>
+<div class="w3-code notranslate htmlHigh">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;<br>
+&lt;bookstore&gt;<br><br>
+&nbsp; &lt;book category="cooking"&gt;<br>
+&nbsp;&nbsp;&nbsp; &lt;title lang=&quot;en&quot;&gt;Everyday 
+Italian&lt;/title&gt;<br>&nbsp;&nbsp;&nbsp; &lt;author&gt;Giada De Laurentiis&lt;/author&gt;<br>&nbsp;&nbsp;&nbsp; 
+&lt;year&gt;2005&lt;/year&gt;<br>&nbsp;&nbsp;&nbsp; &lt;price&gt;30.00&lt;/price&gt;<br>&nbsp; &lt;/book&gt;<br>
+<br>&nbsp; &lt;book category=&quot;children&quot;&gt;<br>&nbsp;&nbsp;&nbsp; &lt;title lang=&quot;en&quot;&gt;Harry 
+Potter&lt;/title&gt;<br>&nbsp;&nbsp;&nbsp; &lt;author&gt;J K. Rowling&lt;/author&gt;<br>&nbsp;&nbsp;&nbsp; 
+&lt;year&gt;2005&lt;/year&gt;<br>&nbsp;&nbsp;&nbsp; &lt;price&gt;29.99&lt;/price&gt;<br>&nbsp; &lt;/book&gt;<br><br>&lt;/bookstore&gt;
+</div>
+</div>
+
+<p>This code retrieves the text value of the first &lt;title&gt; element in an 
+XML document:</p>
+
+<div class="w3-example">
+<h3 align="center">Example</h3>
+<div class="w3-code notranslate jsHigh">
+txt = xmlDoc.getElementsByTagName(&quot;title&quot;)[0].childNodes[0].nodeValue;
+</div>
+</div>
+<div class="w3-panel w3-note">
+<p>The XML DOM is a standard for how to get, change, add, and delete XML elements.</p>
+</div>
+
+<p>This example loads a text string into an XML DOM object, and  
+extracts the info from it with JavaScript:</p>
+<div class="w3-example">
+<h3>Example</h3>
+<div class="w3-code notranslate htmlHigh">
+ &lt;html&gt;<br>&lt;body&gt;<br><br>&lt;p id=&quot;demo&quot;&gt;&lt;/p&gt;<br><br>&lt;script&gt;<br>var text, parser, 
+ xmlDoc;<br><br>text = &quot;&lt;bookstore&gt;&lt;book&gt;&quot; +<br>&quot;&lt;title&gt;Everyday 
+ Italian&lt;/title&gt;&quot; +<br>&quot;&lt;author&gt;Giada De Laurentiis&lt;/author&gt;&quot; +<br>
+ &quot;&lt;year&gt;2005&lt;/year&gt;&quot; +<br>&quot;&lt;/book&gt;&lt;/bookstore&gt;&quot;;<br><br>parser = new DOMParser();<br>
+ xmlDoc = parser.parseFromString(text,&quot;text/xml&quot;);<br><br>
+ document.getElementById(&quot;demo&quot;).innerHTML =<br><strong>xmlDoc.getElementsByTagName(&quot;title&quot;)[0].childNodes[0].nodeValue</strong>;<br>
+ &lt;/script&gt;<br><br>&lt;/body&gt;<br>&lt;/html&gt;
+</div>
+</div>
+</div>
+</div>
+
+<a href="tree.html"> <button class="buttonN" style="vertical-align:middle"><span>Next </span></button></a>
+
+<div class="vertical-menu">
+<a class="_vertical-menu" href="home1.html">XML Home</a>
+<a class="_vertical-menu" href="overview1.html">XML Overview</a>
+<a class="_vertical-menu" href="syntax1.html">XML Syntax</a>
+<a class="_vertical-menu" href="tags1.html">XML Tags</a>
+<a class="_vertical-menu" href="elements1.html">XML Elements</a>
+<a class="_vertical-menu" href="attributes1.html">XML Attributes</a>
+<a class="_vertical-menu" href="namespaces1.html">XML Namespaces</a>
+<a class="_vertical-menu" href="characterent1.html">XML Character Entities</a>
+<a class="_vertical-menu" href="parser1.html">XML Parser</a>
+<a class="_vertical-menu" href="cdta1.html">XML CDATA Section</a>
+<a class="_vertical-menu" href="dtd1.html">XML DTD</a>
+<a class="_vertical-menu" href="schema1.html">XML Schema</a>
+<a class="_vertical-menu" href="dom1.html">XML DOM</a>
+<a class="_vertical-menu" href="tree1.html">XML Tree</a>
+<a class="_vertical-menu" href="xpath1.html">XML XPath</a>
+<a class="_vertical-menu" href="xslt1.html">XML XSLT</a>
+<a class="_vertical-menu" href="xquery1.html">XML XQuery</a>
+<a class="_vertical-menu" href="xlink1.html">XML XLink</a>
+<a class="_vertical-menu" href="xserver1.html">XML XServer</a>
+<a class="_vertical-menu" href="database1.html">XML Database</a>
+<a class="_vertical-menu" href="processor1.html">XML Processor</a>
+</div>
+
+</body>
+</html>

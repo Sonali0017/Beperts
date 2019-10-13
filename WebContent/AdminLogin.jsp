@@ -1,0 +1,115 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>ADMIN</title>
+</head>
+<style>
+table {
+  font-family: arial, sans-serif;
+  width: 50%;
+  margin-left:180px;
+  margin-top:60px;
+  background-color:none;
+  
+}
+
+td, th {
+  border: 0px solid gray;
+  text-align: right;
+  padding: 20px;
+  background-color:none;
+}
+
+tr:nth-child(even) {
+  background-color:none;
+}
+
+.button {
+  display: inline-block;
+  padding: 2px 20px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: right;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: BLACK;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.button:hover {background-color:light black}
+
+.button:active {
+  background-color:gray;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+body {
+background-color:none;
+}
+
+.navbar {
+  width: 100%;
+  background-color:black;
+  overflow: auto;
+  position:fixed;
+  margin-top:0px;
+}
+
+.navbar a {
+  float:left;
+  padding: 10px;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+}
+.navbar a:hover {
+  background-color: #000;
+}
+
+</style>
+
+<body background="https://images.pexels.com/photos/1166644/pexels-photo-1166644.jpeg?cs=srgb&dl=color-design-flora-1166644.jpg&fm=jpg">
+${courses}
+<div class="navbar">
+
+  <a class="active" href="index.jsp"><i class="fa fa-fw fa-home"></i>HOME</a>  
+  <a href="profile.html"><i class="fa fa-fw fa-user"></i> PROFILE </a>
+
+</div>
+
+<h1 align="center">ADMIN</h1>
+
+<table>
+
+  <tr>
+    <td>VIEW EXISTING COURSES</td>
+    <td><a href="StartLearningsServlet"> <button class="button" style="vertical-align:middle"><span>VIEW</span></button></a></td>
+    
+  </tr>
+  <tr>
+    <td>UPDATE COURSE</td>
+    <td><form action="UploadServlet" method="POST" enctype="multipart/form-data">
+    <input type="file" name="description" style="vertical-align:middle"/>
+    <input type="text" name="keyword" placeholder="keyword" style="vertical-align:middle"/>
+    <!-- <input type="text" name="description" placeholder="description"  style="vertical-align:middle"/> -->
+    <input type="text" name="skillname" placeholder="skillname"  style="vertical-align:middle"/>
+    <input type="submit"/>Add
+    </form> </td>
+    </tr>
+
+  <tr>
+    <td>REMOVE COURSE</td>
+    <td><a href="StartLearning.html"> <button class="button" style="vertical-align:middle"><span>DELETE</span></button></a></td>
+    </tr>
+
+ 
+</table>
+</body>
+</html>

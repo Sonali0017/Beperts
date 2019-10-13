@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<title>ANDROID</title>
+<style>
+@CHARSET "ISO-8859-1";
+
+.vertical-menu {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+ 
+  margin-top:48px;
+
+  margin-left:10px;
+}
+
+.vertical-menu a {
+  padding: 6px 8px 6px 2px;
+  text-decoration: none;
+  font-size: 17px;
+  color: #818181;
+  display: block;
+}
+
+.vertical-menu a:hover {
+  color: dark gray;
+}
+
+
+
+.vertical-menu a {
+
+  background-color: #eee;
+
+  color: black;
+
+  display: block;
+
+  padding: 10px;
+
+  text-decoration: none;
+
+}
+
+ 
+
+.vertical-menu a:hover {
+
+  background-color: #ccc;   
+
+}
+
+ 
+
+.vertical-menu a.active {
+
+  background-color: #4CAF50;
+
+  color: white;
+
+}
+
+ 
+
+form.example input[type=text] {
+
+  padding: 10px;
+
+  font-size: 17px;
+
+  border: 2px solid white;
+
+  float: left;
+
+  width: 75%;
+
+  background: #f1f1f1;
+
+}
+
+ 
+
+form.example button {
+
+  float: left;
+
+  width: 15%;
+
+  padding: 20px;
+
+  background: #2196F3;
+
+  color: white;
+
+  font-size: 17px;
+
+  border: 2px solid white;
+
+  border-left: none;
+
+  cursor: pointer;
+  
+
+}
+
+ 
+
+form.example button:hover {
+
+  background: #0b7dda;
+
+}
+
+ 
+
+form.example::after {
+
+  content: "";
+
+  clear: both;
+
+  display: table;
+
+}
+
+ 
+
+.new {
+
+       margin-left:350px;
+
+       margin-right:400px;
+
+       margin-top:50px;
+
+       marging-bottom:10px;
+
+       width:500px;
+
+}
+
+ 
+
+.column{
+
+  float: left;
+
+  padding: 0px;
+
+  height: 300px;
+
+  width:50%;
+
+  content: "";
+
+  display: table;
+
+  clear: both;
+
+  <!--font-family:elephant;-->
+
+ 
+
+}
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+body {
+  font-family: Arial;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+form.example input[type=text] {
+  padding: 10px;
+  font-size: 18px;
+ margin-top:50px;
+  float: left;
+  width: 80%;
+  background: #f1f1f1;
+}
+
+form.example button {
+  float: left;
+  width: 15%;
+  padding: 10px;
+  background: #2196F3;
+  color: white;
+  font-size: 17px;
+  
+  border-left: none;
+  cursor: pointer;
+  margin-top:50px;
+}
+
+form.example button:hover {
+  background: #0b7dda;
+}
+
+form.example::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.buttonN {
+  display: inline-block;
+  border-radius: 4px;
+  background-color:black;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  font-size: 18px;
+  padding: 10px;
+  width: 100px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin-left:750px;
+  margin-right:200px;
+  margin-top:50px;
+  marging-bottom:10px;
+}
+
+.buttonN span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.buttonN span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.buttonN:hover span {
+  padding-right: 25px;
+}
+
+.buttonN:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.buttonP {
+  display: inline-block;
+  border-radius: 4px;
+  background-color:black;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  font-size: 18px;
+  padding: 10px;
+  width: 120px;
+  transition: all 0.5s;
+  cursor: pointer-left;
+  margin-left:350px;
+  margin-right:750px;
+  margin-top:50px;
+  marging-bottom:10px;
+}
+
+.buttonP span {
+  cursor: pointer;
+  display: inline-block;
+  transition: 0.5s;
+}
+
+.buttonP span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.buttonP:hover span {
+  
+  padding-right: 25px;
+}
+
+.buttonP:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.navbar {
+  width: 100%;
+  background-color:black;
+  overflow: auto;
+  position:fixed;
+}
+
+.navbar a {
+  float:left;
+  padding: 10px;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+}
+.navbar a:hover {
+  background-color: #000;
+}
+
+.active {
+  background-color:black;
+}
+
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+  }
+}
+</style>
+</head>
+<body>
+<div class="navbar">
+
+  <a class="active" href="index.jsp"><i class="fa fa-fw fa-home"></i> Home</a>  
+  <a href="profile.html"><i class="fa fa-fw fa-user"></i> Profile</a>
+</div>
+ 
+
+<form class="example" action="keywordSearchServlet" style="margin:auto;max-width:650px">
+  <input type="text" placeholder="Search.." name="search2">
+  <button type="submit"><i class="fa fa-search"></i></button>
+</form>
+
+
+
+<div class="column">
+<div class="new">
+<h1 align="center">ANDROID</h1>
+<p>Android is an open source and Linux-based operating system for mobile devices such as smartphones and tablet computers. Android was developed by the Open Handset Alliance, led by Google, and other companies. This tutorial will teach you basic Android programming and will also take you through some advance concepts related to Android application development.</p>
+
+<h2 align="center">What is Android?</h2>
+
+<p>Android is an open source and Linux-based <b>Operating System</b> for mobile devices such as smartphones and tablet computers. Android was developed by the <i>Open Handset Alliance</i>, led by Google, and other companies.</p>
+<p>Android offers a unified approach to application development for mobile devices which means developers need only develop for Android, and their applications should be able to run on different devices powered by Android.</p>
+<p>The first beta version of the Android Software Development Kit (SDK) was released by Google in 2007 where as the first commercial version, Android 1.0, was released in September 2008.</p>
+<p>On June 27, 2012, at the Google I/O conference, Google announced the next Android version, 4.1 <b>Jelly Bean</b>. Jelly Bean is an incremental update, with the primary aim of improving the user interface, both in terms of functionality and performance.</p>
+<p>The source code for Android is available under free and open source software licenses. Google publishes most of the code under the Apache License version 2.0 and the rest, Linux kernel changes, under the GNU General Public License version 2.</p>
+<h2 align="center">Why Android ?</h2>
+
+<h2 align="center">Features of Android</h2>
+<p>Android is a powerful operating system competing with Apple 4GS and supports great features. Few of them are listed below &minus;</p>
+<table class="table table-bordered">
+<tr>
+<th>Sr.No.</th>
+<th style="text-align:center;">Feature &amp; Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td><p><b>Beautiful UI</b></p>
+<p>Android OS basic screen provides a beautiful and intuitive user interface.</p></td>
+</tr>
+<tr>
+<td>2</td>
+<td><p><b>Connectivity</b></p>
+<p>GSM/EDGE, IDEN, CDMA, EV-DO, UMTS, Bluetooth, Wi-Fi, LTE, NFC and WiMAX.</p></td>
+</tr>
+<tr>
+<td>3</td>
+<td><p><b>Storage</b></p>
+<p>SQLite, a lightweight relational database, is used for data storage purposes.</p></td>
+</tr>
+<tr>
+<td>4</td>
+<td><p><b>Media support</b></p>
+<p>H.263, H.264, MPEG-4 SP, AMR, AMR-WB, AAC, HE-AAC, AAC 5.1, MP3, MIDI, Ogg Vorbis, WAV, JPEG, PNG, GIF, and BMP.</p></td>
+</tr>
+<tr>
+<td>5</td>
+<td><p><b>Messaging</b></p>
+<p>SMS and MMS</p></td>
+</tr>
+<tr>
+<td>6</td>
+<td><p><b>Web browser</b></p>
+<p>Based on the open-source WebKit layout engine, coupled with Chrome's V8 JavaScript engine supporting HTML5 and CSS3.</p></td>
+</tr>
+<tr>
+<td>7</td>
+<td><p><b>Multi-touch</b></p>
+<p>Android has native support for multi-touch which was initially made available in handsets such as the HTC Hero.</p></td>
+</tr>
+<tr>
+<td>8</td>
+<td><p><b>Multi-tasking</b></p>
+<p>User can jump from one task to another and same time various application can run simultaneously.</p></td>
+</tr>
+<tr>
+<td>9</td>
+<td><p><b>Resizable widgets</b></p>
+<p>Widgets are resizable, so users can expand them to show more content or shrink them to save space.</p></td>
+</tr>
+<tr>
+<td>10</td>
+<td><p><b>Multi-Language</b></p>
+<p>Supports single direction and bi-directional text.</p></td>
+</tr>
+<tr>
+<td>11</td>
+<td><p><b>GCM</b></p>
+<p>Google Cloud Messaging (GCM) is a service that lets developers send short message data to their users on Android devices, without needing a proprietary sync solution.</p></td>
+</tr>
+<tr>
+<td>12</td>
+<td><p><b>Wi-Fi Direct</b></p>
+<p>A technology that lets apps discover and pair directly, over a high-bandwidth peer-to-peer connection.</p></td>
+</tr>
+<tr>
+<td>13</td>
+<td><p><b>Android Beam</b></p>
+<p>A popular NFC-based technology that lets users instantly share, just by touching two NFC-enabled phones together.</p></td>
+</tr>
+</table>
+<h2 align="center">Android Applications</h2>
+<p>Android applications are usually developed in the Java language using the Android Software Development Kit.</p>
+<p>Once developed, Android applications can be packaged easily and sold out either through a store such as <b>Google Play</b>, <b>SlideME</b>, <b>Opera Mobile Store</b>, <b>Mobango</b>, <b>F-droid</b> and the <b>Amazon Appstore</b>.</p>
+<p>Android powers hundreds of millions of mobile devices in more than 190 countries around the world. It's the largest installed base of any mobile platform and growing fast. Every day more than 1 million new Android devices are activated worldwide.</p>
+<p>This tutorial has been written with an aim to teach you how to develop and package Android application. We will start from environment setup for Android application programming and then drill down to look into various aspects of Android applications.</p> 
+<h2 align="center">Categories of Android applications</h2>
+<p>There are many android applications in the market. The top categories are &minus;</p>
+
+<h2 align="center">History of Android</h2>
+<p>The code names of android ranges from A to N currently, such as Aestro, Blender, Cupcake, Donut, Eclair, Froyo, Gingerbread, Honeycomb, Ice Cream Sandwitch, Jelly Bean, KitKat, Lollipop and Marshmallow. Let's understand the android history in a sequence.</P>
+
+
+</div>
+</div>
+
+<a href="Android.html"> <button class="buttonN" style="vertical-align:middle"><span>Next </span></button></a>
+
+<div class="vertical-menu">
+<a class="_vertical-menu" href="Android.html">ANDROID Home</a>
+<a class="_vertical-menu" href="Android.html">ANDROID Architecture</a>
+<a class="_vertical-menu" href="Android.html">ANDROID Resources</a>
+<a class="_vertical-menu" href="Android.html">ANDROID Activities</a>
+<a class="_vertical-menu" href="Android.html">ANDROID Services</a>
+<a class="_vertical-menu" href="Android.html">ANDROID Broadcast Receivers</a>
+<a class="_vertical-menu" href="Android.html">ANDROID Content Providers</a>
+<a class="_vertical-menu" href="Android.html">ANDROID Fragments</a>
+<a class="_vertical-menu" href="Android.html">ANDROID Intents/Filters</a>
+<a class="_vertical-menu" href="Android.html">ANDROID UI Layout</a>
+<a class="_vertical-menu" href="Android.html">ANDROID Event Handling</a>
+<a class="_vertical-menu" href="Android.html">ANDROID Styles and Themes</a>
+<a class="_vertical-menu" href="Android.html">ANDROID Custom Components</a>
+<a class="_vertical-menu" href="Android.html">ANDROID Drag and Drop</a>
+<a class="_vertical-menu" href="Android.html">ANDROID Notifications</a>
+<a class="_vertical-menu" href="Android.html">PublishingAndroidApplication</a>
+
+
+</div>
+
+
+</body>
+</html>

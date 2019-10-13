@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<title>PHP</title>
+<style>
+@CHARSET "ISO-8859-1";
+
+.vertical-menu {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+ 
+  margin-top:48px;
+
+  margin-left:10px;
+}
+
+.vertical-menu a {
+  padding: 6px 8px 6px 2px;
+  text-decoration: none;
+  font-size: 17px;
+  color: #818181;
+  display: block;
+}
+
+.vertical-menu a:hover {
+  color: dark gray;
+}
+
+
+
+.vertical-menu a {
+
+  background-color: #eee;
+
+  color: black;
+
+  display: block;
+
+  padding: 10px;
+
+  text-decoration: none;
+
+}
+
+ 
+
+.vertical-menu a:hover {
+
+  background-color: #ccc;   
+
+}
+
+ 
+
+.vertical-menu a.active {
+
+  background-color: #4CAF50;
+
+  color: white;
+
+}
+
+ 
+
+form.example input[type=text] {
+
+  padding: 10px;
+
+  font-size: 17px;
+
+  border: 2px solid white;
+
+  float: left;
+
+  width: 75%;
+
+  background: #f1f1f1;
+
+}
+
+ 
+
+form.example button {
+
+  float: left;
+
+  width: 15%;
+
+  padding: 20px;
+
+  background: #2196F3;
+
+  color: white;
+
+  font-size: 17px;
+
+  border: 2px solid white;
+
+  border-left: none;
+
+  cursor: pointer;
+  
+
+}
+
+ 
+
+form.example button:hover {
+
+  background: #0b7dda;
+
+}
+
+ 
+
+form.example::after {
+
+  content: "";
+
+  clear: both;
+
+  display: table;
+
+}
+
+ 
+
+.new {
+
+       margin-left:350px;
+
+       margin-right:400px;
+
+       margin-top:50px;
+
+       marging-bottom:10px;
+
+       width:500px;
+
+}
+
+ 
+
+.column{
+
+  float: left;
+
+  padding: 0px;
+
+  height: 300px;
+
+  width:50%;
+
+  content: "";
+
+  display: table;
+
+  clear: both;
+
+  <!--font-family:elephant;-->
+
+ 
+
+}
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+body {
+  font-family: Arial;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+form.example input[type=text] {
+  padding: 10px;
+  font-size: 18px;
+ margin-top:50px;
+  float: left;
+  width: 80%;
+  background: #f1f1f1;
+}
+
+form.example button {
+  float: left;
+  width: 15%;
+  padding: 10px;
+  background: #2196F3;
+  color: white;
+  font-size: 17px;
+  
+  border-left: none;
+  cursor: pointer;
+  margin-top:50px;
+}
+
+form.example button:hover {
+  background: #0b7dda;
+}
+
+form.example::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.buttonN {
+  display: inline-block;
+  border-radius: 4px;
+  background-color:black;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  font-size: 18px;
+  padding: 10px;
+  width: 100px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin-left:750px;
+  margin-right:200px;
+  margin-top:50px;
+  marging-bottom:10px;
+}
+
+.buttonN span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.buttonN span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.buttonN:hover span {
+  padding-right: 25px;
+}
+
+.buttonN:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.buttonP {
+  display: inline-block;
+  border-radius: 4px;
+  background-color:black;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  font-size: 18px;
+  padding: 10px;
+  width: 120px;
+  transition: all 0.5s;
+  cursor: pointer-left;
+  margin-left:350px;
+  margin-right:750px;
+  margin-top:50px;
+  marging-bottom:10px;
+}
+
+.buttonP span {
+  cursor: pointer;
+  display: inline-block;
+  transition: 0.5s;
+}
+
+.buttonP span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.buttonP:hover span {
+  
+  padding-right: 25px;
+}
+
+.buttonP:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.navbar {
+  width: 100%;
+  background-color:black;
+  overflow: auto;
+  position:fixed;
+}
+
+.navbar a {
+  float:left;
+  padding: 10px;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+}
+.navbar a:hover {
+  background-color: #000;
+}
+
+.active {
+  background-color:black;
+}
+
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+  }
+}
+</style>
+</head>
+<body>
+<div class="navbar">
+
+  <a class="active" href="../index.jsp"><i class="fa fa-fw fa-home"></i> Home</a>  
+  <a href="profile.html"><i class="fa fa-fw fa-user"></i> Profile</a>
+
+</div>
+ 
+
+<form class="example" action="../keywordSearchServlet" style="margin:auto;max-width:650px">
+  <input type="text" placeholder="Search.." name="search2">
+  <button type="submit"><i class="fa fa-search"></i></button>
+</form>
+
+<div class="column">
+<div class="new">
+<h1 align="center">PHP</h1>
+<p>The PHP Hypertext Preprocessor (PHP) is a programming language that allows web developers to create dynamic content that interacts with databases. PHP is basically used for developing web based software applications. This tutorial helps you to build your base with PHP.</p>
+<p>PHP started out as a small open source project that evolved as more and more people found out how useful it was. Rasmus Lerdorf unleashed the first version of PHP way back in 1994.</p>
+<ul class="list">
+<li><p>PHP is a recursive acronym for "PHP: Hypertext Preprocessor".</p></li>
+<li><p>PHP is a server side scripting language that is embedded in HTML. It is used to manage dynamic content, databases, session tracking, even build entire e-commerce sites.</p></li>
+<li><p>It is integrated with a number of popular databases, including MySQL, PostgreSQL, Oracle, Sybase, Informix, and Microsoft SQL Server.</p></li>
+<li><p>PHP is pleasingly zippy in its execution, especially when compiled as an Apache module on the Unix side. The MySQL server, once started, executes even very complex queries with huge result sets in record-setting time.</p></li>
+<li><p>PHP supports a large number of major protocols such as POP3, IMAP, and LDAP. PHP4 added support for Java and distributed object architectures (COM and CORBA), making n-tier development a possibility for the first time.</p></li>
+<li><p>PHP is forgiving: PHP language tries to be as forgiving as possible.</p></li>
+<li><p>PHP Syntax is C-Like.</p></li>
+</ul>
+<h2 align="center">Common uses of PHP</h2>
+<ul class="list">
+<li><p>PHP performs system functions, i.e. from files on a system it can create, open, read, write, and close them.</p></li>
+<li><p>PHP can handle forms, i.e. gather data from files, save data to a file, through email you can send data, return data to the user.</p></li>
+<li><p>You add, delete, modify elements within your database through PHP.</p></li>
+<li><p>Access cookies variables and set cookies.</p></li>
+<li><p>Using PHP, you can restrict users to access some pages of your website.</p></li>
+<li><p>It can encrypt data.</p></li>
+</ul>
+<h2>Characteristics of PHP</h2>
+<p>Five important characteristics make PHP's practical nature possible &minus;</p>
+<ul class="list">
+<li>Simplicity</li>
+<li>Efficiency</li>
+<li>Security</li>
+<li>Flexibility</li>
+<li>Familiarity</li>
+</ul>
+<h2 align="center">"Hello World" Script in PHP</h2>
+<p>To get a feel for PHP, first start with simple PHP scripts. Since "Hello, World!" is an essential example, first we will create a friendly little "Hello, World!" script.</p>
+<p>As mentioned earlier, PHP is embedded in HTML.  That means that in amongst your normal HTML (or XHTML if you're cutting-edge) you'll have PHP statements like this &minus;</p>
+
+<pre class="prettyprint notranslate">
+&lt;html&gt;
+   
+   &lt;head&gt;
+      &lt;title&gt;Hello World&lt;/title&gt;
+   &lt;/head&gt;
+   
+   &lt;body&gt;
+      &lt;?php echo "Hello, World!";?&gt;
+   &lt;/body&gt;
+
+&lt;/html&gt;
+</pre>
+<p>It will produce following result &minus;</p>
+<pre class="result notranslate">
+Hello, World!
+</pre>
+<p>If you examine the HTML output of the above example, you'll notice that the PHP code is not present in the file sent from the server to your Web browser. All of the PHP present in the Web page is processed and stripped from the page; the only thing returned to the client from the Web server is pure HTML output.</p>
+<p>All PHP code must be included inside one of the three special markup tags ATE are recognised by the PHP Parser.</p>
+<pre class="prettyprint notranslate">
+&lt;?php PHP code goes here ?&gt;
+
+&lt;?    PHP code goes here ?&gt;
+
+&lt;script language = "php"&gt; PHP code goes here &lt;/script&gt;
+</pre>
+<p>A most common tag is the &lt;?php...?&gt; and we will also use the same tag in our tutorial.</p>
+<p>From the next chapter we will start with  PHP Environment Setup on your machine and then we will dig out almost all concepts related to PHP to make you comfortable with the PHP language.</p>
+</div>
+</div>
+
+<a href="PHP.html"> <button class="buttonN" style="vertical-align:middle"><span>Next </span></button></a>
+
+<div class="vertical-menu">
+<a class="_vertical-menu" href="PHP.html">PHP Home</a>
+<a class="_vertical-menu" href="PHP.html">PHP Syntax</a>
+<a class="_vertical-menu" href="PHP.html">PHP Variable Types</a>
+<a class="_vertical-menu" href="PHP.html">PHP Constants</a>
+<a class="_vertical-menu" href="PHP.html">PHP Operator Types</a>
+<a class="_vertical-menu" href="PHP.html">PHP Loops</a>
+<a class="_vertical-menu" href="PHP.html">PHP Decision Making</a>
+<a class="_vertical-menu" href="PHP.html">PHP Strings</a>
+<a class="_vertical-menu" href="PHP.html">PHP Arrays</a>
+<a class="_vertical-menu" href="PHP.html">PHP Web Concepts</a>
+<a class="_vertical-menu" href="PHP.html">PHP GET AND POST</a>
+<a class="_vertical-menu" href="PHP.html">PHP File Inclusuion</a>
+<a class="_vertical-menu" href="PHP.html">PHP Files I/O</a>
+<a class="_vertical-menu" href="PHP.html">PHP Functions</a>
+<a class="_vertical-menu" href="PHP.html">PHP Cookies</a>
+<a class="_vertical-menu" href="PHP.html">PHP Sessions</a>
+<a class="_vertical-menu" href="PHP.html">PHP Regular Expressions</a>
+<a class="_vertical-menu" href="PHP.html">PHP Error Handling</a>
+<a class="_vertical-menu" href="PHP.html">PHP Date and Time</a>
+<a class="_vertical-menu" href="PHP.html">PHP Predefined Variables</a>
+<a class="_vertical-menu" href="PHP.html">PHP XYZ</a>
+
+</div>
+
+
+</body>
+</html>

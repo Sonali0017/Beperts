@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<meta charset="ISO-8859-1">
+<title>PYTHON NETWORKING</title>
+<style>
+@CHARSET "ISO-8859-1";
+
+.vertical-menu {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+ 
+  margin-top:48px;
+
+  margin-left:10px;
+}
+
+.vertical-menu a {
+  padding: 6px 8px 6px 2px;
+  text-decoration: none;
+  font-size: 17px;
+  color: #818181;
+  display: block;
+}
+
+.vertical-menu a:hover {
+  color: dark gray;
+}
+
+
+
+.vertical-menu a {
+
+  background-color: #eee;
+
+  color: black;
+
+  display: block;
+
+  padding: 10px;
+
+  text-decoration: none;
+
+}
+
+ 
+
+.vertical-menu a:hover {
+
+  background-color: #ccc;   
+
+}
+
+ 
+
+.vertical-menu a.active {
+
+  background-color: #4CAF50;
+
+  color: white;
+
+}
+
+ 
+
+form.example input[type=text] {
+
+  padding: 10px;
+
+  font-size: 17px;
+
+  border: 2px solid white;
+
+  float: left;
+
+  width: 75%;
+
+  background: #f1f1f1;
+
+}
+
+ 
+
+form.example button {
+
+  float: left;
+
+  width: 15%;
+
+  padding: 20px;
+
+  background: #2196F3;
+
+  color: white;
+
+  font-size: 17px;
+
+  border: 2px solid white;
+
+  border-left: none;
+
+  cursor: pointer;
+  
+
+}
+
+ 
+
+form.example button:hover {
+
+  background: #0b7dda;
+
+}
+
+ 
+
+form.example::after {
+
+  content: "";
+
+  clear: both;
+
+  display: table;
+
+}
+
+ 
+
+.new {
+
+       margin-left:350px;
+
+       margin-right:400px;
+
+       margin-top:50px;
+
+       marging-bottom:10px;
+
+       width:500px;
+
+}
+
+ 
+
+.column{
+
+  float: left;
+
+  padding: 0px;
+
+  height: 300px;
+
+  width:50%;
+
+  content: "";
+
+  display: table;
+
+  clear: both;
+
+  <!--font-family:elephant;-->
+
+ 
+
+}
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+body {
+  font-family: Arial;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+form.example input[type=text] {
+  padding: 10px;
+  font-size: 18px;
+ margin-top:50px;
+  float: left;
+  width: 80%;
+  background: #f1f1f1;
+}
+
+form.example button {
+  float: left;
+  width: 15%;
+  padding: 10px;
+  background: #2196F3;
+  color: white;
+  font-size: 17px;
+  
+  border-left: none;
+  cursor: pointer;
+  margin-top:50px;
+}
+
+form.example button:hover {
+  background: #0b7dda;
+}
+
+form.example::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.buttonN {
+  display: inline-block;
+  border-radius: 4px;
+  background-color:black;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  font-size: 18px;
+  padding: 10px;
+  width: 100px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin-left:750px;
+  margin-right:200px;
+  margin-top:50px;
+  marging-bottom:10px;
+}
+
+.buttonN span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.buttonN span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.buttonN:hover span {
+  padding-right: 25px;
+}
+
+.buttonN:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.buttonP {
+  display: inline-block;
+  border-radius: 4px;
+  background-color:black;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  font-size: 18px;
+  padding: 10px;
+  width: 120px;
+  transition: all 0.5s;
+  cursor: pointer-left;
+  margin-left:350px;
+  margin-right:750px;
+  margin-top:50px;
+  marging-bottom:10px;
+}
+
+.buttonP span {
+  cursor: pointer;
+  display: inline-block;
+  transition: 0.5s;
+}
+
+.buttonP span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.buttonP:hover span {
+  
+  padding-right: 25px;
+}
+
+.buttonP:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.navbar {
+  width: 100%;
+  background-color:black;
+  overflow: auto;
+  position:fixed;
+}
+
+.navbar a {
+  float:left;
+  padding: 10px;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+}
+.navbar a:hover {
+  background-color: #000;
+}
+
+.active {
+  background-color:black;
+}
+
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="navbar">
+
+  <a class="active" href="../index.jsp"><i class="fa fa-fw fa-home"></i> Home</a>  
+  <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
+
+</div>
+ 
+
+<form class="example" action="../keywordSearchServlet" style="margin:auto;max-width:650px"  method="post">
+  <input type="text" placeholder="Search.." name="search2">
+  <button type="submit"><i class="fa fa-search"></i></button>
+</form>
+
+<a href="regexp.html"> <button class="buttonP" style="vertical-align:middle"><span>Previous </span></button></a>
+
+<div class="column">
+<div class="new">
+<h1 align="center">NETWORKING</h1>
+<p>Python provides two levels of access to network services. At a low level, you can access the basic socket support in the underlying operating system, which allows you to implement clients and servers for both connection-oriented and connectionless protocols.</p>
+<p>Python also has libraries that provide higher-level access to specific application-level network protocols, such as FTP, HTTP, and so on.</p>
+<p>This chapter gives you understanding on most famous concept in Networking - Socket Programming.</p>
+<h2 align="center">What is Sockets?</h2>
+<p>Sockets are the endpoints of a bidirectional communications channel. Sockets may communicate within a process, between processes on the same machine, or between processes on different continents.</p>
+<p>Sockets may be implemented over a number of different channel types: Unix domain sockets, TCP, UDP, and so on. The <i>socket</i> library provides specific classes for handling the common transports as well as a generic interface for handling the rest.</p>
+<p>Sockets have their own vocabulary &minus;</p>
+<h2 align="center">A Simple Server</h2>
+<p>To write Internet servers, we use the <b>socket</b> function available in socket module to create a socket object. A socket object is then used to call other functions to setup a socket server.</p>
+<p>Now call <b>bind(hostname, port)</b> function to specify a <i>port</i> for your service on the given host.</p>
+<p>Next, call the <i>accept</i> method of the returned object. This method waits until a client connects to the port you specified, and then returns a <i>connection</i> object that represents the connection to that client.</p>
+<pre class="prettyprint notranslate">
+#!/usr/bin/python           # This is server.py file
+
+import socket               # Import socket module
+
+s = socket.socket()         # Create a socket object
+host = socket.gethostname() # Get local machine name
+port = 12345                # Reserve a port for your service.
+s.bind((host, port))        # Bind to the port
+
+s.listen(5)                 # Now wait for client connection.
+while True:
+   c, addr = s.accept()     # Establish connection with client.
+   print 'Got connection from', addr
+   c.send('Thank you for connecting')
+   c.close()                # Close the connection
+</pre>
+<h2 align="center">A Simple Client</h2>
+<p>Let us write a very simple client program which opens a connection to a given port 12345 and given host. This is very simple to create a socket client using Python's <i>socket</i> module function.</p>
+<p>The <b>socket.connect(hosname, port )</b> opens a TCP connection to <i>hostname</i> on the <i>port</i>. Once you have a socket open, you can read from it like any IO object. When done, remember to close it, as you would close a file.</p>
+<p>The following code is a very simple client that connects to a given host and port, reads any available data from the socket, and then exits &minus;</p>
+<pre class="prettyprint notranslate">
+#!/usr/bin/python           # This is client.py file
+
+import socket               # Import socket module
+
+s = socket.socket()         # Create a socket object
+host = socket.gethostname() # Get local machine name
+port = 12345                # Reserve a port for your service.
+
+s.connect((host, port))
+print s.recv(1024)
+s.close()                     # Close the socket when done
+</pre>
+<p>Now run this server.py in background and then run above client.py to see the result.</p>
+<pre class="prettyprint notranslate">
+# Following would start a server in background.
+$ python server.py &amp; 
+
+# Once server is started run client as follows:
+$ python client.py
+</pre>
+<p>This would produce following result &minus;</p>
+<pre class="result notranslate">
+Got connection from ('127.0.0.1', 48437)
+Thank you for connecting
+</pre>
+</div>
+</div>
+
+<a href="home.html"> <button class="buttonN" style="vertical-align:middle"><span>Next </span></button></a>
+
+<div class="vertical-menu">
+<a class="_vertical-menu" href="home.html">PYTHON Home</a>
+<a class="_vertical-menu" href="syntax.html">PYTHON Syntax</a>
+<a class="_vertical-menu" href="variable.html">PYTHON Variable Types</a>
+<a class="_vertical-menu" href="decision.html">PYTHON Decision Making</a>
+<a class="_vertical-menu" href="loops.html">PYTHON Loops</a>
+<a class="_vertical-menu" href="strings.html">PYTHON Strings</a>
+<a class="_vertical-menu" href="lists.html">PYTHON Lists</a>
+<a class="_vertical-menu" href="tuples.html">PYTHON Tuples</a>
+<a class="_vertical-menu" href="dict.html">PYTHON Dictionary</a>
+<a class="_vertical-menu" href="date.html">PYTHON Date and Time</a>
+<a class="_vertical-menu" href="funct.html">PYTHON Functions</a>
+<a class="_vertical-menu" href="modules.html">PYTHON Modules</a>
+<a class="_vertical-menu" href="files.html">PYTHON Files I/O</a>
+<a class="_vertical-menu" href="exceptions.html">PYTHON Exceptions</a>
+<a class="_vertical-menu" href="regexp.html">PYTHON Regular Expressions</a>
+<a class="_vertical-menu" href="network.html">PYTHON Networking</a>
+<a class="_vertical-menu" href="xyz.html">PYTHON XYZ</a>
+
+</div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<meta charset="ISO-8859-1">
+<title>PYTHON EXCEPTION</title>
+<style>
+@CHARSET "ISO-8859-1";
+
+.vertical-menu {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+ 
+  margin-top:48px;
+
+  margin-left:10px;
+}
+
+.vertical-menu a {
+  padding: 6px 8px 6px 2px;
+  text-decoration: none;
+  font-size: 17px;
+  color: #818181;
+  display: block;
+}
+
+.vertical-menu a:hover {
+  color: dark gray;
+}
+
+
+
+.vertical-menu a {
+
+  background-color: #eee;
+
+  color: black;
+
+  display: block;
+
+  padding: 10px;
+
+  text-decoration: none;
+
+}
+
+ 
+
+.vertical-menu a:hover {
+
+  background-color: #ccc;   
+
+}
+
+ 
+
+.vertical-menu a.active {
+
+  background-color: #4CAF50;
+
+  color: white;
+
+}
+
+ 
+
+form.example input[type=text] {
+
+  padding: 10px;
+
+  font-size: 17px;
+
+  border: 2px solid white;
+
+  float: left;
+
+  width: 75%;
+
+  background: #f1f1f1;
+
+}
+
+ 
+
+form.example button {
+
+  float: left;
+
+  width: 15%;
+
+  padding: 20px;
+
+  background: #2196F3;
+
+  color: white;
+
+  font-size: 17px;
+
+  border: 2px solid white;
+
+  border-left: none;
+
+  cursor: pointer;
+  
+
+}
+
+ 
+
+form.example button:hover {
+
+  background: #0b7dda;
+
+}
+
+ 
+
+form.example::after {
+
+  content: "";
+
+  clear: both;
+
+  display: table;
+
+}
+
+ 
+
+.new {
+
+       margin-left:350px;
+
+       margin-right:400px;
+
+       margin-top:50px;
+
+       marging-bottom:10px;
+
+       width:500px;
+
+}
+
+ 
+
+.column{
+
+  float: left;
+
+  padding: 0px;
+
+  height: 300px;
+
+  width:50%;
+
+  content: "";
+
+  display: table;
+
+  clear: both;
+
+  <!--font-family:elephant;-->
+
+ 
+
+}
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+body {
+  font-family: Arial;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+form.example input[type=text] {
+  padding: 10px;
+  font-size: 18px;
+ margin-top:50px;
+  float: left;
+  width: 80%;
+  background: #f1f1f1;
+}
+
+form.example button {
+  float: left;
+  width: 15%;
+  padding: 10px;
+  background: #2196F3;
+  color: white;
+  font-size: 17px;
+  
+  border-left: none;
+  cursor: pointer;
+  margin-top:50px;
+}
+
+form.example button:hover {
+  background: #0b7dda;
+}
+
+form.example::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.buttonN {
+  display: inline-block;
+  border-radius: 4px;
+  background-color:black;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  font-size: 18px;
+  padding: 10px;
+  width: 100px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin-left:750px;
+  margin-right:200px;
+  margin-top:50px;
+  marging-bottom:10px;
+}
+
+.buttonN span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.buttonN span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.buttonN:hover span {
+  padding-right: 25px;
+}
+
+.buttonN:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.buttonP {
+  display: inline-block;
+  border-radius: 4px;
+  background-color:black;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  font-size: 18px;
+  padding: 10px;
+  width: 120px;
+  transition: all 0.5s;
+  cursor: pointer-left;
+  margin-left:350px;
+  margin-right:750px;
+  margin-top:50px;
+  marging-bottom:10px;
+}
+
+.buttonP span {
+  cursor: pointer;
+  display: inline-block;
+  transition: 0.5s;
+}
+
+.buttonP span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.buttonP:hover span {
+  
+  padding-right: 25px;
+}
+
+.buttonP:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.navbar {
+  width: 100%;
+  background-color:black;
+  overflow: auto;
+  position:fixed;
+}
+
+.navbar a {
+  float:left;
+  padding: 10px;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+}
+.navbar a:hover {
+  background-color: #000;
+}
+
+.active {
+  background-color:black;
+}
+
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+  }
+}
+</style>
+</head>
+<body>
+<div class="navbar">
+
+  <a class="active" href="../index.jsp"><i class="fa fa-fw fa-home"></i> Home</a>  
+  <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
+
+</div>
+ 
+
+<form class="example" action="../keywordSearchServlet" style="margin:auto;max-width:650px"  method="post">
+  <input type="text" placeholder="Search.." name="search2">
+  <button type="submit"><i class="fa fa-search"></i></button>
+</form>
+
+<a href="files.html"> <button class="buttonP" style="vertical-align:middle"><span>Previous </span></button></a>
+
+<div class="column">
+<div class="new">
+<h1 align="center">EXCEPTIONS</h1>
+<p>Python provides two very important features to handle any unexpected error in your Python programs and to add debugging capabilities in them &minus;</p>
+<ul class="list">
+<li><p><b>Exception Handling</b> &minus; This would be covered in this tutorial. Here is a list standard Exceptions available in Python: Standard Exceptions</a>.</p></li>
+<li><p><b>Assertions</b> &minus; This would be covered in Assertions in Python</a> tutorial.</p></li>
+</ul>
+<td><p><b>NotImplementedError</b></p>
+<p>Raised when an abstract method that needs to be implemented in an inherited class is not actually implemented.</p></td>
+</tr>
+</table>
+<h3 align="center">Assertions in Python</h3>
+<p>An assertion is a sanity-check that you can turn on or turn off when you are done with your testing of the program.</p>
+<p>The easiest way to think of an assertion is to liken it to a <b>raise-if</b> statement (or to be more accurate, a raise-if-not statement). An expression is tested, and if the result comes up false, an exception is raised.</p>
+<p>Assertions are carried out by the assert statement, the newest keyword to Python, introduced in version 1.5.</p>
+<p>Programmers often place assertions at the start of a function to check for valid input, and after a function call to check for valid output.</p>
+<h3 align="center">The <i>assert</i> Statement</h3>
+<p>When it encounters an assert statement, Python evaluates the accompanying expression, which is hopefully true. If the expression is false, Python raises an <i>AssertionError</i> exception.</p>
+<p>The <b>syntax</b> for assert is &minus;</p>
+<pre class="result notranslate">
+assert Expression[, Arguments]
+</pre>
+<p>If the assertion fails, Python uses ArgumentExpression as the argument for the AssertionError. AssertionError exceptions can be caught and handled like any other exception using the try-except statement, but if not handled, they will terminate the program and produce a traceback.</p>
+<h3 align="center">Example</h3>
+<p>Here is a function that converts a temperature from degrees Kelvin to degrees Fahrenheit. Since zero degrees Kelvin is as cold as it gets, the function bails out if it sees a negative temperature &minus;</p>
+
+<pre class="prettyprint notranslate">
+#!/usr/bin/python
+def KelvinToFahrenheit(Temperature):
+   assert (Temperature >= 0),"Colder than absolute zero!"
+   return ((Temperature-273)*1.8)+32
+print KelvinToFahrenheit(273)
+print int(KelvinToFahrenheit(505.78))
+print KelvinToFahrenheit(-5)
+</pre>
+<p>When the above code is executed, it produces the following result &minus;</p>
+<pre class="result notranslate">
+32.0
+451
+Traceback (most recent call last):
+File "test.py", line 9, in &lt;module&gt;
+print KelvinToFahrenheit(-5)
+File "test.py", line 4, in KelvinToFahrenheit
+assert (Temperature >= 0),"Colder than absolute zero!"
+AssertionError: Colder than absolute zero!
+</pre>
+<h2 align="center">What is Exception?</h2>
+<p>An exception is an event, which occurs during the execution of a program that disrupts the normal flow of the program's instructions. In general, when a Python script encounters a situation that it cannot cope with, it raises an exception. An exception is a Python object that represents an error.</p>
+<p>When a Python script raises an exception, it must either handle the exception immediately otherwise it terminates and quits.</p>
+<h2 align="center">Handling an exception</h2>
+<p>If you have some <i>suspicious</i> code that may raise an exception, you can defend your program by placing the suspicious code in a <b>try:</b> block. After the try: block, include an <b>except:</b> statement, followed by a block of code which handles the problem as elegantly as possible.</p>
+<h3 align="center">Syntax</h3>
+<p>Here is simple syntax of <i>try....except...else</i> blocks &minus;</p>
+<pre class="result notranslate">
+try:
+   You do your operations here;
+   ......................
+except <i>ExceptionI</i>:
+   If there is ExceptionI, then execute this block.
+except <i>ExceptionII</i>:
+   If there is ExceptionII, then execute this block.
+   ......................
+else:
+   If there is no exception then execute this block. 
+</pre>
+<p>Here are few important points about the above-mentioned syntax &minus;</p>
+<ul class="list">
+<li><p>A single try statement can have multiple except statements. This is useful when the try block contains statements that may throw different types of exceptions.</p></li>
+<li><p>You can also provide a generic except clause, which handles any exception.</p></li>
+<li><p>After the except clause(s), you can include an else-clause. The code in the else-block executes if the code in the try: block does not raise an exception.</p></li>
+<li><p>The else-block is a good place for code that does not need the try: block's protection.</p></li>
+</ul>
+<h3 align="center">Example</h3>
+<p>This example opens a file, writes content in the, file and comes out gracefully because there is no problem at all &minus;</p>
+
+<pre class="prettyprint notranslate">
+#!/usr/bin/python
+
+try:
+   fh = open("testfile", "w")
+   fh.write("This is my test file for exception handling!!")
+except IOError:
+   print "Error: can\'t find file or read data"
+else:
+   print "Written content in the file successfully"
+   fh.close()
+</pre>
+<p>This produces the following result &minus;</p>
+<pre class="result notranslate">
+Written content in the file successfully
+</pre>
+<h3 align="center">Example</h3>
+<p>This example tries to open a file where you do not have write permission, so it raises an exception &minus;</p>
+
+<pre class="prettyprint notranslate">
+#!/usr/bin/python
+
+try:
+   fh = open("testfile", "r")
+   fh.write("This is my test file for exception handling!!")
+except IOError:
+   print "Error: can\'t find file or read data"
+else:
+   print "Written content in the file successfully"
+</pre>
+<p>This produces the following result &minus;</p>
+<pre class="result notranslate">
+Error: can't find file or read data
+</pre>
+<h2 align="center">The <i>except</i> Clause with No Exceptions</h2>
+<p>You can also use the except statement with no exceptions defined as follows &minus;</p>
+<pre class="result notranslate">
+try:
+   You do your operations here;
+   ......................
+except:
+   If there is any exception, then execute this block.
+   ......................
+else:
+   If there is no exception then execute this block. 
+</pre>
+<p>This kind of a <b>try-except</b> statement catches all the exceptions that occur. Using this kind of try-except statement is not considered a good programming practice though, because it catches all exceptions but does not make the programmer identify the root cause of the problem that may occur.</p>
+<h2 align="center">The <i>except</i> Clause with Multiple Exceptions</h2>
+<p>You can also use the same <i>except</i> statement to handle multiple exceptions as follows &minus;</p>
+<pre class="prettyprint notranslate">
+try:
+   You do your operations here;
+   ......................
+except(Exception1[, Exception2[,...ExceptionN]]]):
+   If there is any exception from the given exception list, 
+   then execute this block.
+   ......................
+else:
+   If there is no exception then execute this block. 
+</pre>
+<h2 align="center">The try-finally Clause</h2>
+<p>You can use a <b>finally:</b> block along with a <b>try:</b> block. The finally block is a place to put any code that must execute, whether the try-block
+raised an exception or not. The syntax of the try-finally statement is this &minus;</p>
+<pre class="prettyprint notranslate">
+try:
+   You do your operations here;
+   ......................
+   Due to any exception, this may be skipped.
+finally:
+   This would always be executed.
+   ......................
+</pre>
+<p>You cannot use <i>else</i> clause as well along with a finally clause.</p>
+<h3 align="center">Example</h3>
+
+<pre class="prettyprint notranslate">
+#!/usr/bin/python
+
+try:
+   fh = open("testfile", "w")
+   fh.write("This is my test file for exception handling!!")
+finally:
+   print "Error: can\'t find file or read data"
+</pre>
+<p>If you do not have permission to open the file in writing mode, then this will produce the following result &minus;</p>
+<pre class="result notranslate">
+Error: can't find file or read data
+</pre>
+<p>Same example can be written more cleanly as follows &minus;</p>
+
+<pre class="prettyprint notranslate">
+#!/usr/bin/python
+
+try:
+   fh = open("testfile", "w")
+   try:
+      fh.write("This is my test file for exception handling!!")
+   finally:
+      print "Going to close the file"
+      fh.close()
+except IOError:
+   print "Error: can\'t find file or read data"
+</pre>
+<p>When an exception is thrown in the <i>try</i> block, the execution immediately passes to the <i>finally</i> block. After all the statements in the <i>finally</i> block are executed, the exception is raised again and is handled in the <i>except</i> statements if present in the next higher layer of the <i>try-except</i> statement.</p>
+<h2 align="center">Argument of an Exception</h2>
+<p>An exception can have an <i>argument</i>, which is a value that gives additional information about the problem. The contents  of the argument vary by exception. You capture an exception's argument by supplying a variable in the except clause as follows &minus;</p>
+<pre class="prettyprint notranslate">
+try:
+   You do your operations here;
+   ......................
+except <i>ExceptionType, Argument</i>:
+   You can print value of Argument here...
+</pre>
+<p>If you write the code to handle a single exception, you can have a variable follow the name of the exception in the except statement. If you are trapping multiple exceptions, you can have a variable follow the tuple of the exception.</p>
+<p>This variable receives the value of the exception mostly containing the cause of the exception. The variable can receive a single value or multiple values in the form of a tuple. This tuple usually contains the error string, the error number, and an error location.</p>
+<h3 align="center">Example</h3>
+<p>Following is an example for a single exception &minus;</p>
+
+
+<pre class="prettyprint notranslate">
+#!/usr/bin/python
+
+# Define a function here.
+def temp_convert(var):
+   try:
+      return int(var)
+   except ValueError, Argument:
+      print "The argument does not contain numbers\n", Argument
+
+# Call above function here.
+temp_convert("xyz");
+</pre>
+<p>This produces the following result &minus;</p>
+<pre class="result notranslate">
+The argument does not contain numbers
+invalid literal for int() with base 10: 'xyz'
+</pre>
+<h2 align="center">Raising an Exceptions</h2>
+<p>You can raise exceptions in several ways by using the raise statement. The general syntax for the <b>raise</b> statement is as follows.</p>
+<h3 align="center">Syntax</h3>
+<pre class="result notranslate">
+raise [Exception [, args [, traceback]]]
+</pre>
+<p>Here, <i>Exception</i> is the type of exception (for example, NameError) and <i>argument</i> is a value for the exception argument. The argument is optional; if not supplied, the exception argument is None.</p>
+<p>The final argument, traceback, is also optional (and rarely used in practice), and if present, is the traceback object used for the exception.</p>
+<h3 align="center">Example</h3>
+<p>An exception can be a string, a class or an object. Most of the exceptions that the Python core raises are classes, with an argument that is an instance of the class. Defining new exceptions is quite easy and can be done as follows &minus;</p>
+<pre class="prettyprint notranslate">
+def functionName( level ):
+   if level &lt; 1:
+      raise "Invalid level!", level
+      # The code below to this would not be executed
+      # if we raise the exception
+</pre>
+<p><b>Note:</b> In order to catch an exception, an "except" clause must refer to the same exception thrown either class object or simple string. For example, to capture above exception, we must write the except clause as follows &minus;</p>
+<pre class="prettyprint notranslate">
+try:
+   Business Logic here...
+except "Invalid level!":
+   Exception handling here...
+else:
+   Rest of the code here...
+</pre>
+<h2 align="center">User-Defined Exceptions</h2>
+<p>Python also allows you to create your own exceptions by deriving classes from the standard built-in exceptions.</p>
+<p>Here is an example related to <i>RuntimeError</i>. Here, a class is created that is subclassed from <i>RuntimeError</i>. This is useful when you need to display more specific information when an exception is caught.</p>
+<p>In the try block, the user-defined exception is raised and caught in the except block. The variable e is used to create an instance of the class <i>Networkerror</i>.</p>
+<pre class="prettyprint notranslate">
+class Networkerror(RuntimeError):
+   def __init__(self, arg):
+      self.args = arg
+</pre>
+<p>So once you defined above class, you can raise the exception as follows &minus;</p>
+<pre class="prettyprint notranslate">
+try:
+   raise Networkerror("Bad hostname")
+except Networkerror,e:
+   print e.args
+</pre>
+</div>
+</div>
+
+<a href="regexp.html"> <button class="buttonN" style="vertical-align:middle"><span>Next </span></button></a>
+
+<div class="vertical-menu">
+<a class="_vertical-menu" href="home.html">PYTHON Home</a>
+<a class="_vertical-menu" href="syntax.html">PYTHON Syntax</a>
+<a class="_vertical-menu" href="variable.html">PYTHON Variable Types</a>
+<a class="_vertical-menu" href="decision.html">PYTHON Decision Making</a>
+<a class="_vertical-menu" href="loops.html">PYTHON Loops</a>
+<a class="_vertical-menu" href="strings.html">PYTHON Strings</a>
+<a class="_vertical-menu" href="lists.html">PYTHON Lists</a>
+<a class="_vertical-menu" href="tuples.html">PYTHON Tuples</a>
+<a class="_vertical-menu" href="dict.html">PYTHON Dictionary</a>
+<a class="_vertical-menu" href="date.html">PYTHON Date and Time</a>
+<a class="_vertical-menu" href="funct.html">PYTHON Functions</a>
+<a class="_vertical-menu" href="modules.html">PYTHON Modules</a>
+<a class="_vertical-menu" href="files.html">PYTHON Files I/O</a>
+<a class="_vertical-menu" href="exceptions.html">PYTHON Exceptions</a>
+<a class="_vertical-menu" href="regexp.html">PYTHON Regular Expressions</a>
+<a class="_vertical-menu" href="network.html">PYTHON Networking</a>
+<a class="_vertical-menu" href="xyz.html">PYTHON XYZ</a>
+
+</div>
+
+</body>
+</html>

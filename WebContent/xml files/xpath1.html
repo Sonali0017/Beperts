@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="Xml.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<title>XML XPATH</title>
+<style>
+@CHARSET "ISO-8859-1";
+
+.vertical-menu {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+ 
+  margin-top:48px;
+
+  margin-left:10px;
+}
+
+.vertical-menu a {
+  padding: 6px 8px 6px 2px;
+  text-decoration: none;
+  font-size: 17px;
+  color: #818181;
+  display: block;
+}
+
+.vertical-menu a:hover {
+  color: dark gray;
+}
+
+
+
+.vertical-menu a {
+
+  background-color: #eee;
+
+  color: black;
+
+  display: block;
+
+  padding: 10px;
+
+  text-decoration: none;
+
+}
+
+ 
+
+.vertical-menu a:hover {
+
+  background-color: #ccc;   
+
+}
+
+ 
+
+.vertical-menu a.active {
+
+  background-color: #4CAF50;
+
+  color: white;
+
+}
+
+ 
+
+form.example input[type=text] {
+
+  padding: 10px;
+
+  font-size: 17px;
+
+  border: 2px solid white;
+
+  float: left;
+
+  width: 75%;
+
+  background: #f1f1f1;
+
+}
+
+ 
+
+form.example button {
+
+  float: left;
+
+  width: 15%;
+
+  padding: 20px;
+
+  background: #2196F3;
+
+  color: white;
+
+  font-size: 17px;
+
+  border: 2px solid white;
+
+  border-left: none;
+
+  cursor: pointer;
+  
+
+}
+
+ 
+
+form.example button:hover {
+
+  background: #0b7dda;
+
+}
+
+ 
+
+form.example::after {
+
+  content: "";
+
+  clear: both;
+
+  display: table;
+
+}
+
+ 
+
+.new {
+
+       margin-left:350px;
+
+       margin-right:400px;
+
+       margin-top:50px;
+
+       marging-bottom:10px;
+
+       width:500px;
+
+}
+
+ 
+
+.column{
+
+  float: left;
+
+  padding: 0px;
+
+  height: 300px;
+
+  width:50%;
+
+  content: "";
+
+  display: table;
+
+  clear: both;
+
+  <!--font-family:elephant;-->
+
+ 
+
+}
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+body {
+  font-family: Arial;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+form.example input[type=text] {
+  padding: 10px;
+  font-size: 18px;
+ margin-top:50px;
+  float: left;
+  width: 80%;
+  background: #f1f1f1;
+}
+
+form.example button {
+  float: left;
+  width: 15%;
+  padding: 10px;
+  background: #2196F3;
+  color: white;
+  font-size: 17px;
+  
+  border-left: none;
+  cursor: pointer;
+  margin-top:50px;
+}
+
+form.example button:hover {
+  background: #0b7dda;
+}
+
+form.example::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.buttonN {
+  display: inline-block;
+  border-radius: 4px;
+  background-color:black;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  font-size: 18px;
+  padding: 10px;
+  width: 100px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin-left:750px;
+  margin-right:200px;
+  margin-top:50px;
+  marging-bottom:10px;
+}
+
+.buttonN span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.buttonN span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.buttonN:hover span {
+  padding-right: 25px;
+}
+
+.buttonN:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.buttonP {
+  display: inline-block;
+  border-radius: 4px;
+  background-color:black;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  font-size: 18px;
+  padding: 10px;
+  width: 120px;
+  transition: all 0.5s;
+  cursor: pointer-left;
+  margin-left:350px;
+  margin-right:750px;
+  margin-top:50px;
+  marging-bottom:10px;
+}
+
+.buttonP span {
+  cursor: pointer;
+  display: inline-block;
+  transition: 0.5s;
+}
+
+.buttonP span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.buttonP:hover span {
+  
+  padding-right: 25px;
+}
+
+.buttonP:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.navbar {
+  width: 100%;
+  background-color:black;
+  overflow: auto;
+  position:fixed;
+}
+
+.navbar a {
+  float:left;
+  padding: 10px;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+}
+.navbar a:hover {
+  background-color: #000;
+}
+
+.active {
+  background-color:black;
+}
+
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+  }
+}
+</style>
+</head>
+<body>
+<div class="navbar">
+
+  <a class="active" href="../index.jsp"><i class="fa fa-fw fa-home"></i> Home</a>  
+  <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
+
+</div>
+ 
+
+<form class="example" action="../keywordSearchServlet" style="margin:auto;max-width:650px" method="post">
+  <input type="text" placeholder="Search.." name="search2">
+  <button type="submit"><i class="fa fa-search"></i></button>
+</form>
+
+<a href="tree.html"> <button class="buttonP" style="vertical-align:middle"><span>Previous </span></button></a>
+
+<div class="column">
+<div class="new">
+<h2 align="center"> XML XPATH</h2>
+
+<p>XPath is a major element in the XSLT standard.</p>
+<p>XPath can be used to navigate through elements and attributes in an XML document.</p>
+
+<ul>
+  <li>XPath is a syntax for defining parts of an XML document</li>
+  <li>XPath uses path expressions to navigate in XML documents</li>
+  <li>XPath contains a library of standard functions</li>
+  <li>XPath is a major element in XSLT and in XQuery</li>
+  <li>XPath is a W3C recommendation</li>
+</ul>
+
+
+
+<h2 align="center">XPath Path Expressions</h2>
+<p>XPath uses path expressions to select nodes or node-sets in an XML document. These path 
+expressions look very much like the expressions you see when you work with a traditional computer file system.</p>
+<p>XPath expressions can be used in JavaScript, Java, XML Schema, PHP, Python, 
+C and C++, and lots of other languages.</p>
+
+
+<h2 align="center">XPath is Used in XSLT</h2>
+<p>XPath is a major element in the XSLT standard.</p>
+<p>With XPath knowledge you will be able to take great advantage of XSL.</p>
+<div id="midcontentadcontainer" style="overflow:auto;text-align:center">
+<!-- MidContent -->
+
+  <div id='div-gpt-ad-1493883843099-0' style="display: inline-block">
+    <script>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1493883843099-0'); });
+    </script>
+  </div>
+    
+<h2 align="center">XPath Example</h2>
+<p align="left">We will use the following XML document:</p>
+<div align="left" class="w3-example">
+<div align="left" class="w3-code notranslate htmlHigh">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;<br><br>
+&lt;bookstore&gt;<br><br>
+&lt;book category="cooking"&gt;<br>
+&nbsp;
+&lt;title lang=&quot;en&quot;&gt;Everyday Italian&lt;/title&gt;<br>
+&nbsp;
+&lt;author&gt;Giada De Laurentiis&lt;/author&gt;<br>
+&nbsp;
+&lt;year&gt;2005&lt;/year&gt;<br>
+&nbsp;
+&lt;price&gt;30.00&lt;/price&gt;<br>
+&lt;/book&gt;<br><br>
+&lt;book category="children"&gt;<br>
+&nbsp;
+&lt;title lang=&quot;en&quot;&gt;Harry Potter&lt;/title&gt;<br>
+&nbsp;
+&lt;author&gt;J K. Rowling&lt;/author&gt;<br>
+&nbsp;
+&lt;year&gt;2005&lt;/year&gt;<br>
+&nbsp;
+&lt;price&gt;29.99&lt;/price&gt;<br>
+&lt;/book&gt;<br><br>
+&lt;book category="web"&gt;<br>
+&nbsp;
+&lt;title lang=&quot;en&quot;&gt;XQuery Kick Start&lt;/title&gt;<br>
+&nbsp;
+&lt;author&gt;James McGovern&lt;/author&gt;<br>
+&nbsp;
+&lt;author&gt;Per Bothner&lt;/author&gt;<br>
+&nbsp;
+&lt;author&gt;Kurt Cagle&lt;/author&gt;<br>
+&nbsp;
+&lt;author&gt;James Linn&lt;/author&gt;<br>
+&nbsp;
+&lt;author&gt;Vaidyanathan Nagarajan&lt;/author&gt;<br>
+&nbsp;
+&lt;year&gt;2003&lt;/year&gt;<br>
+&nbsp;
+&lt;price&gt;49.99&lt;/price&gt;<br>
+&lt;/book&gt;<br><br>
+&lt;book category="web"&gt;<br>
+&nbsp;
+&lt;title lang=&quot;en&quot;&gt;Learning XML&lt;/title&gt;<br>
+&nbsp;
+&lt;author&gt;Erik T. Ray&lt;/author&gt;<br>
+&nbsp;
+&lt;year&gt;2003&lt;/year&gt;<br>
+&nbsp;
+&lt;price&gt;39.95&lt;/price&gt;<br>
+&lt;/book&gt;<br><br>
+&lt;/bookstore&gt;</div></div>
+<p>In the table below we have listed some XPath expressions and the result of the expressions:</p>
+<table class="w3-table-all notranslate">
+  <tr>
+    <th style="width:40%">XPath Expression</th>
+    <th>Result</th>
+  </tr>
+  <tr>
+    <td>/bookstore/book[1] </td>
+    <td>Selects the first book element that is the child of the bookstore element</td>
+    </tr>
+  <tr>
+    <td>/bookstore/book[last()]</td>
+    <td>Selects the last book element that is the child of the bookstore element</td>
+    </tr>
+  <tr>
+    <td>/bookstore/book[last()-1]</td>
+    <td>Selects the last but one book element that is the child of the bookstore element</td>
+  </tr>
+  <tr>
+    <td>/bookstore/book[position()&lt;3]</td>
+    <td>Selects the first two book elements that are children of the bookstore element</td>
+  </tr>
+  <tr>
+    <td>//title[@lang]</td>
+    <td>Selects all the title elements that have an attribute named lang</td>
+  </tr>
+  <tr>
+    <td>//title[@lang='en']</td>
+    <td>Selects all the title elements that have a &quot;lang&quot; attribute with a value of &quot;en&quot;</td>
+  </tr>
+  <tr>
+    <td>/bookstore/book[price&gt;35.00]</td>
+    <td>Selects all the book elements of the bookstore element that have a price element with a value greater than 35.00</td>
+  </tr>
+  <tr>
+    <td>/bookstore/book[price&gt;35.00]/title</td>
+    <td>Selects all the title elements of the book elements of the bookstore element that have a price element with a value greater than 35.00</td>
+  </tr>
+  </table>
+  </div>
+  </div>
+  </div>
+
+<a href="xslt.html"> <button class="buttonN" style="vertical-align:middle"><span>Next </span></button></a>
+
+<div class="vertical-menu">
+<a class="_vertical-menu" href="home.html">XML Home</a>
+<a class="_vertical-menu" href="overview.html">XML Overview</a>
+<a class="_vertical-menu" href="syntax.html">XML Syntax</a>
+<a class="_vertical-menu" href="tags.html">XML Tags</a>
+<a class="_vertical-menu" href="elements.html">XML Elements</a>
+<a class="_vertical-menu" href="attributes.html">XML Attributes</a>
+<a class="_vertical-menu" href="namespaces.html">XML Namespaces</a>
+<a class="_vertical-menu" href="characterent.html">XML Character Entities</a>
+<a class="_vertical-menu" href="parser.html">XML Parser</a>
+<a class="_vertical-menu" href="cdta.html">XML CDATA Section</a>
+<a class="_vertical-menu" href="dtd.html">XML DTD</a>
+<a class="_vertical-menu" href="schema.html">XML Schema</a>
+<a class="_vertical-menu" href="dom.html">XML DOM</a>
+<a class="_vertical-menu" href="tree.html">XML Tree</a>
+<a class="_vertical-menu" href="xpath.html">XML XPath</a>
+<a class="_vertical-menu" href="xslt.html">XML XSLT</a>
+<a class="_vertical-menu" href="xquery.html">XML XQuery</a>
+<a class="_vertical-menu" href="xlink.html">XML XLink</a>
+<a class="_vertical-menu" href="xserver.html">XML XServer</a>
+<a class="_vertical-menu" href="database.html">XML Database</a>
+<a class="_vertical-menu" href="processor.html">XML Processor</a>
+</div>
+
+</body>
+</html>

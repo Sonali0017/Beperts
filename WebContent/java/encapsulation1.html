@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="Java.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<title>JAVA ENCAPSULATION</title>
+<style>
+@CHARSET "ISO-8859-1";
+
+.vertical-menu {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+ 
+  margin-top:48px;
+
+  margin-left:10px;
+}
+
+.vertical-menu a {
+  padding: 6px 8px 6px 2px;
+  text-decoration: none;
+  font-size: 17px;
+  color: #818181;
+  display: block;
+}
+
+.vertical-menu a:hover {
+  color: dark gray;
+}
+
+
+
+.vertical-menu a {
+
+  background-color: #eee;
+
+  color: black;
+
+  display: block;
+
+  padding: 10px;
+
+  text-decoration: none;
+
+}
+
+ 
+
+.vertical-menu a:hover {
+
+  background-color: #ccc;   
+
+}
+
+ 
+
+.vertical-menu a.active {
+
+  background-color: #4CAF50;
+
+  color: white;
+
+}
+
+ 
+
+form.example input[type=text] {
+
+  padding: 10px;
+
+  font-size: 17px;
+
+  border: 2px solid white;
+
+  float: left;
+
+  width: 75%;
+
+  background: #f1f1f1;
+
+}
+
+ 
+
+form.example button {
+
+  float: left;
+
+  width: 15%;
+
+  padding: 20px;
+
+  background: #2196F3;
+
+  color: white;
+
+  font-size: 17px;
+
+  border: 2px solid white;
+
+  border-left: none;
+
+  cursor: pointer;
+  
+
+}
+
+ 
+
+form.example button:hover {
+
+  background: #0b7dda;
+
+}
+
+ 
+
+form.example::after {
+
+  content: "";
+
+  clear: both;
+
+  display: table;
+
+}
+
+ 
+
+.new {
+
+       margin-left:350px;
+
+       margin-right:400px;
+
+       margin-top:50px;
+
+       marging-bottom:10px;
+
+       width:500px;
+
+}
+
+ 
+
+.column{
+
+  float: left;
+
+  padding: 0px;
+
+  height: 300px;
+
+  width:50%;
+
+  content: "";
+
+  display: table;
+
+  clear: both;
+
+  <!--font-family:elephant;-->
+
+ 
+
+}
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+body {
+  font-family: Arial;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+form.example input[type=text] {
+  padding: 10px;
+  font-size: 18px;
+ margin-top:50px;
+  float: left;
+  width: 80%;
+  background: #f1f1f1;
+}
+
+form.example button {
+  float: left;
+  width: 15%;
+  padding: 10px;
+  background: #2196F3;
+  color: white;
+  font-size: 17px;
+  
+  border-left: none;
+  cursor: pointer;
+  margin-top:50px;
+}
+
+form.example button:hover {
+  background: #0b7dda;
+}
+
+form.example::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.buttonN {
+  display: inline-block;
+  border-radius: 4px;
+  background-color:black;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  font-size: 18px;
+  padding: 10px;
+  width: 100px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin-left:750px;
+  margin-right:200px;
+  margin-top:50px;
+  marging-bottom:10px;
+}
+
+.buttonN span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.buttonN span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.buttonN:hover span {
+  padding-right: 25px;
+}
+
+.buttonN:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.buttonP {
+  display: inline-block;
+  border-radius: 4px;
+  background-color:black;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  font-size: 18px;
+  padding: 10px;
+  width: 120px;
+  transition: all 0.5s;
+  cursor: pointer-left;
+  margin-left:350px;
+  margin-right:750px;
+  margin-top:50px;
+  marging-bottom:10px;
+}
+
+.buttonP span {
+  cursor: pointer;
+  display: inline-block;
+  transition: 0.5s;
+}
+
+.buttonP span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.buttonP:hover span {
+  
+  padding-right: 25px;
+}
+
+.buttonP:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.navbar {
+  width: 100%;
+  background-color:black;
+  overflow: auto;
+  position:fixed;
+}
+
+.navbar a {
+  float:left;
+  padding: 10px;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+}
+.navbar a:hover {
+  background-color: #000;
+}
+
+.active {
+  background-color:black;
+}
+
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+  }
+}</style>
+</head>
+<body>
+<div class="navbar">
+
+  <a class="active" href="../index.jsp"><i class="fa fa-fw fa-home"></i> Home</a>  
+  <a href="profile.html"><i class="fa fa-fw fa-user"></i> Profile</a>
+
+</div>
+
+<form class="example" action="../keywordSearchServlet" style="margin:auto;max-width:650px"  method="post">
+  <input type="text" placeholder="Search.." name="search2">
+  <button type="submit"><i class="fa fa-search"></i></button>
+</form>
+
+<a href="abstraction1.html"> <button class="buttonP" style="vertical-align:middle"><span>Previous </span></button></a>
+<div class="column">
+<div class="new">
+<h1 align="center">Encapsulation</h1>
+<p><b>Encapsulation</b> is one of the four fundamental OOP concepts. The other three are inheritance, polymorphism, and abstraction.</p>
+<p>Encapsulation in Java is a mechanism of wrapping the data (variables) and code acting on the data (methods) together as a single unit. In encapsulation, the variables of a class will be hidden from other classes, and can be accessed only through the methods of their current class. Therefore, it is also known as <b>data hiding</b>.</p>
+<p>To achieve encapsulation in Java &minus;</p>
+<ul class="list">
+<li><p>Declare the variables of a class as private.</p></li>
+<li><p>Provide public setter and getter methods to modify and view the variables values.</p></li>
+</ul>
+<h3 align="center">Example</h3>
+<p>Following is an example that demonstrates how to achieve Encapsulation in Java &minus;</p>
+<pre class="prettyprint notranslate">
+/* File name : EncapTest.java */
+public class EncapTest {
+   private String name;
+   private String idNum;
+   private int age;
+
+   public int getAge() {
+      return age;
+   }
+
+   public String getName() {
+      return name;
+   }
+
+   public String getIdNum() {
+      return idNum;
+   }
+
+   public void setAge( int newAge) {
+      age = newAge;
+   }
+
+   public void setName(String newName) {
+      name = newName;
+   }
+
+   public void setIdNum( String newId) {
+      idNum = newId;
+   }
+}
+</pre>
+<p>The public setXXX() and getXXX() methods are the access points of the instance variables of the EncapTest class. Normally, these methods are referred as getters and setters. Therefore, any class that wants to access the variables should access them through these getters and setters.</p>
+<p>The variables of the EncapTest class can be accessed using the following program &minus;</p>
+<pre class="prettyprint notranslate">
+/* File name : RunEncap.java */
+public class RunEncap {
+
+   public static void main(String args[]) {
+      EncapTest encap = new EncapTest();
+      encap.setName("James");
+      encap.setAge(20);
+      encap.setIdNum("12343ms");
+
+      System.out.print("Name : " + encap.getName() + " Age : " + encap.getAge());
+   }
+}
+</pre>
+<p>This will produce the following result &minus;</p>
+<h3 align="center">Output</h3>
+<pre class="result notranslate">
+Name : James Age : 20
+</pre>
+<h2 align="center">Benefits of Encapsulation</h2>
+<ul class="list">
+<li><p>The fields of a class can be made read-only or write-only.</p></li>
+<li><p>A class can have total control over what is stored in its fields.</p></li>
+</ul>
+</div>
+</div>
+
+<a href="packages1.html"> <button class="buttonN" style="vertical-align:middle"><span>Next </span></button></a>
+
+<div class="vertical-menu">
+<a class="_vertical-menu" href="home1.html">JAVA Home</a>
+<a class="_vertical-menu" href="syntax1.html">JAVA Syntax</a>
+<a class="_vertical-menu" href="objcls1.html">JAVA Object and Classes</a>
+<a class="_vertical-menu" href="constructors1.html">JAVA Constructors</a>
+<a class="_vertical-menu" href="datatypes1.html">JAVA Datatypes</a>
+<a class="_vertical-menu" href="loops1.html">JAVA Loops</a>
+<a class="_vertical-menu" href="decision1.html">JAVA Decision Making</a>
+<a class="_vertical-menu" href="strings1.html">JAVA Strings</a>
+<a class="_vertical-menu" href="arrays1.html">JAVA Arrays</a>
+<a class="_vertical-menu" href="date1.html">JAVA Date and Time</a>
+<a class="_vertical-menu" href="regularexp1.html">JAVA Regular Expressions</a>
+<a class="_vertical-menu" href="method1.html">JAVA Methods</a>
+<a class="_vertical-menu" href="exceptions1.html">JAVA Exceptions</a>
+<a class="_vertical-menu" href="inheritance1.html">JAVA Inheritance</a>
+<a class="_vertical-menu" href="polymorphism1.html">JAVA Polymorphism</a>
+<a class="_vertical-menu" href="abstraction1.html">JAVA Abstraction</a>
+<a class="_vertical-menu" href="encapsulation1.html">JAVA Encapsulation</a>
+<a class="_vertical-menu" href="packages1.html">JAVA Packages</a>
+<a class="_vertical-menu" href="collections1.html">JAVA Collections</a>
+<a class="_vertical-menu" href="multithread1.html">JAVA Multithreading</a>
+<a class="_vertical-menu" href="multithread1.html">JAVA XYZ</a>
+</div>
+</body>
+</html>

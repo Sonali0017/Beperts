@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="Xml.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<title>XML CHARACTER ENTITIES</title>
+<style>
+@CHARSET "ISO-8859-1";
+
+.vertical-menu {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+ 
+  margin-top:48px;
+
+  margin-left:10px;
+}
+
+.vertical-menu a {
+  padding: 6px 8px 6px 2px;
+  text-decoration: none;
+  font-size: 17px;
+  color: #818181;
+  display: block;
+}
+
+.vertical-menu a:hover {
+  color: dark gray;
+}
+
+
+
+.vertical-menu a {
+
+  background-color: #eee;
+
+  color: black;
+
+  display: block;
+
+  padding: 10px;
+
+  text-decoration: none;
+
+}
+
+ 
+
+.vertical-menu a:hover {
+
+  background-color: #ccc;   
+
+}
+
+ 
+
+.vertical-menu a.active {
+
+  background-color: #4CAF50;
+
+  color: white;
+
+}
+
+ 
+
+form.example input[type=text] {
+
+  padding: 10px;
+
+  font-size: 17px;
+
+  border: 2px solid white;
+
+  float: left;
+
+  width: 75%;
+
+  background: #f1f1f1;
+
+}
+
+ 
+
+form.example button {
+
+  float: left;
+
+  width: 15%;
+
+  padding: 20px;
+
+  background: #2196F3;
+
+  color: white;
+
+  font-size: 17px;
+
+  border: 2px solid white;
+
+  border-left: none;
+
+  cursor: pointer;
+  
+
+}
+
+ 
+
+form.example button:hover {
+
+  background: #0b7dda;
+
+}
+
+ 
+
+form.example::after {
+
+  content: "";
+
+  clear: both;
+
+  display: table;
+
+}
+
+ 
+
+.new {
+
+       margin-left:350px;
+
+       margin-right:400px;
+
+       margin-top:50px;
+
+       marging-bottom:10px;
+
+       width:500px;
+
+}
+
+ 
+
+.column{
+
+  float: left;
+
+  padding: 0px;
+
+  height: 300px;
+
+  width:50%;
+
+  content: "";
+
+  display: table;
+
+  clear: both;
+
+  <!--font-family:elephant;-->
+
+ 
+
+}
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+body {
+  font-family: Arial;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+form.example input[type=text] {
+  padding: 10px;
+  font-size: 18px;
+ margin-top:50px;
+  float: left;
+  width: 80%;
+  background: #f1f1f1;
+}
+
+form.example button {
+  float: left;
+  width: 15%;
+  padding: 10px;
+  background: #2196F3;
+  color: white;
+  font-size: 17px;
+  
+  border-left: none;
+  cursor: pointer;
+  margin-top:50px;
+}
+
+form.example button:hover {
+  background: #0b7dda;
+}
+
+form.example::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.buttonN {
+  display: inline-block;
+  border-radius: 4px;
+  background-color:black;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  font-size: 18px;
+  padding: 10px;
+  width: 100px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin-left:750px;
+  margin-right:200px;
+  margin-top:50px;
+  marging-bottom:10px;
+}
+
+.buttonN span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.buttonN span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.buttonN:hover span {
+  padding-right: 25px;
+}
+
+.buttonN:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.buttonP {
+  display: inline-block;
+  border-radius: 4px;
+  background-color:black;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  font-size: 18px;
+  padding: 10px;
+  width: 120px;
+  transition: all 0.5s;
+  cursor: pointer-left;
+  margin-left:350px;
+  margin-right:750px;
+  margin-top:50px;
+  marging-bottom:10px;
+}
+
+.buttonP span {
+  cursor: pointer;
+  display: inline-block;
+  transition: 0.5s;
+}
+
+.buttonP span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.buttonP:hover span {
+  
+  padding-right: 25px;
+}
+
+.buttonP:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.navbar {
+  width: 100%;
+  background-color:black;
+  overflow: auto;
+  position:fixed;
+}
+
+.navbar a {
+  float:left;
+  padding: 10px;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+}
+.navbar a:hover {
+  background-color: #000;
+}
+
+.active {
+  background-color:black;
+}
+
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+  }
+}
+</style>
+</head>
+<body>
+<div class="navbar">
+
+  <a class="active" href="../index.jsp"><i class="fa fa-fw fa-home"></i> Home</a>  
+  <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
+
+</div>
+
+<form class="example" action="../keywordSearchServlet" style="margin:auto;max-width:650px"  method="post">
+  <input type="text" placeholder="Search.." name="search2">
+  <button type="submit"><i class="fa fa-search"></i></button>
+</form>
+
+<a href="namespaces.html"> <button class="buttonP" style="vertical-align:middle"><span>Previous </span></button></a>
+
+<div class="column">
+<div class="new">
+<h2 align="center">XML Character Entities</h2>
+<p>This chapter describes the XML <b>Character Entities</b>. Before we understand the Character Entities, let us first understand what an XML entity is.</p>
+<p>As put by W3 Consortium</a> the definition of an entity is as follows &minus;</p>
+<blockquote>"The document entity serves as the root of the entity tree and a starting-point for an XML processor".</blockquote>
+<p>This means, entities are the placeholders in XML. These can be declared in the document prolog or in a DTD. There are different types of entities and in this chapter we will discuss Character Entity.</p>
+<p>Both, HTML and XML, have some symbols reserved for their use, which cannot be used as content in XML code. For example, <b>&lt;</b> and <b>&gt;</b> signs are used for opening and closing XML tags. To display these special characters, the character entities are used.</p>
+<p>There are few special characters or symbols which are not available to be typed directly from the keyboard. Character Entities can also be used to display those symbols/special characters.</p>
+<h2 align="center">Types of Character Entities</h2>
+<p>There are three types of character entities &minus;</p>
+<ul class="list">
+<li>Predefined Character Entities</li>
+<li>Numbered Character Entities</li>
+<li>Named Character Entities</li>
+</ul>
+<h3 align="center">Predefined Character Entities</h3>
+<p>They are introduced to avoid the ambiguity while using some symbols. For example, an ambiguity is observed when less than ( <b>&lt;</b> ) or greater than ( <b>&gt;</b> ) symbol is used with the angle tag (<b>&lt;&gt;</b>). Character entities are basically used to delimit tags in XML. Following is a list of pre-defined character entities from XML specification. These can be used to express characters without ambiguity.</p>
+<ul class="list">
+<li><p>Ampersand &minus; <b>&amp;amp;</b></p></li>
+<li><p>Single quote &minus; <b>&amp;apos;</b></p></li>
+<li><p>Greater than &minus; <b>&amp;gt;</b></p></li>
+<li><p>Less than &minus; <b>&amp;lt;</b></p></li>
+<li><p>Double quote &minus; <b>&amp;quot;</b></p></li>
+</ul>
+<h3 align="center">Numeric Character Entities</h3>
+<p>The numeric reference is used to refer to a character entity. Numeric reference can either be in decimal or hexadecimal format. As there are thousands of numeric references available, these are a bit hard to remember. Numeric reference refers to the character by its number in the Unicode character set.</p>
+<p>General syntax for decimal numeric reference is &minus;</p>
+<pre class="result notranslate">
+&# decimal number ;
+</pre>
+<p>General syntax for hexadecimal numeric reference is &minus;</p>
+<pre class="result notranslate">
+&#x Hexadecimal number ;
+</pre>
+<p>The following table lists some predefined character entities with their numeric values &minus;</p>
+<table class="table table-bordered">
+<thead>
+<th>Entity name</th>
+<th>Character</th>
+<th>Decimal reference</th>
+<th>Hexadecimal reference</th>
+</thead>
+<tbody>
+<tr>
+<td>quot</td>
+<td>&quot;</td>
+<td>&amp;#34;</td>
+<td>&amp;#x22;</td>
+</tr>
+<tr>
+<td>amp</td>
+<td>&amp;</td>
+<td>&amp;#38;</td>
+<td>&amp;#x26;</td>
+</tr>
+<tr>
+<td>apos</td>
+<td>'</td>
+<td>&amp;#39;</td>
+<td>&amp;#x27;</td>
+</tr>
+<tr>
+<td>lt</td>
+<td>&lt;</td>
+<td>&amp;#60;</td>
+<td>&amp;#x3C;</td>
+</tr>
+<tr>
+<td>gt</td>
+<td>&gt;</td>
+<td>&amp;#62;</td>
+<td>&amp;#x3E;</td>
+</tr>
+</tbody>
+</table>
+<h3 align="center">Named Character Entity</h3>
+<p>As it is hard to remember the numeric characters, the most preferred type of character
+entity is the named character entity. Here, each entity is identified with a name.</p>
+<p>For example &minus;</p>
+<ul class="list">
+<li><p>&apos;Aacute&apos; represents capital character with acute accent.</p></li>
+<li><p>&apos;ugrave&apos; represents the small with grave accent.</p></li>
+</ul>
+</div>
+</div>
+
+<a href="parser.html"> <button class="buttonN" style="vertical-align:middle"><span>Next </span></button></a>
+
+<div class="vertical-menu">
+<a class="_vertical-menu" href="home1.html">XML Home</a>
+<a class="_vertical-menu" href="overview1.html">XML Overview</a>
+<a class="_vertical-menu" href="syntax1.html">XML Syntax</a>
+<a class="_vertical-menu" href="tags1.html">XML Tags</a>
+<a class="_vertical-menu" href="elements1.html">XML Elements</a>
+<a class="_vertical-menu" href="attributes1.html">XML Attributes</a>
+<a class="_vertical-menu" href="namespaces1.html">XML Namespaces</a>
+<a class="_vertical-menu" href="characterent1.html">XML Character Entities</a>
+<a class="_vertical-menu" href="parser1.html">XML Parser</a>
+<a class="_vertical-menu" href="cdta1.html">XML CDATA Section</a>
+<a class="_vertical-menu" href="dtd1.html">XML DTD</a>
+<a class="_vertical-menu" href="schema1.html">XML Schema</a>
+<a class="_vertical-menu" href="dom1.html">XML DOM</a>
+<a class="_vertical-menu" href="tree1.html">XML Tree</a>
+<a class="_vertical-menu" href="xpath1.html">XML XPath</a>
+<a class="_vertical-menu" href="xslt1.html">XML XSLT</a>
+<a class="_vertical-menu" href="xquery1.html">XML XQuery</a>
+<a class="_vertical-menu" href="xlink1.html">XML XLink</a>
+<a class="_vertical-menu" href="xserver1.html">XML XServer</a>
+<a class="_vertical-menu" href="database1.html">XML Database</a>
+<a class="_vertical-menu" href="processor1.html">XML Processor</a>
+</div>
+
+</body>
+</html>

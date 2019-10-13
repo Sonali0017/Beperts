@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<meta charset="ISO-8859-1">
+<title>PYTHON DICTIONARY</title>
+<style>
+@CHARSET "ISO-8859-1";
+
+.vertical-menu {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+ 
+  margin-top:48px;
+
+  margin-left:10px;
+}
+
+.vertical-menu a {
+  padding: 6px 8px 6px 2px;
+  text-decoration: none;
+  font-size: 17px;
+  color: #818181;
+  display: block;
+}
+
+.vertical-menu a:hover {
+  color: dark gray;
+}
+
+
+
+.vertical-menu a {
+
+  background-color: #eee;
+
+  color: black;
+
+  display: block;
+
+  padding: 10px;
+
+  text-decoration: none;
+
+}
+
+ 
+
+.vertical-menu a:hover {
+
+  background-color: #ccc;   
+
+}
+
+ 
+
+.vertical-menu a.active {
+
+  background-color: #4CAF50;
+
+  color: white;
+
+}
+
+ 
+
+form.example input[type=text] {
+
+  padding: 10px;
+
+  font-size: 17px;
+
+  border: 2px solid white;
+
+  float: left;
+
+  width: 75%;
+
+  background: #f1f1f1;
+
+}
+
+ 
+
+form.example button {
+
+  float: left;
+
+  width: 15%;
+
+  padding: 20px;
+
+  background: #2196F3;
+
+  color: white;
+
+  font-size: 17px;
+
+  border: 2px solid white;
+
+  border-left: none;
+
+  cursor: pointer;
+  
+
+}
+
+ 
+
+form.example button:hover {
+
+  background: #0b7dda;
+
+}
+
+ 
+
+form.example::after {
+
+  content: "";
+
+  clear: both;
+
+  display: table;
+
+}
+
+ 
+
+.new {
+
+       margin-left:350px;
+
+       margin-right:400px;
+
+       margin-top:50px;
+
+       marging-bottom:10px;
+
+       width:500px;
+
+}
+
+ 
+
+.column{
+
+  float: left;
+
+  padding: 0px;
+
+  height: 300px;
+
+  width:50%;
+
+  content: "";
+
+  display: table;
+
+  clear: both;
+
+  <!--font-family:elephant;-->
+
+ 
+
+}
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+body {
+  font-family: Arial;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+form.example input[type=text] {
+  padding: 10px;
+  font-size: 18px;
+ margin-top:50px;
+  float: left;
+  width: 80%;
+  background: #f1f1f1;
+}
+
+form.example button {
+  float: left;
+  width: 15%;
+  padding: 10px;
+  background: #2196F3;
+  color: white;
+  font-size: 17px;
+  
+  border-left: none;
+  cursor: pointer;
+  margin-top:50px;
+}
+
+form.example button:hover {
+  background: #0b7dda;
+}
+
+form.example::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.buttonN {
+  display: inline-block;
+  border-radius: 4px;
+  background-color:black;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  font-size: 18px;
+  padding: 10px;
+  width: 100px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin-left:750px;
+  margin-right:200px;
+  margin-top:50px;
+  marging-bottom:10px;
+}
+
+.buttonN span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.buttonN span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.buttonN:hover span {
+  padding-right: 25px;
+}
+
+.buttonN:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.buttonP {
+  display: inline-block;
+  border-radius: 4px;
+  background-color:black;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  font-size: 18px;
+  padding: 10px;
+  width: 120px;
+  transition: all 0.5s;
+  cursor: pointer-left;
+  margin-left:350px;
+  margin-right:750px;
+  margin-top:50px;
+  marging-bottom:10px;
+}
+
+.buttonP span {
+  cursor: pointer;
+  display: inline-block;
+  transition: 0.5s;
+}
+
+.buttonP span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.buttonP:hover span {
+  
+  padding-right: 25px;
+}
+
+.buttonP:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.navbar {
+  width: 100%;
+  background-color:black;
+  overflow: auto;
+  position:fixed;
+}
+
+.navbar a {
+  float:left;
+  padding: 10px;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+}
+.navbar a:hover {
+  background-color: #000;
+}
+
+.active {
+  background-color:black;
+}
+
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+  }
+}
+</style>
+
+</head>
+<body>
+<div class="navbar">
+
+  <a class="active" href="../index.jsp"><i class="fa fa-fw fa-home"></i> Home</a>  
+  <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
+
+</div>
+ 
+
+<form class="example" action="../keywordSearchServlet" style="margin:auto;max-width:650px"  method="post">
+  <input type="text" placeholder="Search.." name="search2">
+  <button type="submit"><i class="fa fa-search"></i></button>
+</form>
+
+<a href="tuples.html"> <button class="buttonP" style="vertical-align:middle"><span>Previous </span></button></a>
+
+<div class="column">
+<div class="new">
+<h1 align="center">DICTIONARY</h1>
+<p>Each key is separated from its value by a colon (:), the items are separated by commas, and the whole thing is enclosed in curly braces. An empty dictionary without any items is written with just two curly braces, like this: {}.</p>
+<p>Keys are unique within a dictionary while values may not be. The values of a dictionary can be of any type, but the keys must be of an immutable data type such as strings, numbers, or tuples.</p>
+<h2>Accessing Values in Dictionary</h2>
+<p>To access dictionary elements, you can use the familiar square brackets along with the key to obtain its value. Following is a simple example &minus;</p>
+
+<pre class="prettyprint notranslate">
+#!/usr/bin/python
+
+dict = {'Name': 'Zara', 'Age': 7, 'Class': 'First'}
+print "dict['Name']: ", dict['Name']
+print "dict['Age']: ", dict['Age']
+</pre>
+<p>When the above code is  executed, it produces the following result &minus;</p>
+<pre class="result notranslate">
+dict['Name']:  Zara
+dict['Age']:  7
+</pre>
+<p>If we attempt to access a data item with a key, which is not part of the dictionary, we get an error as follows &minus;</p>
+
+<pre class="prettyprint notranslate">
+#!/usr/bin/python
+
+dict = {'Name': 'Zara', 'Age': 7, 'Class': 'First'}
+print "dict['Alice']: ", dict['Alice']
+</pre>
+<p>When the above code is  executed, it produces the following result &minus;</p>
+<pre class="result notranslate">
+dict['Alice']:
+Traceback (most recent call last):
+   File "test.py", line 4, in &lt;module&gt;
+      print "dict['Alice']: ", dict['Alice'];
+KeyError: 'Alice'
+</pre>
+<h2 align="center">Updating Dictionary</h2>
+<p>You can update a dictionary by adding a new entry or a key-value pair, modifying an existing entry, or deleting an existing entry as shown below in the simple example &minus;</p>
+
+<pre class="prettyprint notranslate">
+#!/usr/bin/python
+
+dict = {'Name': 'Zara', 'Age': 7, 'Class': 'First'}
+dict['Age'] = 8; # update existing entry
+dict['School'] = "DPS School"; # Add new entry
+
+print "dict['Age']: ", dict['Age']
+print "dict['School']: ", dict['School']
+</pre>
+<p>When the above code is executed, it produces the following result &minus;</p>
+<pre class="result notranslate">
+dict['Age']:  8
+dict['School']:  DPS School
+</pre>
+<h2 align="center">Delete Dictionary Elements</h2>
+<p>You can either remove individual dictionary elements or clear the entire contents of a dictionary. You can also delete entire dictionary in a single operation.</p>
+<p>To explicitly remove an entire dictionary, just use the <b>del</b> statement. Following is a simple example &minus;</p>
+
+<pre class="prettyprint notranslate">
+#!/usr/bin/python
+
+dict = {'Name': 'Zara', 'Age': 7, 'Class': 'First'}
+del dict['Name']; # remove entry with key 'Name'
+dict.clear();     # remove all entries in dict
+del dict ;        # delete entire dictionary
+
+print "dict['Age']: ", dict['Age']
+print "dict['School']: ", dict['School']
+</pre>
+<p>This produces the following result. Note that an exception is raised because after <b>del dict</b> dictionary does not exist any more &minus;</p>
+<pre class="result notranslate">
+dict['Age']:
+Traceback (most recent call last):
+   File "test.py", line 8, in &lt;module&gt;
+      print "dict['Age']: ", dict['Age'];
+TypeError: 'type' object is unsubscriptable
+</pre>
+<p><b>Note</b> &minus; del() method is discussed in subsequent section.</p>
+<h2 align="center">Properties of Dictionary Keys</h2>
+<p>Dictionary values have no restrictions. They can be any arbitrary Python object, either standard objects or user-defined objects. However, same is not true for the keys.</p>
+<p>There are two important points to remember about dictionary keys &minus;</p>
+<p><b>(a)</b> More than one entry per key not allowed. Which means no duplicate key is allowed. When duplicate keys encountered during assignment, the last assignment wins. For example &minus;</p>
+
+<pre class="prettyprint notranslate">
+#!/usr/bin/python
+
+dict = {'Name': 'Zara', 'Age': 7, 'Name': 'Manni'}
+print "dict['Name']: ", dict['Name']
+</pre>
+<p>When the above code is  executed, it produces the following result &minus;</p>
+<pre class="result notranslate">
+dict['Name']:  Manni
+</pre>
+<p><b>(b)</b> Keys must be immutable. Which means you can use strings, numbers or tuples as dictionary keys but something like ['key'] is not allowed. Following is a simple example &minus;</p>
+
+<pre class="prettyprint notranslate">
+#!/usr/bin/python
+
+dict = {['Name']: 'Zara', 'Age': 7}
+print "dict['Name']: ", dict['Name']
+</pre>
+<p>When the above code is executed, it produces the following result &minus;</p>
+<pre class="result notranslate">
+Traceback (most recent call last):
+   File "test.py", line 3, in &lt;module&gt;
+      dict = {['Name']: 'Zara', 'Age': 7};
+TypeError: unhashable type: 'list'
+</pre>
+</div>
+</div>
+
+
+<a href="date.html"> <button class="buttonN" style="vertical-align:middle"><span>Next </span></button></a>
+
+<div class="vertical-menu">
+<a class="_vertical-menu" href="home.html">PYTHON Home</a>
+<a class="_vertical-menu" href="syntax.html">PYTHON Syntax</a>
+<a class="_vertical-menu" href="variable.html">PYTHON Variable Types</a>
+<a class="_vertical-menu" href="decision.html">PYTHON Decision Making</a>
+<a class="_vertical-menu" href="loops.html">PYTHON Loops</a>
+<a class="_vertical-menu" href="strings.html">PYTHON Strings</a>
+<a class="_vertical-menu" href="lists.html">PYTHON Lists</a>
+<a class="_vertical-menu" href="tuples.html">PYTHON Tuples</a>
+<a class="_vertical-menu" href="dict.html">PYTHON Dictionary</a>
+<a class="_vertical-menu" href="date.html">PYTHON Date and Time</a>
+<a class="_vertical-menu" href="funct.html">PYTHON Functions</a>
+<a class="_vertical-menu" href="modules.html">PYTHON Modules</a>
+<a class="_vertical-menu" href="files.html">PYTHON Files I/O</a>
+<a class="_vertical-menu" href="exceptions.html">PYTHON Exceptions</a>
+<a class="_vertical-menu" href="multithread.html">PYTHON Regular Expressions</a>
+<a class="_vertical-menu" href="multithread.html">PYTHON Networking</a>
+<a class="_vertical-menu" href="xyz.html">PYTHON XYZ</a>
+
+</div>
+
+</body>
+</html>

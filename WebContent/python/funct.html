@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<meta charset="ISO-8859-1">
+<title>PYTHON FUNCTIONS</title>
+<style>
+@CHARSET "ISO-8859-1";
+
+.vertical-menu {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+ 
+  margin-top:48px;
+
+  margin-left:10px;
+}
+
+.vertical-menu a {
+  padding: 6px 8px 6px 2px;
+  text-decoration: none;
+  font-size: 17px;
+  color: #818181;
+  display: block;
+}
+
+.vertical-menu a:hover {
+  color: dark gray;
+}
+
+
+
+.vertical-menu a {
+
+  background-color: #eee;
+
+  color: black;
+
+  display: block;
+
+  padding: 10px;
+
+  text-decoration: none;
+
+}
+
+ 
+
+.vertical-menu a:hover {
+
+  background-color: #ccc;   
+
+}
+
+ 
+
+.vertical-menu a.active {
+
+  background-color: #4CAF50;
+
+  color: white;
+
+}
+
+ 
+
+form.example input[type=text] {
+
+  padding: 10px;
+
+  font-size: 17px;
+
+  border: 2px solid white;
+
+  float: left;
+
+  width: 75%;
+
+  background: #f1f1f1;
+
+}
+
+ 
+
+form.example button {
+
+  float: left;
+
+  width: 15%;
+
+  padding: 20px;
+
+  background: #2196F3;
+
+  color: white;
+
+  font-size: 17px;
+
+  border: 2px solid white;
+
+  border-left: none;
+
+  cursor: pointer;
+  
+
+}
+
+ 
+
+form.example button:hover {
+
+  background: #0b7dda;
+
+}
+
+ 
+
+form.example::after {
+
+  content: "";
+
+  clear: both;
+
+  display: table;
+
+}
+
+ 
+
+.new {
+
+       margin-left:350px;
+
+       margin-right:400px;
+
+       margin-top:50px;
+
+       marging-bottom:10px;
+
+       width:500px;
+
+}
+
+ 
+
+.column{
+
+  float: left;
+
+  padding: 0px;
+
+  height: 300px;
+
+  width:50%;
+
+  content: "";
+
+  display: table;
+
+  clear: both;
+
+  <!--font-family:elephant;-->
+
+ 
+
+}
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+body {
+  font-family: Arial;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+form.example input[type=text] {
+  padding: 10px;
+  font-size: 18px;
+ margin-top:50px;
+  float: left;
+  width: 80%;
+  background: #f1f1f1;
+}
+
+form.example button {
+  float: left;
+  width: 15%;
+  padding: 10px;
+  background: #2196F3;
+  color: white;
+  font-size: 17px;
+  
+  border-left: none;
+  cursor: pointer;
+  margin-top:50px;
+}
+
+form.example button:hover {
+  background: #0b7dda;
+}
+
+form.example::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.buttonN {
+  display: inline-block;
+  border-radius: 4px;
+  background-color:black;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  font-size: 18px;
+  padding: 10px;
+  width: 100px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin-left:750px;
+  margin-right:200px;
+  margin-top:50px;
+  marging-bottom:10px;
+}
+
+.buttonN span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.buttonN span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.buttonN:hover span {
+  padding-right: 25px;
+}
+
+.buttonN:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.buttonP {
+  display: inline-block;
+  border-radius: 4px;
+  background-color:black;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  font-size: 18px;
+  padding: 10px;
+  width: 120px;
+  transition: all 0.5s;
+  cursor: pointer-left;
+  margin-left:350px;
+  margin-right:750px;
+  margin-top:50px;
+  marging-bottom:10px;
+}
+
+.buttonP span {
+  cursor: pointer;
+  display: inline-block;
+  transition: 0.5s;
+}
+
+.buttonP span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.buttonP:hover span {
+  
+  padding-right: 25px;
+}
+
+.buttonP:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.navbar {
+  width: 100%;
+  background-color:black;
+  overflow: auto;
+  position:fixed;
+}
+
+.navbar a {
+  float:left;
+  padding: 10px;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+}
+.navbar a:hover {
+  background-color: #000;
+}
+
+.active {
+  background-color:black;
+}
+
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="navbar">
+
+  <a class="active" href="../index.jsp"><i class="fa fa-fw fa-home"></i> Home</a>  
+  <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
+
+</div>
+ 
+
+<form class="example" action="../keywordSearchServlet" style="margin:auto;max-width:650px"  method="post">
+  <input type="text" placeholder="Search.." name="search2">
+  <button type="submit"><i class="fa fa-search"></i></button>
+</form>
+
+<a href="date.html"> <button class="buttonP" style="vertical-align:middle"><span>Previous </span></button></a>
+
+<div class="column">
+<div class="new">
+<h1 align="center">FUNCTIONS</h1>
+<p>A function is a block of organized, reusable code that is used to perform a single, related action. Functions provide better modularity for your application and a high degree of code reusing.</p>
+<p>As you already know, Python gives you many built-in functions like print(), etc. but you can also create your own functions. These functions are called <i>user-defined functions.</i></p>
+<h2>Defining a Function</h2>
+<p>You can define functions to provide the required functionality. Here are simple rules to define a function in Python.</p>
+<ul class="list">
+<li><p>Function blocks begin with the keyword <b>def</b> followed by the function name and parentheses ( ( ) ).</p></li>
+<li><p>Any input parameters or arguments should be placed within these parentheses. You can also define parameters inside these parentheses.</p></li>
+<li><p>The first statement of a function can be an optional statement - the documentation string of the function or <i>docstring</i>.</p></li>
+<li><p>The code block within every function starts with a colon (:) and is indented.</p></li>
+<li><p>The statement return [expression] exits a function, optionally passing back an expression to the caller. A return statement with no arguments is the same as return None.</p></li>
+</ul>
+<h2 align="center">Syntax</h2>
+<pre class="result notranslate">
+def functionname( parameters ):
+   "function_docstring"
+   function_suite
+   return [expression]
+</pre>
+<p>By default, parameters have a positional behavior and you need to inform them in the same order that they were defined.</p>
+<h2 align="center">Example</h2>
+<p>The following function takes a string as input parameter and prints it on standard screen.</p>
+<pre class="prettyprint notranslate">
+def printme( str ):
+   "This prints a passed string into this function"
+   print str
+   return
+</pre>
+<h2>Calling a Function</h2>
+<p>Defining a function only gives it a name, specifies the parameters that are to be included in the function and structures the blocks of code.</p>
+<p>Once the basic structure of a function is finalized, you can execute it by calling it from another function or directly from the Python prompt. Following is the example to call printme() function &minus;</p>
+
+<pre class="prettyprint notranslate">
+#!/usr/bin/python
+
+# Function definition is here
+def printme( str ):
+   "This prints a passed string into this function"
+   print str
+   return;
+
+# Now you can call printme function
+printme("I'm first call to user defined function!")
+printme("Again second call to the same function")
+</pre>
+<p>When the above code is executed, it produces the following result &minus;</p>
+<pre class="result notranslate">
+I'm first call to user defined function!
+Again second call to the same function
+</pre>
+<h2>Pass by reference vs value</h2>
+<p>All parameters (arguments) in the Python language are passed by reference. It means if you change what a parameter refers to within a function, the change also reflects back in the calling function. For example &minus;</p>
+
+<pre class="prettyprint notranslate">
+#!/usr/bin/python
+
+# Function definition is here
+def changeme( mylist ):
+   "This changes a passed list into this function"
+   mylist.append([1,2,3,4]);
+   print "Values inside the function: ", mylist
+   return
+
+# Now you can call changeme function
+mylist = [10,20,30];
+changeme( mylist );
+print "Values outside the function: ", mylist
+</pre>
+<p>Here, we are maintaining reference of the passed object and appending values in the same object. So, this would produce the following result &minus;</p>
+<pre class="result notranslate">
+Values inside the function:  [10, 20, 30, [1, 2, 3, 4]]
+Values outside the function:  [10, 20, 30, [1, 2, 3, 4]]
+</pre>
+<p>There is one more example where argument is being passed by reference and the reference is being overwritten inside the called function.</p>
+
+<pre class="prettyprint notranslate">
+#!/usr/bin/python
+
+# Function definition is here
+def changeme( mylist ):
+   "This changes a passed list into this function"
+   mylist = [1,2,3,4]; # This would assig new reference in mylist
+   print "Values inside the function: ", mylist
+   return
+
+# Now you can call changeme function
+mylist = [10,20,30];
+changeme( mylist );
+print "Values outside the function: ", mylist
+</pre>
+<p>The parameter <i>mylist</i> is local to the function changeme. Changing mylist within the function does not affect <i>mylist</i>. The function accomplishes nothing and finally this would produce the following result &minus;</p>
+<pre class="result notranslate">
+Values inside the function:  [1, 2, 3, 4]
+Values outside the function:  [10, 20, 30]
+</pre>
+<h2 align="center">Function Arguments</h2>
+<p>You can call a function by using the following types of formal arguments &minus;</p>
+<ul class="list">
+<li>Required arguments</li>
+<li>Keyword arguments</li>
+<li>Default arguments</li>
+<li>Variable-length arguments</li>
+</ul>
+<h2 align="center">Required arguments</h2>
+<p>Required arguments are the arguments passed to a function in correct positional order. Here, the number of arguments in the function call should match exactly with the function definition.</p>
+<p>To call the function <i>printme()</i>, you definitely need to pass one argument, otherwise it gives a syntax error as follows &minus;</p>
+
+<pre class="prettyprint notranslate">
+#!/usr/bin/python
+
+# Function definition is here
+def printme( str ):
+   "This prints a passed string into this function"
+   print str
+   return;
+
+# Now you can call printme function
+printme()
+</pre>
+<p>When the above code is  executed, it produces the following result &minus;</p>
+<pre class="result notranslate">
+Traceback (most recent call last):
+   File "test.py", line 11, in &lt;module&gt;
+      printme();
+TypeError: printme() takes exactly 1 argument (0 given)
+</pre>
+<h2 align="center">Keyword arguments</h2>
+<p>Keyword arguments are related to the function calls. When you use keyword arguments in a function call, the caller identifies the arguments by the parameter name.</p>
+<p>This allows you to skip arguments or place them out of order because the Python interpreter is able to use the keywords provided to match the values with parameters. You can also make keyword calls to the <i>printme()</i> function in the following ways &minus;</p>
+
+<pre class="prettyprint notranslate">
+#!/usr/bin/python
+
+# Function definition is here
+def printme( str ):
+   "This prints a passed string into this function"
+   print str
+   return;
+
+# Now you can call printme function
+printme( str = "My string")
+</pre>
+<p>When the above code is  executed, it produces the following result &minus;</p>
+<pre class="result notranslate">
+My string
+</pre>
+<p>The following example gives more clear picture. Note that the order of parameters does not matter.</p>
+
+<pre class="prettyprint notranslate">
+#!/usr/bin/python
+
+# Function definition is here
+def printinfo( name, age ):
+   "This prints a passed info into this function"
+   print "Name: ", name
+   print "Age ", age
+   return;
+
+# Now you can call printinfo function
+printinfo( age=50, name="miki" )
+</pre>
+<p>When the above code is  executed, it produces the following result &minus;</p>
+<pre class="result notranslate">
+Name:  miki
+Age  50
+</pre>
+<h2 align="center">Default arguments</h2>
+<p>A default argument is an argument that assumes a default value if a value is not provided in the function call for that argument. The following example gives an idea on default arguments, it prints default age if it is not passed &minus;</p>
+
+<pre class="prettyprint notranslate">
+#!/usr/bin/python
+
+# Function definition is here
+def printinfo( name, age = 35 ):
+   "This prints a passed info into this function"
+   print "Name: ", name
+   print "Age ", age
+   return;
+
+# Now you can call printinfo function
+printinfo( age=50, name="miki" )
+printinfo( name="miki" )
+</pre>
+<p>When the above code is  executed, it produces the following result &minus;</p>
+<pre class="result notranslate">
+Name:  miki
+Age  50
+Name:  miki
+Age  35
+</pre>
+<h2>Variable-length arguments</h2>
+<p>You may need to process a function for more arguments than you specified while defining the function. These arguments are called <i>variable-length</i> arguments and are not named in the function definition, unlike required and default arguments.</p>
+<p>Syntax for a function with non-keyword variable arguments is this &minus;</p>
+<pre class="result notranslate">
+def functionname([formal_args,] *var_args_tuple ):
+   "function_docstring"
+   function_suite
+   return [expression]
+</pre>
+</div>
+</div>
+
+<a href="modules.html"> <button class="buttonN" style="vertical-align:middle"><span>Next </span></button></a>
+
+<div class="vertical-menu">
+<a class="_vertical-menu" href="home.html">PYTHON Home</a>
+<a class="_vertical-menu" href="syntax.html">PYTHON Syntax</a>
+<a class="_vertical-menu" href="variable.html">PYTHON Variable Types</a>
+<a class="_vertical-menu" href="decision.html">PYTHON Decision Making</a>
+<a class="_vertical-menu" href="loops.html">PYTHON Loops</a>
+<a class="_vertical-menu" href="strings.html">PYTHON Strings</a>
+<a class="_vertical-menu" href="lists.html">PYTHON Lists</a>
+<a class="_vertical-menu" href="tuples.html">PYTHON Tuples</a>
+<a class="_vertical-menu" href="dict.html">PYTHON Dictionary</a>
+<a class="_vertical-menu" href="date.html">PYTHON Date and Time</a>
+<a class="_vertical-menu" href="funct.html">PYTHON Functions</a>
+<a class="_vertical-menu" href="modules.html">PYTHON Modules</a>
+<a class="_vertical-menu" href="files.html">PYTHON Files I/O</a>
+<a class="_vertical-menu" href="exceptions.html">PYTHON Exceptions</a>
+<a class="_vertical-menu" href="multithread.html">PYTHON Regular Expressions</a>
+<a class="_vertical-menu" href="multithread.html">PYTHON Networking</a>
+<a class="_vertical-menu" href="xyz.html">PYTHON XYZ</a>
+
+</div>
+
+</body>
+</html>

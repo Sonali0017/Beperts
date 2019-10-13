@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<title>PYTHON</title>
+<style>
+@CHARSET "ISO-8859-1";
+
+.vertical-menu {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+ 
+  margin-top:48px;
+
+  margin-left:10px;
+}
+
+.vertical-menu a {
+  padding: 6px 8px 6px 2px;
+  text-decoration: none;
+  font-size: 17px;
+  color: #818181;
+  display: block;
+}
+
+.vertical-menu a:hover {
+  color: dark gray;
+}
+
+
+
+.vertical-menu a {
+
+  background-color: #eee;
+
+  color: black;
+
+  display: block;
+
+  padding: 10px;
+
+  text-decoration: none;
+
+}
+
+ 
+
+.vertical-menu a:hover {
+
+  background-color: #ccc;   
+
+}
+
+ 
+
+.vertical-menu a.active {
+
+  background-color: #4CAF50;
+
+  color: white;
+
+}
+
+ 
+
+form.example input[type=text] {
+
+  padding: 10px;
+
+  font-size: 17px;
+
+  border: 2px solid white;
+
+  float: left;
+
+  width: 75%;
+
+  background: #f1f1f1;
+
+}
+
+ 
+
+form.example button {
+
+  float: left;
+
+  width: 15%;
+
+  padding: 20px;
+
+  background: #2196F3;
+
+  color: white;
+
+  font-size: 17px;
+
+  border: 2px solid white;
+
+  border-left: none;
+
+  cursor: pointer;
+  
+
+}
+
+ 
+
+form.example button:hover {
+
+  background: #0b7dda;
+
+}
+
+ 
+
+form.example::after {
+
+  content: "";
+
+  clear: both;
+
+  display: table;
+
+}
+
+ 
+
+.new {
+
+       margin-left:350px;
+
+       margin-right:400px;
+
+       margin-top:50px;
+
+       marging-bottom:10px;
+
+       width:500px;
+
+}
+
+ 
+
+.column{
+
+  float: left;
+
+  padding: 0px;
+
+  height: 300px;
+
+  width:50%;
+
+  content: "";
+
+  display: table;
+
+  clear: both;
+
+  <!--font-family:elephant;-->
+
+ 
+
+}
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+body {
+  font-family: Arial;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+form.example input[type=text] {
+  padding: 10px;
+  font-size: 18px;
+ margin-top:50px;
+  float: left;
+  width: 80%;
+  background: #f1f1f1;
+}
+
+form.example button {
+  float: left;
+  width: 15%;
+  padding: 10px;
+  background: #2196F3;
+  color: white;
+  font-size: 17px;
+  
+  border-left: none;
+  cursor: pointer;
+  margin-top:50px;
+}
+
+form.example button:hover {
+  background: #0b7dda;
+}
+
+form.example::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.buttonN {
+  display: inline-block;
+  border-radius: 4px;
+  background-color:black;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  font-size: 18px;
+  padding: 10px;
+  width: 100px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin-left:750px;
+  margin-right:200px;
+  margin-top:50px;
+  marging-bottom:10px;
+}
+
+.buttonN span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.buttonN span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.buttonN:hover span {
+  padding-right: 25px;
+}
+
+.buttonN:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.buttonP {
+  display: inline-block;
+  border-radius: 4px;
+  background-color:black;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  font-size: 18px;
+  padding: 10px;
+  width: 120px;
+  transition: all 0.5s;
+  cursor: pointer-left;
+  margin-left:350px;
+  margin-right:750px;
+  margin-top:50px;
+  marging-bottom:10px;
+}
+
+.buttonP span {
+  cursor: pointer;
+  display: inline-block;
+  transition: 0.5s;
+}
+
+.buttonP span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.buttonP:hover span {
+  
+  padding-right: 25px;
+}
+
+.buttonP:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.navbar {
+  width: 100%;
+  background-color:black;
+  overflow: auto;
+  position:fixed;
+}
+
+.navbar a {
+  float:left;
+  padding: 10px;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+}
+.navbar a:hover {
+  background-color: #000;
+}
+
+.active {
+  background-color:black;
+}
+
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+  }
+}
+</style>
+</head>
+<body>
+<div class="navbar">
+
+  <a class="active" href="../index.jsp"><i class="fa fa-fw fa-home"></i> Home</a>  
+  <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
+</div>
+ 
+
+<form class="example" action="../keywordSearchServlet" style="margin:auto;max-width:650px"  method="post">
+  <input type="text" placeholder="Search.." name="search2">
+  <button type="submit"><i class="fa fa-search"></i></button>
+</form>
+
+
+
+<div class="column">
+<div class="new">
+<h1 align="center">PYTHON</h1>
+<p>Python is a high-level, interpreted, interactive and object-oriented scripting language. Python is designed to be highly readable. It uses English keywords frequently where as other languages use punctuation, and it has fewer syntactical constructions than other languages.</p>
+<ul class="list">
+<li><p><b>Python is Interpreted</b> &minus; Python is processed at runtime by the interpreter. You do not need to compile your program before executing it. This is similar to PERL and PHP.</p></li>
+<li><p><b>Python is Interactive</b> &minus; You can actually sit at a Python prompt and interact with the interpreter directly to write your programs.</p></li>
+<li><p><b>Python is Object-Oriented</b> &minus; Python supports Object-Oriented style or technique of programming that encapsulates code within objects.</p></li>
+<li><p><b>Python is a Beginner's Language</b> &minus; Python is a great language for the beginner-level programmers and supports the development of a wide range of applications from simple text processing to WWW browsers to games.</p></li>
+</ul>
+<p align="center">Python's features include &minus;</p>
+<ul class="list">
+<li><p><b>Easy-to-learn</b> &minus; Python has few keywords, simple structure, and a clearly defined syntax. This allows the student to pick up the language quickly.</p></li>
+<li><p><b>Easy-to-read</b> &minus; Python code is more clearly defined and visible to the eyes.</p></li>
+<li><p><b>Easy-to-maintain</b> &minus; Python's source code is fairly easy-to-maintain.</p></li>
+<li><p><b>A broad standard library</b> &minus; Python's bulk of the library is very portable and cross-platform compatible on UNIX, Windows, and Macintosh.</p></li>
+<li><p><b>Interactive Mode</b> &minus; Python has support for an interactive mode which allows interactive testing and debugging of snippets of code.</p></li>
+<li><p><b>Portable</b> &minus; Python can run on a wide variety of hardware platforms and has the same interface on all platforms.</p></li>
+<li><p><b>Extendable</b> &minus; You can add low-level modules to the Python interpreter. These modules enable programmers to add to or customize their tools to be more efficient.</p></li>
+<li><p><b>Databases</b> &minus; Python provides interfaces to all major commercial databases.</p></li>
+<li><p><b>GUI Programming</b> &minus; Python supports GUI applications that can be created and ported to many system calls, libraries and windows systems, such as Windows MFC, Macintosh, and the X Window system of Unix.</p></li>
+<li><p><b>Scalable</b> &minus; Python provides a better structure and support for large programs than shell scripting.</p></li>
+</ul>
+<p>Apart from the above-mentioned features, Python has a big list of good features, few are listed below &minus;</p>
+<ul class="list">
+<li><p>It supports functional and structured programming methods as well as OOP.</p></li>
+<li><p>It can be used as a scripting language or can be compiled to byte-code for building large applications.</p></li>
+<li><p>It provides very high-level dynamic data types and supports dynamic type checking.</p></li>
+<li><p>It supports automatic garbage collection.</p></li>
+<li><p>It can be easily integrated with C, C++, COM, ActiveX, CORBA, and Java.</p></li>
+</ul>
+</div>
+</div>
+
+<a href="syntax.html"> <button class="buttonN" style="vertical-align:middle"><span>Next </span></button></a>
+
+<div class="vertical-menu">
+<a class="_vertical-menu" href="home.html">PYTHON Home</a>
+<a class="_vertical-menu" href="syntax.html">PYTHON Syntax</a>
+<a class="_vertical-menu" href="variable.html">PYTHON Variable Types</a>
+<a class="_vertical-menu" href="decision.html">PYTHON Decision Making</a>
+<a class="_vertical-menu" href="loops.html">PYTHON Loops</a>
+<a class="_vertical-menu" href="strings.html">PYTHON Strings</a>
+<a class="_vertical-menu" href="lists.html">PYTHON Lists</a>
+<a class="_vertical-menu" href="tuples.html">PYTHON Tuples</a>
+<a class="_vertical-menu" href="dict.html">PYTHON Dictionary</a>
+<a class="_vertical-menu" href="date.html">PYTHON Date and Time</a>
+<a class="_vertical-menu" href="funct.html">PYTHON Functions</a>
+<a class="_vertical-menu" href="modules.html">PYTHON Modules</a>
+<a class="_vertical-menu" href="files.html">PYTHON Files I/O</a>
+<a class="_vertical-menu" href="exceptions.html">PYTHON Exceptions</a>
+<a class="_vertical-menu" href="multithread.html">PYTHON Regular Expressions</a>
+<a class="_vertical-menu" href="multithread.html">PYTHON Networking</a>
+<a class="_vertical-menu" href="xyz.html">PYTHON XYZ</a>
+
+</div>
+
+
+</body>
+</html>

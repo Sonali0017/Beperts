@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="Java.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<title>JAVA CONSTRUCTORS</title>
+<style>
+@CHARSET "ISO-8859-1";
+
+.vertical-menu {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+ 
+  margin-top:48px;
+
+  margin-left:10px;
+}
+
+.vertical-menu a {
+  padding: 6px 8px 6px 2px;
+  text-decoration: none;
+  font-size: 17px;
+  color: #818181;
+  display: block;
+}
+
+.vertical-menu a:hover {
+  color: dark gray;
+}
+
+
+
+.vertical-menu a {
+
+  background-color: #eee;
+
+  color: black;
+
+  display: block;
+
+  padding: 10px;
+
+  text-decoration: none;
+
+}
+
+ 
+
+.vertical-menu a:hover {
+
+  background-color: #ccc;   
+
+}
+
+ 
+
+.vertical-menu a.active {
+
+  background-color: #4CAF50;
+
+  color: white;
+
+}
+
+ 
+
+form.example input[type=text] {
+
+  padding: 10px;
+
+  font-size: 17px;
+
+  border: 2px solid white;
+
+  float: left;
+
+  width: 75%;
+
+  background: #f1f1f1;
+
+}
+
+ 
+
+form.example button {
+
+  float: left;
+
+  width: 15%;
+
+  padding: 20px;
+
+  background: #2196F3;
+
+  color: white;
+
+  font-size: 17px;
+
+  border: 2px solid white;
+
+  border-left: none;
+
+  cursor: pointer;
+  
+
+}
+
+ 
+
+form.example button:hover {
+
+  background: #0b7dda;
+
+}
+
+ 
+
+form.example::after {
+
+  content: "";
+
+  clear: both;
+
+  display: table;
+
+}
+
+ 
+
+.new {
+
+       margin-left:350px;
+
+       margin-right:400px;
+
+       margin-top:50px;
+
+       marging-bottom:10px;
+
+       width:500px;
+
+}
+
+ 
+
+.column{
+
+  float: left;
+
+  padding: 0px;
+
+  height: 300px;
+
+  width:50%;
+
+  content: "";
+
+  display: table;
+
+  clear: both;
+
+  <!--font-family:elephant;-->
+
+ 
+
+}
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+body {
+  font-family: Arial;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+form.example input[type=text] {
+  padding: 10px;
+  font-size: 18px;
+ margin-top:50px;
+  float: left;
+  width: 80%;
+  background: #f1f1f1;
+}
+
+form.example button {
+  float: left;
+  width: 15%;
+  padding: 10px;
+  background: #2196F3;
+  color: white;
+  font-size: 17px;
+  
+  border-left: none;
+  cursor: pointer;
+  margin-top:50px;
+}
+
+form.example button:hover {
+  background: #0b7dda;
+}
+
+form.example::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.buttonN {
+  display: inline-block;
+  border-radius: 4px;
+  background-color:black;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  font-size: 18px;
+  padding: 10px;
+  width: 100px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin-left:750px;
+  margin-right:200px;
+  margin-top:50px;
+  marging-bottom:10px;
+}
+
+.buttonN span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.buttonN span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.buttonN:hover span {
+  padding-right: 25px;
+}
+
+.buttonN:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.buttonP {
+  display: inline-block;
+  border-radius: 4px;
+  background-color:black;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  font-size: 18px;
+  padding: 10px;
+  width: 120px;
+  transition: all 0.5s;
+  cursor: pointer-left;
+  margin-left:350px;
+  margin-right:750px;
+  margin-top:50px;
+  marging-bottom:10px;
+}
+
+.buttonP span {
+  cursor: pointer;
+  display: inline-block;
+  transition: 0.5s;
+}
+
+.buttonP span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.buttonP:hover span {
+  
+  padding-right: 25px;
+}
+
+.buttonP:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.navbar {
+  width: 100%;
+  background-color:black;
+  overflow: auto;
+  position:fixed;
+}
+
+.navbar a {
+  float:left;
+  padding: 10px;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+}
+.navbar a:hover {
+  background-color: #000;
+}
+
+.active {
+  background-color:black;
+}
+
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+  }
+}</style>
+</head>
+<body>
+<div class="navbar">
+
+  <a class="active" href="../index.jsp"><i class="fa fa-fw fa-home"></i> Home</a>  
+  <a href="profile.html"><i class="fa fa-fw fa-user"></i> Profile</a>
+
+</div>
+ 
+
+<form class="example" action="../keywordSearchServlet" style="margin:auto;max-width:650px"  method="post">
+  <input type="text" placeholder="Search.." name="search2">
+  <button type="submit"><i class="fa fa-search"></i></button>
+</form>
+
+<a href="objcls1.html"> <button class="buttonP" style="vertical-align:middle"><span>Previous </span></button></a>
+<div class="column">
+<div class="new">
+<h1 align="center">Constructors</h1>
+<p>A constructor initializes an object when it is created. It has the same name as its class and is syntactically similar to a method. However, constructors have no explicit return type.</p>
+<p>Typically, you will use a constructor to give initial values to the instance variables defined by the class, or to perform any other start-up procedures required to create a fully formed object.</p>
+<p>All classes have constructors, whether you define one or not, because Java automatically provides a default constructor that initializes all member variables to zero. However, once you define your own constructor, the default constructor is no longer used.</p>
+<h2 align="center">Syntax</h2>
+<p>Following is the syntax of a constructor &minus;</p>
+<pre class="prettyprint notranslate" id="constructor1">
+class ClassName {
+   ClassName() {
+   }
+}
+</pre>
+<p>Java allows two types of constructors namely &minus;</p>
+<ul class="list">
+<li>No argument Constructors</li>
+<li>Parameterized Constructors</li>
+</ul>
+<h2 align="center">No argument Constructors</h2>
+<p>As the name specifies the no argument constructors of Java does not accept any parameters instead, using these constructors the instance variables of a method will be initialized with fixed values for all objects.</p>
+<h2 align="center">Example</h2>
+<pre class="prettyprint notranslate">
+Public class MyClass {
+   Int num;
+   MyClass() {
+      num = 100;
+   }
+}
+</pre>
+<p>You would call constructor to initialize objects as follows</p>
+<pre class="prettyprint notranslate">
+public class ConsDemo {
+   public static void main(String args[]) {
+      MyClass t1 = new MyClass();
+      MyClass t2 = new MyClass();
+      System.out.println(t1.num + " " + t2.num);
+   }
+}
+</pre>
+<p>This would produce the following result</p>
+<pre class="result notranslate">
+100 100
+</pre>
+<h2 align="center">Parameterized Constructors</h2>
+<p>Most often, you will need a constructor that accepts one or more parameters. Parameters are added to a constructor in the same way that they are added to a method, just declare them inside the parentheses after the constructor's name.</p>
+<h2 align="center">Example</h2>
+<p>Here is a simple example that uses a constructor &minus;</p>
+<pre class="prettyprint notranslate" id="constructor2">
+// A simple constructor.
+class MyClass {
+   int x;
+   
+   // Following is the constructor
+   MyClass(int i ) {
+      x = i;
+   }
+}
+</pre>
+<p>You would call constructor to initialize objects as follows &minus;</p>
+<pre class="prettyprint notranslate">
+public class ConsDemo {
+   public static void main(String args[]) {
+      MyClass t1 = new MyClass( 10 );
+      MyClass t2 = new MyClass( 20 );
+      System.out.println(t1.x + " " + t2.x);
+   }
+}
+</pre>
+<p>This would produce the following result &minus;</p>
+<pre class="prettyprint notranslate">
+10 20
+</pre>
+
+</div>
+</div>
+
+<a href="datatypes1.html"> <button class="buttonN" style="vertical-align:middle"><span>Next </span></button></a>
+
+<div class="vertical-menu">
+<a class="_vertical-menu" href="home1.html">JAVA Home</a>
+<a class="_vertical-menu" href="syntax1html">JAVA Syntax</a>
+<a class="_vertical-menu" href="objcls1.html">JAVA Object and Classes</a>
+<a class="_vertical-menu" href="constructors1.html">JAVA Constructors</a>
+<a class="_vertical-menu" href="datatypes1.html">JAVA Datatypes</a>
+<a class="_vertical-menu" href="loops1.html">JAVA Loops</a>
+<a class="_vertical-menu" href="decision1.html">JAVA Decision Making</a>
+<a class="_vertical-menu" href="strings1.html">JAVA Strings</a>
+<a class="_vertical-menu" href="arrays1.html">JAVA Arrays</a>
+<a class="_vertical-menu" href="date1.html">JAVA Date and Time</a>
+<a class="_vertical-menu" href="regularexp1.html">JAVA Regular Expressions</a>
+<a class="_vertical-menu" href="method1.html">JAVA Methods</a>
+<a class="_vertical-menu" href="exceptions1.html">JAVA Exceptions</a>
+<a class="_vertical-menu" href="inheritance1.html">JAVA Inheritance</a>
+<a class="_vertical-menu" href="polymorphism1.html">JAVA Polymorphism</a>
+<a class="_vertical-menu" href="abstraction1.html">JAVA Abstraction</a>
+<a class="_vertical-menu" href="encapsulation1.html">JAVA Encapsulation</a>
+<a class="_vertical-menu" href="packages1.html">JAVA Packages</a>
+<a class="_vertical-menu" href="collections1.html">JAVA Collections</a>
+<a class="_vertical-menu" href="multithread1.html">JAVA Multithreading</a>
+<a class="_vertical-menu" href="multithread1.html">JAVA XYZ</a>
+</div>
+
+</body>
+</html>

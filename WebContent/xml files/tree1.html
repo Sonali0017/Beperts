@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="Xml.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<title>XML TREE</title>
+<style>
+@CHARSET "ISO-8859-1";
+
+.vertical-menu {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+ 
+  margin-top:48px;
+
+  margin-left:10px;
+}
+
+.vertical-menu a {
+  padding: 6px 8px 6px 2px;
+  text-decoration: none;
+  font-size: 17px;
+  color: #818181;
+  display: block;
+}
+
+.vertical-menu a:hover {
+  color: dark gray;
+}
+
+
+
+.vertical-menu a {
+
+  background-color: #eee;
+
+  color: black;
+
+  display: block;
+
+  padding: 10px;
+
+  text-decoration: none;
+
+}
+
+ 
+
+.vertical-menu a:hover {
+
+  background-color: #ccc;   
+
+}
+
+ 
+
+.vertical-menu a.active {
+
+  background-color: #4CAF50;
+
+  color: white;
+
+}
+
+ 
+
+form.example input[type=text] {
+
+  padding: 10px;
+
+  font-size: 17px;
+
+  border: 2px solid white;
+
+  float: left;
+
+  width: 75%;
+
+  background: #f1f1f1;
+
+}
+
+ 
+
+form.example button {
+
+  float: left;
+
+  width: 15%;
+
+  padding: 20px;
+
+  background: #2196F3;
+
+  color: white;
+
+  font-size: 17px;
+
+  border: 2px solid white;
+
+  border-left: none;
+
+  cursor: pointer;
+  
+
+}
+
+ 
+
+form.example button:hover {
+
+  background: #0b7dda;
+
+}
+
+ 
+
+form.example::after {
+
+  content: "";
+
+  clear: both;
+
+  display: table;
+
+}
+
+ 
+
+.new {
+
+       margin-left:350px;
+
+       margin-right:400px;
+
+       margin-top:50px;
+
+       marging-bottom:10px;
+
+       width:500px;
+
+}
+
+ 
+
+.column{
+
+  float: left;
+
+  padding: 0px;
+
+  height: 300px;
+
+  width:50%;
+
+  content: "";
+
+  display: table;
+
+  clear: both;
+
+  <!--font-family:elephant;-->
+
+ 
+
+}
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+body {
+  font-family: Arial;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+form.example input[type=text] {
+  padding: 10px;
+  font-size: 18px;
+ margin-top:50px;
+  float: left;
+  width: 80%;
+  background: #f1f1f1;
+}
+
+form.example button {
+  float: left;
+  width: 15%;
+  padding: 10px;
+  background: #2196F3;
+  color: white;
+  font-size: 17px;
+  
+  border-left: none;
+  cursor: pointer;
+  margin-top:50px;
+}
+
+form.example button:hover {
+  background: #0b7dda;
+}
+
+form.example::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.buttonN {
+  display: inline-block;
+  border-radius: 4px;
+  background-color:black;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  font-size: 18px;
+  padding: 10px;
+  width: 100px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin-left:750px;
+  margin-right:200px;
+  margin-top:50px;
+  marging-bottom:10px;
+}
+
+.buttonN span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.buttonN span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.buttonN:hover span {
+  padding-right: 25px;
+}
+
+.buttonN:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.buttonP {
+  display: inline-block;
+  border-radius: 4px;
+  background-color:black;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  font-size: 18px;
+  padding: 10px;
+  width: 120px;
+  transition: all 0.5s;
+  cursor: pointer-left;
+  margin-left:350px;
+  margin-right:750px;
+  margin-top:50px;
+  marging-bottom:10px;
+}
+
+.buttonP span {
+  cursor: pointer;
+  display: inline-block;
+  transition: 0.5s;
+}
+
+.buttonP span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.buttonP:hover span {
+  
+  padding-right: 25px;
+}
+
+.buttonP:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.navbar {
+  width: 100%;
+  background-color:black;
+  overflow: auto;
+  position:fixed;
+}
+
+.navbar a {
+  float:left;
+  padding: 10px;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+}
+.navbar a:hover {
+  background-color: #000;
+}
+
+.active {
+  background-color:black;
+}
+
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+  }
+}
+</style>
+</head>
+<body>
+<div class="navbar">
+
+  <a class="active" href="../index.jsp"><i class="fa fa-fw fa-home"></i> Home</a>  
+  <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
+
+</div>
+ 
+
+<form class="example" action="keywordSearchServlet" style="margin:auto;max-width:650px" method="post">
+  <input type="text" placeholder="Search.." name="search2">
+  <button type="submit"><i class="fa fa-search"></i></button>
+</form>
+
+<a href="dom.html"> <button class="buttonP" style="vertical-align:middle"><span>Previous </span></button></a>
+
+<div class="column">
+<div class="new">
+<h2 align="center">XML Tree</h2>
+<p class="intro">XML documents form a tree structure that starts at &quot;the root&quot; and branches to &quot;the leaves&quot;.</p>
+<h2 align="center">An Example XML Document</h2>
+<div class="w3-example">
+<div class="w3-code notranslate htmlHigh">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8<strong>"</strong>?&gt;<br>&lt;bookstore&gt;<br>
+&nbsp;
+&lt;book category="cooking"&gt;<br>
+  &nbsp;&nbsp;&nbsp;
+  &lt;title lang=&quot;en&quot;&gt;Everyday Italian&lt;/title&gt;<br>
+  &nbsp;&nbsp;&nbsp;
+  &lt;author&gt;Giada De Laurentiis&lt;/author&gt;<br>
+  &nbsp;&nbsp;&nbsp;
+  &lt;year&gt;2005&lt;/year&gt;<br>
+  &nbsp;&nbsp;&nbsp;
+  &lt;price&gt;30.00&lt;/price&gt;<br>
+&nbsp;
+&lt;/book&gt;<br>
+&nbsp;
+&lt;book category="children"&gt;<br>
+  &nbsp;&nbsp;&nbsp;
+  &lt;title lang=&quot;en&quot;&gt;Harry Potter&lt;/title&gt;<br>
+  &nbsp;&nbsp;&nbsp;
+  &lt;author&gt;J K. Rowling&lt;/author&gt;<br>
+  &nbsp;&nbsp;&nbsp;
+  &lt;year&gt;2005&lt;/year&gt;<br>
+  &nbsp;&nbsp;&nbsp;
+  &lt;price&gt;29.99&lt;/price&gt;<br>
+&nbsp;
+&lt;/book&gt;<br>
+&nbsp;
+&lt;book category="web"&gt;<br>
+  &nbsp;&nbsp;&nbsp;
+  &lt;title lang=&quot;en&quot;&gt;Learning XML&lt;/title&gt;<br>
+  &nbsp;&nbsp;&nbsp;
+  &lt;author&gt;Erik T. Ray&lt;/author&gt;<br>
+  &nbsp;&nbsp;&nbsp;
+  &lt;year&gt;2003&lt;/year&gt;<br>
+  &nbsp;&nbsp;&nbsp;
+  &lt;price&gt;39.95&lt;/price&gt;<br>
+&nbsp;
+&lt;/book&gt;<br>
+&lt;/bookstore&gt;
+</div></div>
+
+<div id="midcontentadcontainer" style="overflow:auto;text-align:center">
+<!-- MidContent -->
+
+  <!--<pre>mid_content, all: [300,250][336,280][728,90][970,250][970,90][320,50][468,60]</pre>-->
+  <div id="snhb-mid_content-0"></div>
+    
+</div>
+
+<h2 align="center">XML Tree Structure</h2>
+<p>XML documents are formed as <strong>element trees</strong>.</p>
+<p>An XML tree starts at a <strong>root element</strong> and branches from the 
+root to <strong>child elements</strong>.</p>
+<p>All elements can have sub elements (child elements):</p>
+
+<div class="w3-example">
+<div class="w3-code notranslate htmlHigh">
+&lt;root&gt;<br>
+  &nbsp;
+  &lt;child&gt;<br>
+    &nbsp;&nbsp;&nbsp;
+    &lt;subchild&gt;.....&lt;/subchild&gt;<br>
+  &nbsp;
+  &lt;/child&gt;<br>
+&lt;/root&gt;
+</div></div>
+
+<p>The terms parent, child, and sibling are used to describe the relationships between 
+elements.</p>
+<p>Parents have children. Children have parents. Siblings are children on the same level (brothers 
+and sisters).</p>
+<p>All elements can have text content (Harry Potter) and attributes (category="cooking").</p>
+
+
+
+<h2 align="center">Self-Describing Syntax</h2>
+<p>XML uses a much self-describing syntax.</p>
+<p>A prolog defines the XML version and the character encoding:</p>
+
+<div class="w3-example">
+<div class="w3-code notranslate htmlHigh">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8<strong>"</strong>?&gt;
+</div></div>
+
+<p>The next line is the <b>root element </b>of the document:</p>
+
+<div class="w3-example">
+<div class="w3-code notranslate htmlHigh">
+&lt;bookstore&gt; </div></div>
+
+<p>The next line starts a &lt;book&gt; element:</p>
+
+<div class="w3-example">
+<div class="w3-code notranslate htmlHigh">
+&lt;book category="cooking"&gt; </div></div>
+
+<p>The &lt;book&gt; elements have <strong>4 child elements</strong>: &lt;title&gt;, &lt;author&gt;, &lt;year&gt;, &lt;price&gt;.</p>
+
+<div class="w3-example">
+<div class="w3-code notranslate htmlHigh">
+&lt;title lang=&quot;en&quot;&gt;Everyday Italian&lt;/title&gt;<br>
+&lt;author&gt;Giada De Laurentiis&lt;/author&gt;<br>
+&lt;year&gt;2005&lt;/year&gt;<br>
+&lt;price&gt;30.00&lt;/price&gt;
+</div>
+</div>
+
+<p>The next line ends the book element:</p>
+
+<div class="w3-example">
+<div class="w3-code notranslate htmlHigh">
+&lt;/book&gt;
+</div></div>
+
+<p>You can assume, from this example, that the XML document contains information 
+about books in a bookstore.</p>
+
+</div>
+</div>
+
+<a href="xpath.html"> <button class="buttonN" style="vertical-align:middle"><span>Next </span></button></a>
+
+<div class="vertical-menu">
+<a class="_vertical-menu" href="home.html">XML Hom</a>
+<a class="_vertical-menu" href="overview.html">XML Overview</a>
+<a class="_vertical-menu" href="syntax.html">XML Syntax</a>
+<a class="_vertical-menu" href="tags.html">XML Tags</a>
+<a class="_vertical-menu" href="elements.html">XML Elements</a>
+<a class="_vertical-menu" href="attributes.html">XML Attributes</a>
+<a class="_vertical-menu" href="namespaces.html">XML Namespaces</a>
+<a class="_vertical-menu" href="characterent.html">XML Character Entities</a>
+<a class="_vertical-menu" href="parser.html">XML Parser</a>
+<a class="_vertical-menu" href="cdta.html">XML CDATA Section</a>
+<a class="_vertical-menu" href="dtd.html">XML DTD</a>
+<a class="_vertical-menu" href="schema.html">XML Schema</a>
+<a class="_vertical-menu" href="dom.html">XML DOM</a>
+<a class="_vertical-menu" href="tree.html">XML Tree</a>
+<a class="_vertical-menu" href="xpath.html">XML XPath</a>
+<a class="_vertical-menu" href="xslt.html">XML XSLT</a>
+<a class="_vertical-menu" href="xquery.html">XML XQuery</a>
+<a class="_vertical-menu" href="xlink.html">XML XLink</a>
+<a class="_vertical-menu" href="xserver.html">XML XServer</a>
+<a class="_vertical-menu" href="database.html">XML Database</a>
+<a class="_vertical-menu" href="processor.html">XML Processor</a>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="Xml.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<title>XML SYNTAX</title>
+<style>
+@CHARSET "ISO-8859-1";
+
+.vertical-menu {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+ 
+  margin-top:48px;
+
+  margin-left:10px;
+}
+
+.vertical-menu a {
+  padding: 6px 8px 6px 2px;
+  text-decoration: none;
+  font-size: 17px;
+  color: #818181;
+  display: block;
+}
+
+.vertical-menu a:hover {
+  color: dark gray;
+}
+
+
+
+.vertical-menu a {
+
+  background-color: #eee;
+
+  color: black;
+
+  display: block;
+
+  padding: 10px;
+
+  text-decoration: none;
+
+}
+
+ 
+
+.vertical-menu a:hover {
+
+  background-color: #ccc;   
+
+}
+
+ 
+
+.vertical-menu a.active {
+
+  background-color: #4CAF50;
+
+  color: white;
+
+}
+
+ 
+
+form.example input[type=text] {
+
+  padding: 10px;
+
+  font-size: 17px;
+
+  border: 2px solid white;
+
+  float: left;
+
+  width: 75%;
+
+  background: #f1f1f1;
+
+}
+
+ 
+
+form.example button {
+
+  float: left;
+
+  width: 15%;
+
+  padding: 20px;
+
+  background: #2196F3;
+
+  color: white;
+
+  font-size: 17px;
+
+  border: 2px solid white;
+
+  border-left: none;
+
+  cursor: pointer;
+  
+
+}
+
+ 
+
+form.example button:hover {
+
+  background: #0b7dda;
+
+}
+
+ 
+
+form.example::after {
+
+  content: "";
+
+  clear: both;
+
+  display: table;
+
+}
+
+ 
+
+.new {
+
+       margin-left:350px;
+
+       margin-right:400px;
+
+       margin-top:50px;
+
+       marging-bottom:10px;
+
+       width:500px;
+
+}
+
+ 
+
+.column{
+
+  float: left;
+
+  padding: 0px;
+
+  height: 300px;
+
+  width:50%;
+
+  content: "";
+
+  display: table;
+
+  clear: both;
+
+  <!--font-family:elephant;-->
+
+ 
+
+}
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+body {
+  font-family: Arial;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+form.example input[type=text] {
+  padding: 10px;
+  font-size: 18px;
+ margin-top:50px;
+  float: left;
+  width: 80%;
+  background: #f1f1f1;
+}
+
+form.example button {
+  float: left;
+  width: 15%;
+  padding: 10px;
+  background: #2196F3;
+  color: white;
+  font-size: 17px;
+  
+  border-left: none;
+  cursor: pointer;
+  margin-top:50px;
+}
+
+form.example button:hover {
+  background: #0b7dda;
+}
+
+form.example::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.buttonN {
+  display: inline-block;
+  border-radius: 4px;
+  background-color:black;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  font-size: 18px;
+  padding: 10px;
+  width: 100px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin-left:750px;
+  margin-right:200px;
+  margin-top:50px;
+  marging-bottom:10px;
+}
+
+.buttonN span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.buttonN span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.buttonN:hover span {
+  padding-right: 25px;
+}
+
+.buttonN:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.buttonP {
+  display: inline-block;
+  border-radius: 4px;
+  background-color:black;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  font-size: 18px;
+  padding: 10px;
+  width: 120px;
+  transition: all 0.5s;
+  cursor: pointer-left;
+  margin-left:350px;
+  margin-right:750px;
+  margin-top:50px;
+  marging-bottom:10px;
+}
+
+.buttonP span {
+  cursor: pointer;
+  display: inline-block;
+  transition: 0.5s;
+}
+
+.buttonP span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.buttonP:hover span {
+  
+  padding-right: 25px;
+}
+
+.buttonP:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.navbar {
+  width: 100%;
+  background-color:black;
+  overflow: auto;
+  position:fixed;
+}
+
+.navbar a {
+  float:left;
+  padding: 10px;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+}
+.navbar a:hover {
+  background-color: #000;
+}
+
+.active {
+  background-color:black;
+}
+
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+  }
+}
+</style>
+</head>
+<body>
+<div class="navbar">
+
+  <a class="active" href="../index.jsp"><i class="fa fa-fw fa-home"></i> Home</a>  
+  <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
+
+</div>
+
+<form class="example" action="../keywordSearchServlet" style="margin:auto;max-width:650px" method="post">
+  <input type="text" placeholder="Search.." name="search2">
+  <button type="submit"><i class="fa fa-search"></i></button>
+</form>
+
+<a href="overview.html"> <button class="buttonP" style="vertical-align:middle"><span>Previous </span></button></a>
+
+<div class="column">
+<div class="new">
+<h2 align="center">XML Syntax</h2>
+<p>In this chapter, we will discuss the simple syntax rules to write an XML document. Following is a complete XML document &minus;</p>
+<pre class="prettyprint notranslate">
+&lt;?xml version = "1.0"?&gt;
+&lt;contact-info&gt;
+   &lt;name&gt;Tanmay Patil&lt;/name&gt;
+   &lt;company&gt;TutorialsPoint&lt;/company&gt;
+   &lt;phone&gt;(011) 123-4567&lt;/phone&gt;
+&lt;/contact-info&gt;
+</pre>
+<p>You can notice there are two kinds of information in the above example &minus;</p>
+<ul class="list">
+<li><p>Markup, like &lt;contact-info&gt;</p></li>
+<li><p>The text, or the character data.</p></li>
+</ul>
+<p>The following are the syntax rules to write different kinds of markup and text in a XML document:</p>
+<ul class="list">
+<li><p>XML Declaration</p></li>
+<li><p>Tags and Elements</p></li>
+<li><p>Attributes</p></li>
+<li><p>References</p></li>
+<li><p>Text</p></li>
+</ul>
+<h2 align="center">XML Declaration</h2>
+<p>The XML document can optionally have an XML declaration. It is written as follows &minus;</p>
+<pre class="prettyprint notranslate">
+&lt;?xml version = "1.0" encoding = "UTF-8"?&gt;
+</pre>
+<p>Where <i>version</i> is the XML version and <i>encoding</i> specifies the character encoding used in the document.</p>
+<h3 align="center">Syntax Rules for XML Declaration</h3>
+<ul class="list">
+<li><p>The XML declaration is case sensitive and must begin with "<b>&lt;?xml&gt;</b>" where "<b>xml</b>" is written in lower-case.</p></li>
+<li><p>If document contains XML declaration, then it strictly needs to be the first statement of the XML document.</p></li>
+<li><p>The XML declaration strictly needs be the first statement in the XML document.</p></li>
+<li><p>An HTTP protocol can override the value of <i>encoding</i> that you put in the XML declaration.</p></li>
+</ul>
+<h2 align="center">Tags and Elements</h2>
+<p>An XML file is structured by several XML-elements, also called XML-nodes or XML-tags.
+The names of XML-elements are enclosed in triangular brackets &lt; &gt; as shown below &minus;</p>
+<pre class="prettyprint notranslate">
+&lt;element&gt;
+</pre>
+<h3 align="center">Syntax Rules for Tags and Elements</h3>
+<p><b>Element Syntax</b> &minus; Each XML-element needs to be closed either with start or with end elements as shown below &minus;</p>
+<pre class="prettyprint notranslate">
+&lt;element&gt;....&lt;/element&gt;
+</pre>
+<p>or in simple-cases, just this way &minus;</p>
+<pre class="prettyprint notranslate">
+&lt;element/&gt;
+</pre>
+<p><b>Nesting of Elements</b> &minus; An XML-element can contain multiple XML-elements as its children, but the children elements must not overlap. i.e., an end tag of an element must have the same name as that of the most recent unmatched start tag.</p>
+<p>The Following example shows incorrect nested tags &minus;</p>
+<pre class="prettyprint notranslate">
+&lt;?xml version = "1.0"?&gt;
+&lt;contact-info&gt;
+&lt;company&gt;BP
+&lt;contact-info&gt;
+&lt;/company&gt;
+</pre>
+<p>The Following example shows correct nested tags &minus;</p>
+<pre class="prettyprint notranslate">
+&lt;?xml version = "1.0"?&gt;
+&lt;contact-info&gt;
+   &lt;company&gt;BP&lt;/company&gt;
+&lt;contact-info&gt;
+</pre>
+<p><b>Root Element</b> &minus; An XML document can have only one root element. For example, following is not a correct XML document, because both the <b>x</b> and <b>y</b> elements occur at the top level without a root element &minus;</p>
+<pre class="prettyprint notranslate">
+&lt;x&gt;...&lt;/x&gt;
+&lt;y&gt;...&lt;/y&gt;
+</pre>
+<p>The Following example shows a correctly formed XML document &minus;</p>
+<pre class="prettyprint notranslate">
+&lt;root&gt;
+   &lt;x&gt;...&lt;/x&gt;
+   &lt;y&gt;...&lt;/y&gt;
+&lt;/root&gt;
+</pre>
+<p><b>Case Sensitivity</b> &minus; The names of XML-elements are case-sensitive. That means the name of the start and the end elements need to be exactly in the same case.</p>
+<p>For example, <b>&lt;contact-info&gt;</b> is different from <b>&lt;Contact-Info&gt;</b></p>
+<h2 align="center">XML Attributes</h2>
+<p>An <b>attribute</b> specifies a single property for the element, using a name/value pair. An XML-element can have one or more attributes. For example &minus;</p>
+<pre class="result notranslate">
+&lt;a href = "http://www.Bepert's.com/"&gt;BP!&lt;/a&gt;
+</pre>
+<p>Here <b>href</b> is the attribute name and <b>http://www.Beperts.com/</b> is attribute value.</p>
+<h3 align="center">Syntax Rules for XML Attributes</h3>
+<ul class="list">
+<li><p>Attribute names in XML (unlike HTML) are case sensitive. That is, <i>HREF</i> and <i>href</i> are considered two different XML attributes.</p></li>
+<li><p>Same attribute cannot have two values in a syntax. The following example shows incorrect syntax because the attribute <i>b</i> is specified twice</p> &minus;</li>
+</ul>
+<pre class="prettyprint notranslate">
+&lt;a b = "x" c = "y" b = "z"&gt;....&lt;/a&gt;
+</pre>
+<ul class="list">
+<li><p>Attribute names are defined without quotation marks, whereas attribute values must always appear in quotation marks. Following example demonstrates incorrect xml syntax</p> &minus;</li>
+</ul>
+<pre class="prettyprint notranslate">
+&lt;a b = x&gt;....&lt;/a&gt;
+</pre>
+<p>In the above syntax, the attribute value is not defined in quotation marks.</p>
+<h2 align="center">XML References</h2>
+<p>References usually allow you to add or include additional text or markup in an XML document. References always begin with the symbol <b>"and"</b> which is a reserved character and end with the symbol <b>";".</b> XML has two types of references &minus;</p>
+<ul class="list">
+<li><p><b>Entity References</b> &minus; An entity reference contains a name between the start and the end delimiters. For example <b>&amp;amp;</b> where <i>amp</i> is <i>name</i>. The <i>name</i> refers to a predefined string of text and/or markup.</p></li>
+<li><p><b>Character References</b> &minus; These contain references, such as <b>&amp;#65;</b>, contains a hash mark (У#Ф) followed by a number. The number always refers to the Unicode code of a character. In this case, 65 refers to alphabet "A".</p></li>
+</ul>
+<h2 align="center">XML Text</h2>
+<p>The names of XML-elements and XML-attributes are case-sensitive, which means the name of start and end elements need to be written in the same case. To avoid character encoding problems, all XML files should be saved as Unicode UTF-8 or UTF-16 files.</p>
+<p>Whitespace characters like blanks, tabs and line-breaks between XML-elements and between the XML-attributes will be ignored.</p>
+<p>Some characters are reserved by the XML syntax itself. Hence, they cannot be used directly. To use them, some replacement-entities are used, which are listed below &minus;</p>
+<table class="table-bordered">
+<tr>
+<th>Not Allowed Character </th>
+<th>Replacement Entity</th>
+<th>Character Description</th>
+</tr>
+<tr>
+<td>&lt;</td>
+<td>&amp;lt;</td>
+<td>less than</td>
+</tr>
+<tr>
+<td>&gt;</td>
+<td>&amp;gt;</td>
+<td>greater than</td>
+</tr>
+<tr>
+<td>&amp;</td>
+<td>&amp;amp;</td>
+<td>ampersand</td>
+</tr>
+<tr>
+<td>&apos;</td>
+<td>&amp;apos;</td>
+<td>apostrophe</td>
+</tr>
+<tr>
+<td>&quot;</td>
+<td>&amp;quot;</td>
+<td>quotation mark</td>
+</tr>
+</table>
+<h2 align="center">The XML Prolog</h2>
+<p>This line is called the XML <strong>prolog</strong>:</p>
+
+<div class="w3-example">
+<div class="w3-code notranslate htmlHigh">
+ &lt;?xml version="1.0" encoding="UTF-8<strong>"</strong>?&gt;</div></div>
+
+<p>The XML prolog is optional. If it exists, it must come first in the document. </p>
+<p>XML documents can contain international characters, like Norwegian шже or 
+French кий.</p>
+<p>To avoid errors, you should specify the encoding used, or save your XML files 
+as UTF-8.</p>
+<p>UTF-8 is the default character encoding for XML documents.</p>
+</div>
+</div>
+
+
+<a href="tags.html"> <button class="buttonN" style="vertical-align:middle"><span>Next </span></button></a>
+
+<div class="vertical-menu">
+<a class="_vertical-menu" href="home1.html">XML Home</a>
+<a class="_vertical-menu" href="overview1.html">XML Overview</a>
+<a class="_vertical-menu" href="syntax1.html">XML Syntax</a>
+<a class="_vertical-menu" href="tags.html">XML Tags</a>
+<a class="_vertical-menu" href="elements.html">XML Elements</a>
+<a class="_vertical-menu" href="attributes.html">XML Attributes</a>
+<a class="_vertical-menu" href="namespaces.html">XML Namespaces</a>
+<a class="_vertical-menu" href="characterent.html">XML Character Entities</a>
+<a class="_vertical-menu" href="parser.html">XML Parser</a>
+<a class="_vertical-menu" href="cdta.html">XML CDATA Section</a>
+<a class="_vertical-menu" href="dtd.html">XML DTD</a>
+<a class="_vertical-menu" href="schema.html">XML Schema</a>
+<a class="_vertical-menu" href="dom.html">XML DOM</a>
+<a class="_vertical-menu" href="tree.html">XML Tree</a>
+<a class="_vertical-menu" href="xpath.html">XML XPath</a>
+<a class="_vertical-menu" href="xslt.html">XML XSLT</a>
+<a class="_vertical-menu" href="xquery.html">XML XQuery</a>
+<a class="_vertical-menu" href="xlink.html">XML XLink</a>
+<a class="_vertical-menu" href="xserver.html">XML XServer</a>
+<a class="_vertical-menu" href="database.html">XML Database</a>
+<a class="_vertical-menu" href="processor.html">XML Processor</a>
+</div>
+
+</body>
+</html>

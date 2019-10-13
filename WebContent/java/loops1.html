@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="Java.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<title>JAVA LOOPS</title>
+<style>
+@CHARSET "ISO-8859-1";
+
+.vertical-menu {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+ 
+  margin-top:48px;
+
+  margin-left:10px;
+}
+
+.vertical-menu a {
+  padding: 6px 8px 6px 2px;
+  text-decoration: none;
+  font-size: 17px;
+  color: #818181;
+  display: block;
+}
+
+.vertical-menu a:hover {
+  color: dark gray;
+}
+
+
+
+.vertical-menu a {
+
+  background-color: #eee;
+
+  color: black;
+
+  display: block;
+
+  padding: 10px;
+
+  text-decoration: none;
+
+}
+
+ 
+
+.vertical-menu a:hover {
+
+  background-color: #ccc;   
+
+}
+
+ 
+
+.vertical-menu a.active {
+
+  background-color: #4CAF50;
+
+  color: white;
+
+}
+
+ 
+
+form.example input[type=text] {
+
+  padding: 10px;
+
+  font-size: 17px;
+
+  border: 2px solid white;
+
+  float: left;
+
+  width: 75%;
+
+  background: #f1f1f1;
+
+}
+
+ 
+
+form.example button {
+
+  float: left;
+
+  width: 15%;
+
+  padding: 20px;
+
+  background: #2196F3;
+
+  color: white;
+
+  font-size: 17px;
+
+  border: 2px solid white;
+
+  border-left: none;
+
+  cursor: pointer;
+  
+
+}
+
+ 
+
+form.example button:hover {
+
+  background: #0b7dda;
+
+}
+
+ 
+
+form.example::after {
+
+  content: "";
+
+  clear: both;
+
+  display: table;
+
+}
+
+ 
+
+.new {
+
+       margin-left:350px;
+
+       margin-right:400px;
+
+       margin-top:50px;
+
+       marging-bottom:10px;
+
+       width:500px;
+
+}
+
+ 
+
+.column{
+
+  float: left;
+
+  padding: 0px;
+
+  height: 300px;
+
+  width:50%;
+
+  content: "";
+
+  display: table;
+
+  clear: both;
+
+  <!--font-family:elephant;-->
+
+ 
+
+}
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+body {
+  font-family: Arial;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+form.example input[type=text] {
+  padding: 10px;
+  font-size: 18px;
+ margin-top:50px;
+  float: left;
+  width: 80%;
+  background: #f1f1f1;
+}
+
+form.example button {
+  float: left;
+  width: 15%;
+  padding: 10px;
+  background: #2196F3;
+  color: white;
+  font-size: 17px;
+  
+  border-left: none;
+  cursor: pointer;
+  margin-top:50px;
+}
+
+form.example button:hover {
+  background: #0b7dda;
+}
+
+form.example::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.buttonN {
+  display: inline-block;
+  border-radius: 4px;
+  background-color:black;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  font-size: 18px;
+  padding: 10px;
+  width: 100px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin-left:750px;
+  margin-right:200px;
+  margin-top:50px;
+  marging-bottom:10px;
+}
+
+.buttonN span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.buttonN span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.buttonN:hover span {
+  padding-right: 25px;
+}
+
+.buttonN:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.buttonP {
+  display: inline-block;
+  border-radius: 4px;
+  background-color:black;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  font-size: 18px;
+  padding: 10px;
+  width: 120px;
+  transition: all 0.5s;
+  cursor: pointer-left;
+  margin-left:350px;
+  margin-right:750px;
+  margin-top:50px;
+  marging-bottom:10px;
+}
+
+.buttonP span {
+  cursor: pointer;
+  display: inline-block;
+  transition: 0.5s;
+}
+
+.buttonP span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.buttonP:hover span {
+  
+  padding-right: 25px;
+}
+
+.buttonP:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.navbar {
+  width: 100%;
+  background-color:black;
+  overflow: auto;
+  position:fixed;
+}
+
+.navbar a {
+  float:left;
+  padding: 10px;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+}
+.navbar a:hover {
+  background-color: #000;
+}
+
+.active {
+  background-color:black;
+}
+
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+  }
+}</style>
+</head>
+<body>
+<div class="navbar">
+
+  <a class="active" href="../index.jsp"><i class="fa fa-fw fa-home"></i> Home</a>  
+  <a href="profile.html"><i class="fa fa-fw fa-user"></i> Profile</a>
+
+</div>
+<form class="example" action="../keywordSearchServlet" style="margin:auto;max-width:650px" method="post">
+  <input type="text" placeholder="Search.." name="search2">
+  <button type="submit"><i class="fa fa-search"></i></button>
+</form>
+
+<a href="datatypes1.html"> <button class="buttonP" style="vertical-align:middle"><span>Previous </span></button></a>
+<div class="column">
+<div class="new">
+<h1 align="center">Loops</h1>
+<p>There may be a situation when you need to execute a block of code several number of times. In general, statements are executed sequentially: The first statement in a function is executed first, followed by the second, and so on.</p>
+<p>Programming languages provide various control structures that allow for more complicated execution paths.</p>
+<p>A <b>loop</b> statement allows us to execute a statement or group of statements multiple times and following is the general form of a loop statement in most of the programming languages &minus;</p>
+
+<p>Java programming language provides the following types of loop to handle looping requirements. Click the following links to check their detail.</p>
+<table class="table table-bordered">
+<tr>
+<th>Sr.No.</th>
+<th style="text-align:center;">Loop &amp; Description</th>
+</tr>
+<tr>
+<td class="ts">1</td>
+<td>while loop</a>
+<p>Repeats a statement or group of statements while a given condition is true. It tests the condition before executing the loop body.</p></td>
+</tr>
+<tr>
+<td class="ts">2</td>
+<td>for loop</a>
+<p>Execute a sequence of statements multiple times and abbreviates the code that manages the loop variable.</p></td>
+</tr>
+<tr>
+<td class="ts">3</td>
+<td>do...while loop</a>
+<p>Like a while statement, except that it tests the condition at the end of the loop body.</p></td>
+</tr>
+</table>
+<h2 align="center">Loop Control Statements</h2>
+<p>Loop control statements change execution from its normal sequence. When execution leaves a scope, all automatic objects that were created in that scope are destroyed.</p>
+<p>Java supports the following control statements. Click the following links to check their detail.</p>
+<table class="table table-bordered">
+<tr>
+<th>Sr.No.</th>
+<th style="text-align:center;">Control Statement &amp; Description</th>
+</tr>
+<tr>
+<td class="ts">1</td>
+<td>break statement</a>
+<p>Terminates the <b>loop</b> or <b>switch</b> statement and transfers execution to the statement immediately following the loop or switch.</p></td>
+</tr>
+<tr>
+<td class="ts">2</td>
+<td>continue statement</a>
+<p>Causes the loop to skip the remainder of its body and immediately retest its condition prior to reiterating.</p></td>
+</tr>
+</table>
+<h2 align="center">Enhanced for loop in Java</h2>
+<p>As of Java 5, the enhanced for loop was introduced. This is mainly used to traverse collection of elements including arrays.</p>
+<h3 align="center">Syntax</h3>
+<p>Following is the syntax of enhanced for loop &minus;</p>
+<pre class="result notranslate">
+for(declaration : expression) {
+   // Statements
+}
+</pre>
+<ul class="list">
+<li><p><b>Declaration</b> &minus; The newly declared block variable, is of a type compatible with the elements of the array you are accessing. The variable will be available within the for block and its value would be the same as the current array element.</p></li>
+<li><p><b>Expression</b> &minus; This evaluates to the array you need to loop through. The expression can be an array variable or method call that returns an array.</p></li>
+</ul>
+<h3 align="center">Example</h3>
+
+public class Test {
+
+   public static void main(String args[]) {
+      int [] numbers = {10, 20, 30, 40, 50};
+
+      for(int x : numbers ) {
+         System.out.print( x );
+         System.out.print(",");
+      }
+      System.out.print("\n");
+      String [] names = {"James", "Larry", "Tom", "Lacy"};
+
+      for( String name : names ) {
+         System.out.print( name );
+         System.out.print(",");
+      }
+   }
+}
+
+<p>This will produce the following result &minus;</p>
+<h3 align="center">Output</h3>
+<pre class="result notranslate">
+10, 20, 30, 40, 50,
+James, Larry, Tom, Lacy,
+</pre>
+</div>
+</div>
+
+<a href="decision1.html"> <button class="buttonN" style="vertical-align:middle"><span>Next </span></button></a>
+
+<div class="vertical-menu">
+<a class="_vertical-menu" href="home1.html">JAVA Home</a>
+<a class="_vertical-menu" href="syntax1.html">JAVA Syntax</a>
+<a class="_vertical-menu" href="objcls1.html">JAVA Object and Classes</a>
+<a class="_vertical-menu" href="constructors1.html">JAVA Constructors</a>
+<a class="_vertical-menu" href="datatypes1.html">JAVA Datatypes</a>
+<a class="_vertical-menu" href="loops1.html">JAVA Loops</a>
+<a class="_vertical-menu" href="decision1.html">JAVA Decision Making</a>
+<a class="_vertical-menu" href="strings1.html">JAVA Strings</a>
+<a class="_vertical-menu" href="arrays1.html">JAVA Arrays</a>
+<a class="_vertical-menu" href="date1.html">JAVA Date and Time</a>
+<a class="_vertical-menu" href="regularexp1.html">JAVA Regular Expressions</a>
+<a class="_vertical-menu" href="method1.html">JAVA Methods</a>
+<a class="_vertical-menu" href="exceptions1.html">JAVA Exceptions</a>
+<a class="_vertical-menu" href="inheritance1.html">JAVA Inheritance</a>
+<a class="_vertical-menu" href="polymorphism1.html">JAVA Polymorphism</a>
+<a class="_vertical-menu" href="abstraction1.html">JAVA Abstraction</a>
+<a class="_vertical-menu" href="encapsulation1.html">JAVA Encapsulation</a>
+<a class="_vertical-menu" href="packages1.html">JAVA Packages</a>
+<a class="_vertical-menu" href="collections1.html">JAVA Collections</a>
+<a class="_vertical-menu" href="multithread1.html">JAVA Multithreading</a>
+<a class="_vertical-menu" href="multithread1.html">JAVA XYZ</a>
+
+
+</div>
+
+
+</body>
+</html>

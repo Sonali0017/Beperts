@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="Xml.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<title>XML OVERVIEW</title>
+<style>
+@CHARSET "ISO-8859-1";
+
+.vertical-menu {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+ 
+  margin-top:48px;
+
+  margin-left:10px;
+}
+
+.vertical-menu a {
+  padding: 6px 8px 6px 2px;
+  text-decoration: none;
+  font-size: 17px;
+  color: #818181;
+  display: block;
+}
+
+.vertical-menu a:hover {
+  color: dark gray;
+}
+
+
+
+.vertical-menu a {
+
+  background-color: #eee;
+
+  color: black;
+
+  display: block;
+
+  padding: 10px;
+
+  text-decoration: none;
+
+}
+
+ 
+
+.vertical-menu a:hover {
+
+  background-color: #ccc;   
+
+}
+
+ 
+
+.vertical-menu a.active {
+
+  background-color: #4CAF50;
+
+  color: white;
+
+}
+
+ 
+
+form.example input[type=text] {
+
+  padding: 10px;
+
+  font-size: 17px;
+
+  border: 2px solid white;
+
+  float: left;
+
+  width: 75%;
+
+  background: #f1f1f1;
+
+}
+
+ 
+
+form.example button {
+
+  float: left;
+
+  width: 15%;
+
+  padding: 20px;
+
+  background: #2196F3;
+
+  color: white;
+
+  font-size: 17px;
+
+  border: 2px solid white;
+
+  border-left: none;
+
+  cursor: pointer;
+  
+
+}
+
+ 
+
+form.example button:hover {
+
+  background: #0b7dda;
+
+}
+
+ 
+
+form.example::after {
+
+  content: "";
+
+  clear: both;
+
+  display: table;
+
+}
+
+ 
+
+.new {
+
+       margin-left:350px;
+
+       margin-right:400px;
+
+       margin-top:50px;
+
+       marging-bottom:10px;
+
+       width:500px;
+
+}
+
+ 
+
+.column{
+
+  float: left;
+
+  padding: 0px;
+
+  height: 300px;
+
+  width:50%;
+
+  content: "";
+
+  display: table;
+
+  clear: both;
+
+  <!--font-family:elephant;-->
+
+ 
+
+}
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+body {
+  font-family: Arial;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+form.example input[type=text] {
+  padding: 10px;
+  font-size: 18px;
+ margin-top:50px;
+  float: left;
+  width: 80%;
+  background: #f1f1f1;
+}
+
+form.example button {
+  float: left;
+  width: 15%;
+  padding: 10px;
+  background: #2196F3;
+  color: white;
+  font-size: 17px;
+  
+  border-left: none;
+  cursor: pointer;
+  margin-top:50px;
+}
+
+form.example button:hover {
+  background: #0b7dda;
+}
+
+form.example::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.buttonN {
+  display: inline-block;
+  border-radius: 4px;
+  background-color:black;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  font-size: 18px;
+  padding: 10px;
+  width: 100px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin-left:750px;
+  margin-right:200px;
+  margin-top:50px;
+  marging-bottom:10px;
+}
+
+.buttonN span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.buttonN span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.buttonN:hover span {
+  padding-right: 25px;
+}
+
+.buttonN:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.buttonP {
+  display: inline-block;
+  border-radius: 4px;
+  background-color:black;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  font-size: 18px;
+  padding: 10px;
+  width: 120px;
+  transition: all 0.5s;
+  cursor: pointer-left;
+  margin-left:350px;
+  margin-right:750px;
+  margin-top:50px;
+  marging-bottom:10px;
+}
+
+.buttonP span {
+  cursor: pointer;
+  display: inline-block;
+  transition: 0.5s;
+}
+
+.buttonP span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.buttonP:hover span {
+  
+  padding-right: 25px;
+}
+
+.buttonP:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.navbar {
+  width: 100%;
+  background-color:black;
+  overflow: auto;
+  position:fixed;
+}
+
+.navbar a {
+  float:left;
+  padding: 10px;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+}
+.navbar a:hover {
+  background-color: #000;
+}
+
+.active {
+  background-color:black;
+}
+
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+  }
+}
+</style>
+</head>
+<body>
+<div class="navbar">
+
+  <a class="active" href="../index.jsp"><i class="fa fa-fw fa-home"></i> Home</a>  
+  <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
+
+</div>
+ 
+
+<form class="example" action="keywordSearchServlet" style="margin:auto;max-width:650px" method="post">
+  <input type="text" placeholder="Search.." name="search2">
+  <button type="submit"><i class="fa fa-search"></i></button>
+</form>
+
+<a href="index.html"> <button class="buttonP" style="vertical-align:middle"><span>Previous </span></button></a>
+
+<div class="column">
+<div class="new">
+<h2 align="center">Overview</h2>
+<p>XML stands for <b>E</b>xtensible <b>M</b>arkup <b>L</b>anguage. It is a text-based markup language derived from Standard Generalized Markup Language (SGML).</p>
+<p>XML tags identify the data and are used to store and organize the data, rather than specifying how to display it like HTML tags, which are used to display the data. XML is not going to replace HTML in the near future, but it introduces new possibilities by adopting many successful features of HTML.</p>
+<p>There are three important characteristics of XML that make it useful in a variety of systems and solutions &minus;</p>
+<ul class="list">
+<li><p><b>XML is extensible</b> &minus; XML allows you to create your own self-descriptive tags, or language, that suits your application.</p></li>
+<li><p><b>XML carries the data, does not present it</b> &minus; XML allows you to store the data irrespective of how it will be presented.</p></li>
+<li><p><b>XML is a public standard</b> &minus; XML was developed by an organization called the World Wide Web Consortium (W3C) and is available as an open standard.</p></li>
+</ul>
+<h2 align="center">XML Usage</h2>
+<p>A short list of XML usage says it all &minus;</p>
+<ul class="list">
+<li><p>XML can work behind the scene to simplify the creation of HTML documents for large web sites.</p></li>
+<li><p>XML can be used to exchange the information between organizations and systems.</p></li>
+<li><p>XML can be used for offloading and reloading of databases.</p></li>
+<li><p>XML can be used to store and arrange the data, which can customize your data handling needs.</p></li>
+<li><p>XML can easily be merged with style sheets to create almost any desired output.</p></li>
+<li><p>Virtually, any type of data can be expressed as an XML document.</p></li>
+</ul>
+<h2 align="center">What is Markup?</h2>
+<p>XML is a markup language that defines set of rules for  encoding documents in a format that is both human-readable and machine-readable. So <i>what exactly is a markup language?</i> Markup is information added to a document that enhances its meaning in certain ways, in that it identifies the parts and how they relate to each other. More specifically, a markup language is a set of symbols that can be placed in the text of a document to demarcate and label the parts of that document.</p>
+<p>Following example shows how XML markup looks, when embedded in a piece of text &minus;</p>
+<pre class="prettyprint notranslate">
+&lt;message&gt;
+   &lt;text&gt;Hello, world!&lt;/text&gt;
+&lt;/message&gt;
+</pre>
+<p>This snippet includes the markup symbols, or the tags such as &lt;message&gt;...&lt;/message&gt; and &lt;text&gt;... &lt;/text&gt;. The tags &lt;message&gt; and &lt;/message&gt; mark the start and the end of the XML code fragment. The tags &lt;text&gt; and &lt;/text&gt; surround the text Hello, world!.</p>
+<h2 align="center">Is XML a Programming Language?</h2>
+<p>A programming language consists of grammar rules and its own vocabulary which is used
+to create computer programs. These programs instruct the computer to perform specific tasks. XML does not qualify to be a programming language as it does not perform any computation or algorithms. It is usually stored in a simple text file and is processed by special software that is capable of interpreting XML.</p>
+</div>
+</div>
+
+<a href="syntax.html"> <button class="buttonN" style="vertical-align:middle"><span>Next </span></button></a>
+
+<div class="vertical-menu">
+<a class="_vertical-menu" href="home1.html">XML Home</a>
+<a class="_vertical-menu" href="overview1.html">XML Overview</a>
+<a class="_vertical-menu" href="syntax1.html">XML Syntax</a>
+<a class="_vertical-menu" href="tags1.html">XML Tags</a>
+<a class="_vertical-menu" href="elements1.html">XML Elements</a>
+<a class="_vertical-menu" href="attributes1.html">XML Attributes</a>
+<a class="_vertical-menu" href="namespaces1.html">XML Namespaces</a>
+<a class="_vertical-menu" href="characterent1.html">XML Character Entities</a>
+<a class="_vertical-menu" href="parser1.html">XML Parser</a>
+<a class="_vertical-menu" href="cdta1.html">XML CDATA Section</a>
+<a class="_vertical-menu" href="dtd1.html">XML DTD</a>
+<a class="_vertical-menu" href="schema1.html">XML Schema</a>
+<a class="_vertical-menu" href="dom1.html">XML DOM</a>
+<a class="_vertical-menu" href="tree1.html">XML Tree</a>
+<a class="_vertical-menu" href="xpath1.html">XML XPath</a>
+<a class="_vertical-menu" href="xslt1.html">XML XSLT</a>
+<a class="_vertical-menu" href="xquery1.html">XML XQuery</a>
+<a class="_vertical-menu" href="xlink1.html">XML XLink</a>
+<a class="_vertical-menu" href="xserver1.html">XML XServer</a>
+<a class="_vertical-menu" href="database1.html">XML Database</a>
+<a class="_vertical-menu" href="processor1.html">XML Processor</a>
+</div>
+
+</body>
+</html>

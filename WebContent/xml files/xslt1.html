@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="Xml.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<title>XML XSLT</title>
+<style>
+@CHARSET "ISO-8859-1";
+
+.vertical-menu {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+ 
+  margin-top:48px;
+
+  margin-left:10px;
+}
+
+.vertical-menu a {
+  padding: 6px 8px 6px 2px;
+  text-decoration: none;
+  font-size: 17px;
+  color: #818181;
+  display: block;
+}
+
+.vertical-menu a:hover {
+  color: dark gray;
+}
+
+
+
+.vertical-menu a {
+
+  background-color: #eee;
+
+  color: black;
+
+  display: block;
+
+  padding: 10px;
+
+  text-decoration: none;
+
+}
+
+ 
+
+.vertical-menu a:hover {
+
+  background-color: #ccc;   
+
+}
+
+ 
+
+.vertical-menu a.active {
+
+  background-color: #4CAF50;
+
+  color: white;
+
+}
+
+ 
+
+form.example input[type=text] {
+
+  padding: 10px;
+
+  font-size: 17px;
+
+  border: 2px solid white;
+
+  float: left;
+
+  width: 75%;
+
+  background: #f1f1f1;
+
+}
+
+ 
+
+form.example button {
+
+  float: left;
+
+  width: 15%;
+
+  padding: 20px;
+
+  background: #2196F3;
+
+  color: white;
+
+  font-size: 17px;
+
+  border: 2px solid white;
+
+  border-left: none;
+
+  cursor: pointer;
+  
+
+}
+
+ 
+
+form.example button:hover {
+
+  background: #0b7dda;
+
+}
+
+ 
+
+form.example::after {
+
+  content: "";
+
+  clear: both;
+
+  display: table;
+
+}
+
+ 
+
+.new {
+
+       margin-left:350px;
+
+       margin-right:400px;
+
+       margin-top:50px;
+
+       marging-bottom:10px;
+
+       width:500px;
+
+}
+
+ 
+
+.column{
+
+  float: left;
+
+  padding: 0px;
+
+  height: 300px;
+
+  width:50%;
+
+  content: "";
+
+  display: table;
+
+  clear: both;
+
+  <!--font-family:elephant;-->
+
+ 
+
+}
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+body {
+  font-family: Arial;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+form.example input[type=text] {
+  padding: 10px;
+  font-size: 18px;
+ margin-top:50px;
+  float: left;
+  width: 80%;
+  background: #f1f1f1;
+}
+
+form.example button {
+  float: left;
+  width: 15%;
+  padding: 10px;
+  background: #2196F3;
+  color: white;
+  font-size: 17px;
+  
+  border-left: none;
+  cursor: pointer;
+  margin-top:50px;
+}
+
+form.example button:hover {
+  background: #0b7dda;
+}
+
+form.example::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.buttonN {
+  display: inline-block;
+  border-radius: 4px;
+  background-color:black;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  font-size: 18px;
+  padding: 10px;
+  width: 100px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin-left:750px;
+  margin-right:200px;
+  margin-top:50px;
+  marging-bottom:10px;
+}
+
+.buttonN span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.buttonN span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.buttonN:hover span {
+  padding-right: 25px;
+}
+
+.buttonN:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.buttonP {
+  display: inline-block;
+  border-radius: 4px;
+  background-color:black;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  font-size: 18px;
+  padding: 10px;
+  width: 120px;
+  transition: all 0.5s;
+  cursor: pointer-left;
+  margin-left:350px;
+  margin-right:750px;
+  margin-top:50px;
+  marging-bottom:10px;
+}
+
+.buttonP span {
+  cursor: pointer;
+  display: inline-block;
+  transition: 0.5s;
+}
+
+.buttonP span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.buttonP:hover span {
+  
+  padding-right: 25px;
+}
+
+.buttonP:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.navbar {
+  width: 100%;
+  background-color:black;
+  overflow: auto;
+  position:fixed;
+}
+
+.navbar a {
+  float:left;
+  padding: 10px;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+}
+.navbar a:hover {
+  background-color: #000;
+}
+
+.active {
+  background-color:black;
+}
+
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+  }
+}
+</style>
+</head>
+<body>
+<div class="navbar">
+
+  <a class="active" href="../index.jsp"><i class="fa fa-fw fa-home"></i> Home</a>  
+  <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
+
+</div>
+ 
+
+<form class="example" action="../keywordSearchServlet" style="margin:auto;max-width:650px" method="post">
+  <input type="text" placeholder="Search.." name="search2">
+  <button type="submit"><i class="fa fa-search"></i></button>
+</form>
+
+<a href="xpath.html"> <button class="buttonP" style="vertical-align:middle"><span>Previous </span></button></a>
+
+<div class="column">
+<div class="new">
+<h2 align="center">XML XSLT</h2>
+
+<p>XSLT (eXtensible Stylesheet Language Transformations) is the recommended style sheet language 
+for XML.</p>
+<p>XSLT is far more sophisticated than CSS. With XSLT you can add/remove 
+elements and attributes to or from the output file. You can also rearrange and 
+sort elements, perform tests and make decisions about which elements to hide and 
+display, and a lot more.</p>
+<p>XSLT uses XPath to find information in an XML document.</p>
+
+<h2 align="center">XSLT Example</h2>
+<p>We will use the following XML document:</p>
+<div class="w3-example">
+<div class="w3-code notranslate htmlHigh">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;<br>&lt;breakfast_menu&gt;<br><br>&lt;food&gt;<br>
+&lt;name&gt;Belgian Waffles&lt;/name&gt;<br>&lt;price&gt;$5.95&lt;/price&gt;<br>&lt;description&gt;Two of 
+our famous Belgian Waffles with plenty of real maple syrup&lt;/description&gt;<br>
+&lt;calories&gt;650&lt;/calories&gt;<br>&lt;/food&gt;<br><br>&lt;food&gt;<br>&lt;name&gt;Strawberry 
+Belgian Waffles&lt;/name&gt;<br>&lt;price&gt;$7.95&lt;/price&gt;<br>&lt;description&gt;Light Belgian 
+waffles covered with strawberries and whipped cream&lt;/description&gt;<br>
+&lt;calories&gt;900&lt;/calories&gt;<br>&lt;/food&gt;<br><br>&lt;food&gt;<br>&lt;name&gt;Berry-Berry 
+Belgian Waffles&lt;/name&gt;<br>&lt;price&gt;$8.95&lt;/price&gt;<br>&lt;description&gt;Light Belgian 
+waffles covered with an assortment of fresh berries and whipped 
+cream&lt;/description&gt;<br>&lt;calories&gt;900&lt;/calories&gt;<br>&lt;/food&gt;<br><br>&lt;food&gt;<br>
+&lt;name&gt;French Toast&lt;/name&gt;<br>&lt;price&gt;$4.50&lt;/price&gt;<br>&lt;description&gt;Thick 
+slices made from our homemade sourdough bread&lt;/description&gt;<br>
+&lt;calories&gt;600&lt;/calories&gt;<br>&lt;/food&gt;<br><br>&lt;food&gt;<br>&lt;name&gt;Homestyle 
+Breakfast&lt;/name&gt;<br>&lt;price&gt;$6.95&lt;/price&gt;<br>&lt;description&gt;Two eggs, bacon or 
+sausage, toast, and our ever-popular hash browns&lt;/description&gt;<br>
+&lt;calories&gt;950&lt;/calories&gt;<br>&lt;/food&gt;<br><br>&lt;/breakfast_menu&gt;
+</div></div>
+
+<div id="midcontentadcontainer" style="overflow:auto;text-align:center">
+<!-- MidContent -->
+
+  <!--<pre>mid_content, all: [300,250][336,280][728,90][970,250][970,90][320,50][468,60]</pre>-->
+  <div id="snhb-mid_content-0"></div>
+    
+</div>
+
+
+<p>Use XSLT to transform XML into HTML, before it is displayed in a browser:</p>
+<div class="w3-example">
+<h3 align="center">Example XSLT Stylesheet:</h3>
+<div class="w3-code notranslate htmlHigh">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;<br>&lt;html xsl:version=&quot;1.0&quot; 
+xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot;&gt;<br>&lt;body 
+style=&quot;font-family:Arial;font-size:12pt;background-color:#EEEEEE&quot;&gt;<br>&lt;xsl:for-each 
+select=&quot;breakfast_menu/food&quot;&gt;<br>&nbsp; &lt;div 
+style=&quot;background-color:teal;color:white;padding:4px&quot;&gt;<br>&nbsp;&nbsp;&nbsp; 
+&lt;span style=&quot;font-weight:bold&quot;&gt;&lt;xsl:value-of select=&quot;name&quot;/&gt; - &lt;/span&gt;<br>&nbsp;&nbsp;&nbsp; 
+&lt;xsl:value-of select=&quot;price&quot;/&gt;<br>&nbsp;&nbsp;&nbsp; &lt;/div&gt;<br>&nbsp; &lt;div 
+style=&quot;margin-left:20px;margin-bottom:1em;font-size:10pt&quot;&gt;<br>&nbsp;&nbsp;&nbsp; 
+&lt;p&gt;<br>&nbsp;&nbsp;&nbsp; &lt;xsl:value-of select=&quot;description&quot;/&gt;<br>&nbsp;&nbsp;&nbsp; 
+&lt;span style=&quot;font-style:italic&quot;&gt; (&lt;xsl:value-of select=&quot;calories&quot;/&gt; calories 
+per serving)&lt;/span&gt;<br>&nbsp;&nbsp;&nbsp; &lt;/p&gt;<br>&nbsp; &lt;/div&gt;<br>&lt;/xsl:for-each&gt;<br>
+&lt;/body&gt;<br>&lt;/html&gt;</div>
+
+</div>
+
+</div>
+</div>
+
+<a href="xquery.html"> <button class="buttonN" style="vertical-align:middle"><span>Next </span></button></a>
+
+<div class="vertical-menu">
+<a class="_vertical-menu" href="home.html">XML Home</a>
+<a class="_vertical-menu" href="overview.html">XML Overview</a>
+<a class="_vertical-menu" href="syntax.html">XML Syntax</a>
+<a class="_vertical-menu" href="tags.html">XML Tags</a>
+<a class="_vertical-menu" href="elements.html">XML Elements</a>
+<a class="_vertical-menu" href="attributes.html">XML Attributes</a>
+<a class="_vertical-menu" href="namespaces.html">XML Namespaces</a>
+<a class="_vertical-menu" href="characterent.html">XML Character Entities</a>
+<a class="_vertical-menu" href="parser.html">XML Parser</a>
+<a class="_vertical-menu" href="cdta.html">XML CDATA Section</a>
+<a class="_vertical-menu" href="dtd.html">XML DTD</a>
+<a class="_vertical-menu" href="schema.html">XML Schema</a>
+<a class="_vertical-menu" href="dom.html">XML DOM</a>
+<a class="_vertical-menu" href="tree.html">XML Tree</a>
+<a class="_vertical-menu" href="xpath.html">XML XPath</a>
+<a class="_vertical-menu" href="xslt.html">XML XSLT</a>
+<a class="_vertical-menu" href="xquery.html">XML XQuery</a>
+<a class="_vertical-menu" href="xlink.html">XML XLink</a>
+<a class="_vertical-menu" href="xserver.html">XML XServer</a>
+<a class="_vertical-menu" href="database.html">XML Database</a>
+<a class="_vertical-menu" href="processor.html">XML Processor</a>
+</div>
+
+</body>
+</html>

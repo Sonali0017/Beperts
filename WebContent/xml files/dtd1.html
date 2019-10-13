@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="Xml.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<title>XML DTDs</title>
+<style>
+@CHARSET "ISO-8859-1";
+
+.vertical-menu {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+ 
+  margin-top:48px;
+
+  margin-left:10px;
+}
+
+.vertical-menu a {
+  padding: 6px 8px 6px 2px;
+  text-decoration: none;
+  font-size: 17px;
+  color: #818181;
+  display: block;
+}
+
+.vertical-menu a:hover {
+  color: dark gray;
+}
+
+
+
+.vertical-menu a {
+
+  background-color: #eee;
+
+  color: black;
+
+  display: block;
+
+  padding: 10px;
+
+  text-decoration: none;
+
+}
+
+ 
+
+.vertical-menu a:hover {
+
+  background-color: #ccc;   
+
+}
+
+ 
+
+.vertical-menu a.active {
+
+  background-color: #4CAF50;
+
+  color: white;
+
+}
+
+ 
+
+form.example input[type=text] {
+
+  padding: 10px;
+
+  font-size: 17px;
+
+  border: 2px solid white;
+
+  float: left;
+
+  width: 75%;
+
+  background: #f1f1f1;
+
+}
+
+ 
+
+form.example button {
+
+  float: left;
+
+  width: 15%;
+
+  padding: 20px;
+
+  background: #2196F3;
+
+  color: white;
+
+  font-size: 17px;
+
+  border: 2px solid white;
+
+  border-left: none;
+
+  cursor: pointer;
+  
+
+}
+
+ 
+
+form.example button:hover {
+
+  background: #0b7dda;
+
+}
+
+ 
+
+form.example::after {
+
+  content: "";
+
+  clear: both;
+
+  display: table;
+
+}
+
+ 
+
+.new {
+
+       margin-left:350px;
+
+       margin-right:400px;
+
+       margin-top:50px;
+
+       marging-bottom:10px;
+
+       width:500px;
+
+}
+
+ 
+
+.column{
+
+  float: left;
+
+  padding: 0px;
+
+  height: 300px;
+
+  width:50%;
+
+  content: "";
+
+  display: table;
+
+  clear: both;
+
+  <!--font-family:elephant;-->
+
+ 
+
+}
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+body {
+  font-family: Arial;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+form.example input[type=text] {
+  padding: 10px;
+  font-size: 18px;
+ margin-top:50px;
+  float: left;
+  width: 80%;
+  background: #f1f1f1;
+}
+
+form.example button {
+  float: left;
+  width: 15%;
+  padding: 10px;
+  background: #2196F3;
+  color: white;
+  font-size: 17px;
+  
+  border-left: none;
+  cursor: pointer;
+  margin-top:50px;
+}
+
+form.example button:hover {
+  background: #0b7dda;
+}
+
+form.example::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.buttonN {
+  display: inline-block;
+  border-radius: 4px;
+  background-color:black;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  font-size: 18px;
+  padding: 10px;
+  width: 100px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin-left:750px;
+  margin-right:200px;
+  margin-top:50px;
+  marging-bottom:10px;
+}
+
+.buttonN span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.buttonN span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.buttonN:hover span {
+  padding-right: 25px;
+}
+
+.buttonN:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.buttonP {
+  display: inline-block;
+  border-radius: 4px;
+  background-color:black;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  font-size: 18px;
+  padding: 10px;
+  width: 120px;
+  transition: all 0.5s;
+  cursor: pointer-left;
+  margin-left:350px;
+  margin-right:750px;
+  margin-top:50px;
+  marging-bottom:10px;
+}
+
+.buttonP span {
+  cursor: pointer;
+  display: inline-block;
+  transition: 0.5s;
+}
+
+.buttonP span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.buttonP:hover span {
+  
+  padding-right: 25px;
+}
+
+.buttonP:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.navbar {
+  width: 100%;
+  background-color:black;
+  overflow: auto;
+  position:fixed;
+}
+
+.navbar a {
+  float:left;
+  padding: 10px;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+}
+.navbar a:hover {
+  background-color: #000;
+}
+
+.active {
+  background-color:black;
+}
+
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="navbar">
+
+  <a class="active" href="../index.jsp"><i class="fa fa-fw fa-home"></i> Home</a>  
+  <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
+
+</div>
+
+<form class="example" action="../keywordSearchServlet" style="margin:auto;max-width:650px"  method="post">
+  <input type="text" placeholder="Search.." name="search2">
+  <button type="submit"><i class="fa fa-search"></i></button>
+</form>
+
+<a href="cdta.html"> <button class="buttonP" style="vertical-align:middle"><span>Previous </span></button></a>
+
+<div class="column">
+<div class="new">
+<h2 align="center">XML DTD</h2>
+<p>The XML Document Type Declaration, commonly known as DTD, is a way to describe XML language precisely. DTDs check vocabulary and validity of the structure of XML documents against grammatical rules of appropriate XML language.</p>
+<p>An XML DTD can be either specified inside the document, or it can be kept in a separate document and then liked separately.</p>
+<h2 align="center">Syntax</h2>
+<p>Basic syntax of a DTD is as follows &minus;</p>
+<pre class="prettyprint notranslate">
+&lt;!DOCTYPE element DTD identifier
+[
+   declaration1
+   declaration2
+   ........
+]&gt;
+</pre>
+<p>In the above syntax,</p>
+<ul class="list">
+<li><p>The <b>DTD</b> starts with &lt;!DOCTYPE delimiter.</p></li>
+<li><p>An <b>element</b> tells the parser to parse the document from the specified root element.</p></li>
+<li><p><b>DTD identifier</b> is an identifier for the document type definition, which may be the path to a file on the system or URL to a file on the internet. If the DTD is pointing to external path, it is called <b>External Subset.</b></p></li>
+<li><p><b>The square brackets [ ]</b> enclose an optional list of entity declarations called <i>Internal Subset</i>.</p></li>
+</ul>
+<h2 align="center">Internal DTD</h2>
+<p>A DTD is referred to as an internal DTD if elements are declared within the XML files. To refer it as internal DTD, <i>standalone</i> attribute in XML declaration must be set to <b>yes</b>. This means, the declaration works independent of an external source.</p>
+<h3 align="center">Syntax</h3>
+<p>Following is the syntax of internal DTD &minus;</p>
+<pre class="result notranslate">
+&lt;!DOCTYPE root-element [element-declarations]&gt;
+</pre>
+<p>where <i>root-element</i> is the name of root element and <i>element-declarations</i> is where you declare the elements.</p>
+<h3 align="center">Example</h3>
+<p>Following is a simple example of internal DTD &minus;</p>
+<pre class="prettyprint notranslate">
+&lt;?xml version = "1.0" encoding = "UTF-8" standalone = "yes" ?&gt;
+&lt;!DOCTYPE address [
+   &lt;!ELEMENT address (name,company,phone)&gt;
+   &lt;!ELEMENT name (#PCDATA)&gt;
+   &lt;!ELEMENT company (#PCDATA)&gt;
+   &lt;!ELEMENT phone (#PCDATA)&gt;
+]&gt;
+
+&lt;address&gt;
+   &lt;name&gt;Tanmay Patil&lt;/name&gt;
+   &lt;company&gt;BP&lt;/company&gt;
+   &lt;phone&gt;(011) 123-4567&lt;/phone&gt;
+&lt;/address&gt;
+</pre>
+<p>Let us go through the above code &minus;</p>
+<p><b>Start Declaration</b> &minus; Begin the XML declaration with the following statement.</p>
+<pre class="result notranslate">
+&lt;?xml version = "1.0" encoding = "UTF-8" standalone = "yes" ?&gt;
+</pre>
+<p><b>DTD</b> &minus; Immediately after the XML header, the <i>document type declaration</i> follows, commonly referred to as the DOCTYPE &minus;</p>
+<pre class="result notranslate">
+&lt;!DOCTYPE address [
+</pre>
+<p>The DOCTYPE declaration has an exclamation mark (!) at the start of the element name. The DOCTYPE informs the parser that a DTD is associated with this XML document. </p>
+<p><b>DTD Body</b> &minus; The DOCTYPE declaration is followed by body of the DTD, where you declare elements, attributes, entities, and notations.</p>
+<pre class="prettyprint notranslate">
+&lt;!ELEMENT address (name,company,phone)&gt;
+&lt;!ELEMENT name (#PCDATA)&gt;
+&lt;!ELEMENT company (#PCDATA)&gt;
+&lt;!ELEMENT phone_no (#PCDATA)&gt;
+</pre>
+<p>Several elements are declared here that make up the vocabulary of the &lt;name&gt; document. &lt;!ELEMENT name (#PCDATA)&gt; defines the element <i>name</i> to be of type "#PCDATA". Here #PCDATA means parse-able text data.</p>
+<p><b>End Declaration</b> &minus; Finally, the declaration section of the DTD is closed using a closing bracket and a closing angle bracket (<b>]&gt;</b>). This effectively ends the definition, and thereafter, the XML document follows immediately.</p>
+<h3 align="center">Rules</h3>
+<ul class="list">
+<li><p>The document type declaration must appear at the start of the document (preceded only by the XML header) &minus; it is not permitted anywhere else within the document.</p></li>
+<li><p>Similar to the DOCTYPE declaration, the element declarations must start with an exclamation mark.</p></li>
+<li><p>The Name in the document type declaration must match the element type of the root element.</p></li>
+</ul>
+<h2 align="center">External DTD</h2>
+<p>In external DTD elements are declared outside the XML file. They are accessed by specifying the system attributes which may be either the legal <i>.dtd</i> file or a valid URL. To refer it as external DTD, <i>standalone</i> attribute in the XML declaration must be set as <b>no</b>. This means, declaration includes information from the external source.</p>
+<h3 align="center">Syntax</h3>
+<p>Following is the syntax for external DTD &minus;</p>
+<pre class="result notranslate">
+&lt;!DOCTYPE root-element SYSTEM "file-name"&gt;
+</pre>
+<p>where <i>file-name</i> is the file with <i>.dtd</i> extension.</p>
+<h3 align="center">Example</h3>
+<p>The following example shows external DTD usage &minus;</p>
+<pre class="prettyprint notranslate">
+&lt;?xml version = "1.0" encoding = "UTF-8" standalone = "no" ?&gt;
+&lt;!DOCTYPE address SYSTEM "address.dtd"&gt;
+&lt;address&gt;
+   &lt;name&gt;Tanmay Patil&lt;/name&gt;
+   &lt;company&gt;BP&lt;/company&gt;
+   &lt;phone&gt;(011) 123-4567&lt;/phone&gt;
+&lt;/address&gt;
+</pre>
+<p>The content of the DTD file <b>address.dtd</b> is as shown &minus;</p>
+<pre class="prettyprint notranslate">
+&lt;!ELEMENT address (name,company,phone)&gt;
+&lt;!ELEMENT name (#PCDATA)&gt;
+&lt;!ELEMENT company (#PCDATA)&gt;
+&lt;!ELEMENT phone (#PCDATA)&gt;
+</pre>
+<h2 align="center">Types</h2>
+<p>You can refer to an external DTD by using either <b>system identifiers</b> or <b>public identifiers</b>.</p>
+<h3 align="center">System Identifiers</h3>
+<p>A system identifier enables you to specify the location of an external file containing DTD declarations. Syntax is as follows &minus;</p>
+<pre class="result notranslate">
+&lt;!DOCTYPE name SYSTEM "address.dtd" [...]&gt;
+</pre>
+<p>As you can see, it contains keyword SYSTEM and a URI reference pointing to the location of the document.</p>
+<h3 align="center">Public Identifiers</h3>
+<p>Public identifiers provide a mechanism to locate DTD resources and is written as follows &minus;</p>
+<pre class="result notranslate">
+&lt;!DOCTYPE name PUBLIC "-//Beginning XML//DTD Address Example//EN"&gt;
+</pre>
+<p>As you can see, it begins with keyword PUBLIC, followed by a specialized identifier. Public identifiers are used to identify an entry in a catalog. Public identifiers can follow any format, however, a commonly used format is called <b>Formal Public Identifiers, or FPIs</b>.</p>
+</div>
+</div>
+
+<a href="schema.html"> <button class="buttonN" style="vertical-align:middle"><span>Next </span></button></a>
+
+<div class="vertical-menu">
+<a class="_vertical-menu" href="home1.html">XML Home</a>
+<a class="_vertical-menu" href="overview1.html">XML Overview</a>
+<a class="_vertical-menu" href="syntax1.html">XML Syntax</a>
+<a class="_vertical-menu" href="tags1.html">XML Tags</a>
+<a class="_vertical-menu" href="elements1.html">XML Elements</a>
+<a class="_vertical-menu" href="attributes1.html">XML Attributes</a>
+<a class="_vertical-menu" href="namespaces1.html">XML Namespaces</a>
+<a class="_vertical-menu" href="characterent1.html">XML Character Entities</a>
+<a class="_vertical-menu" href="parser1.html">XML Parser</a>
+<a class="_vertical-menu" href="cdta1.html">XML CDATA Section</a>
+<a class="_vertical-menu" href="dtd1.html">XML DTD</a>
+<a class="_vertical-menu" href="schema1.html">XML Schema</a>
+<a class="_vertical-menu" href="dom1.html">XML DOM</a>
+<a class="_vertical-menu" href="tree1.html">XML Tree</a>
+<a class="_vertical-menu" href="xpath1.html">XML XPath</a>
+<a class="_vertical-menu" href="xslt1.html">XML XSLT</a>
+<a class="_vertical-menu" href="xquery1.html">XML XQuery</a>
+<a class="_vertical-menu" href="xlink1.html">XML XLink</a>
+<a class="_vertical-menu" href="xserver1.html">XML XServer</a>
+<a class="_vertical-menu" href="database1.html">XML Database</a>
+<a class="_vertical-menu" href="processor1.html">XML Processor</a>
+</div>
+
+</body>
+</html>

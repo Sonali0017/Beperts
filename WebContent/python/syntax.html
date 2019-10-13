@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<title>PYTHON SYNTAX</title>
+<style>
+@CHARSET "ISO-8859-1";
+
+.vertical-menu {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+ 
+  margin-top:48px;
+
+  margin-left:10px;
+}
+
+.vertical-menu a {
+  padding: 6px 8px 6px 2px;
+  text-decoration: none;
+  font-size: 17px;
+  color: #818181;
+  display: block;
+}
+
+.vertical-menu a:hover {
+  color: dark gray;
+}
+
+
+
+.vertical-menu a {
+
+  background-color: #eee;
+
+  color: black;
+
+  display: block;
+
+  padding: 10px;
+
+  text-decoration: none;
+
+}
+
+ 
+
+.vertical-menu a:hover {
+
+  background-color: #ccc;   
+
+}
+
+ 
+
+.vertical-menu a.active {
+
+  background-color: #4CAF50;
+
+  color: white;
+
+}
+
+ 
+
+form.example input[type=text] {
+
+  padding: 10px;
+
+  font-size: 17px;
+
+  border: 2px solid white;
+
+  float: left;
+
+  width: 75%;
+
+  background: #f1f1f1;
+
+}
+
+ 
+
+form.example button {
+
+  float: left;
+
+  width: 15%;
+
+  padding: 20px;
+
+  background: #2196F3;
+
+  color: white;
+
+  font-size: 17px;
+
+  border: 2px solid white;
+
+  border-left: none;
+
+  cursor: pointer;
+  
+
+}
+
+ 
+
+form.example button:hover {
+
+  background: #0b7dda;
+
+}
+
+ 
+
+form.example::after {
+
+  content: "";
+
+  clear: both;
+
+  display: table;
+
+}
+
+ 
+
+.new {
+
+       margin-left:350px;
+
+       margin-right:400px;
+
+       margin-top:50px;
+
+       marging-bottom:10px;
+
+       width:500px;
+
+}
+
+ 
+
+.column{
+
+  float: left;
+
+  padding: 0px;
+
+  height: 300px;
+
+  width:50%;
+
+  content: "";
+
+  display: table;
+
+  clear: both;
+
+  <!--font-family:elephant;-->
+
+ 
+
+}
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+body {
+  font-family: Arial;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+form.example input[type=text] {
+  padding: 10px;
+  font-size: 18px;
+ margin-top:50px;
+  float: left;
+  width: 80%;
+  background: #f1f1f1;
+}
+
+form.example button {
+  float: left;
+  width: 15%;
+  padding: 10px;
+  background: #2196F3;
+  color: white;
+  font-size: 17px;
+  
+  border-left: none;
+  cursor: pointer;
+  margin-top:50px;
+}
+
+form.example button:hover {
+  background: #0b7dda;
+}
+
+form.example::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.buttonN {
+  display: inline-block;
+  border-radius: 4px;
+  background-color:black;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  font-size: 18px;
+  padding: 10px;
+  width: 100px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin-left:750px;
+  margin-right:200px;
+  margin-top:50px;
+  marging-bottom:10px;
+}
+
+.buttonN span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.buttonN span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.buttonN:hover span {
+  padding-right: 25px;
+}
+
+.buttonN:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.buttonP {
+  display: inline-block;
+  border-radius: 4px;
+  background-color:black;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  font-size: 18px;
+  padding: 10px;
+  width: 120px;
+  transition: all 0.5s;
+  cursor: pointer-left;
+  margin-left:350px;
+  margin-right:750px;
+  margin-top:50px;
+  marging-bottom:10px;
+}
+
+.buttonP span {
+  cursor: pointer;
+  display: inline-block;
+  transition: 0.5s;
+}
+
+.buttonP span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.buttonP:hover span {
+  
+  padding-right: 25px;
+}
+
+.buttonP:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.navbar {
+  width: 100%;
+  background-color:black;
+  overflow: auto;
+  position:fixed;
+}
+
+.navbar a {
+  float:left;
+  padding: 10px;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+}
+.navbar a:hover {
+  background-color: #000;
+}
+
+.active {
+  background-color:black;
+}
+
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+  }
+}
+</style>
+</head>
+<body>
+<div class="navbar">
+
+  <a class="active" href="../index.jsp"><i class="fa fa-fw fa-home"></i> Home</a>  
+  <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
+
+</div>
+ 
+
+<form class="example" action="../keywordSearchServlet" style="margin:auto;max-width:650px"  method="post">
+  <input type="text" placeholder="Search.." name="search2">
+  <button type="submit"><i class="fa fa-search"></i></button>
+</form>
+
+<a href="home.html"> <button class="buttonP" style="vertical-align:middle"><span>Previous </span></button></a>
+
+<div class="column">
+<div class="new">
+<h1 align="center">SYNTAX</h1>
+<p>The Python language has many similarities to Perl, C, and Java. However, there are some definite differences between the languages.</p>
+<h2>First Python Program</h2>
+<p>Let us execute programs in different modes of programming.</p>
+<h3>Interactive Mode Programming</h3>
+<p>Invoking the interpreter without passing a script file as a parameter brings up the following prompt &minus;</p>
+<pre class="prettyprint notranslate">
+$ python
+Python 2.4.3 (#1, Nov 11 2010, 13:34:43)
+[GCC 4.1.2 20080704 (Red Hat 4.1.2-48)] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+&gt;&gt;&gt;
+</pre>
+<p>Type the following text at the Python prompt and press the Enter &minus;</p>
+<pre class="prettyprint notranslate">
+&gt;&gt;&gt; print "Hello, Python!"
+</pre>
+<p>If you are running new version of Python, then you would need to use print statement with parenthesis as in <b>print ("Hello, Python!");</b>. However in Python version 2.4.3, this produces the following result &minus;</p>
+<pre class="result notranslate">
+Hello, Python!
+</pre>
+<h3>Script Mode Programming</h3>
+<p>Invoking the interpreter with a script parameter begins execution of the script and continues until the script is finished. When the script is finished, the interpreter is no longer active.</p>
+<p>Let us write a simple Python program in a script. Python files have extension <b>.py</b>. Type the following source code in a test.py file &minus;</p>
+<a  target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+<pre class="prettyprint notranslate">
+print "Hello, Python!"
+</pre>
+<p>We assume that you have Python interpreter set in PATH variable. Now, try to run this program as follows &minus;</p>
+<pre class="prettyprint notranslate">
+$ python test.py
+</pre>
+<p>This produces the following result &minus;</p>
+<pre class="result notranslate">
+Hello, Python!
+</pre>
+<p>Let us try another way to execute a Python script. Here is the modified test.py file &minus;</p>
+<a target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+<pre class="prettyprint notranslate">
+#!/usr/bin/python
+
+print "Hello, Python!"
+</pre>
+<p>We assume that you have Python interpreter available in /usr/bin directory. Now, try to run this program as follows &minus;</p>
+<pre class="prettyprint notranslate">
+$ chmod +x test.py     # This is to make file executable
+$./test.py
+</pre>
+<p>This produces the following result &minus;</p>
+<pre class="result notranslate">
+Hello, Python!
+</pre>
+<h2 align="center">Python Identifiers</h2>
+<p>A Python identifier is a name used to identify a variable, function, class, module or other object. An identifier starts with a letter A to Z or a to z or an underscore (_) followed by zero or more letters, underscores and digits (0 to 9).</p>
+<p>Python does not allow punctuation characters such as &commat;, $, and % within identifiers. Python is a case sensitive programming language. Thus, <b>Manpower</b> and <b>manpower</b> are two different identifiers in Python.</p>
+<p>Here are naming conventions for Python identifiers &minus;</p>
+<ul class="list">
+<li><p>Class names start with an uppercase letter. All other identifiers start with a lowercase letter.</p></li>
+<li><p>Starting an identifier with a single leading underscore indicates that the identifier is private.</p></li>
+<li><p>Starting an identifier with two leading underscores indicates a strongly private identifier.</p></li>
+<li><p>If the identifier also ends with two trailing underscores, the identifier is a language-defined special name.</p></li>
+</ul>
+<h2 align="center">Reserved Words</h2>
+<p>The following list shows the Python keywords. These are reserved words and you cannot use them as constant or variable or any other identifier names. All the Python keywords contain lowercase letters only.</p>
+<table class="table table-bordered" style="text-align:center;">
+<tr>
+<td>and</td>
+<td>exec</td>
+<td>not</td>
+</tr>
+<tr>
+<td>assert</td>
+<td>finally</td>
+<td>or</td>
+</tr>
+<tr>
+<td>break</td>
+<td>for</td>
+<td>pass</td>
+</tr>
+<tr>
+<td>class</td>
+<td>from</td>
+<td>print</td>
+</tr>
+<tr>
+<td>continue</td>
+<td>global</td>
+<td>raise</td>
+</tr>
+<tr>
+<td>def</td>
+<td>if</td>
+<td>return</td>
+</tr>
+<tr>
+<td>del</td>
+<td>import</td>
+<td>try</td>
+</tr>
+<tr>
+<td>elif</td>
+<td>in</td>
+<td>while</td>
+</tr>
+<tr>
+<td>else</td>
+<td>is</td>
+<td>with </td>
+</tr>
+<tr>
+<td>except</td>
+<td>lambda</td>
+<td>yield</td>
+</tr>
+</table>
+<h2 align="center">Lines and Indentation</h2>
+<p>Python provides no braces to indicate blocks of code for class and function definitions or flow control. Blocks of code are denoted by line indentation, which is rigidly enforced.</p>
+<p>The number of spaces in the indentation is variable, but all statements within the block must be indented the same amount. For example &minus;</p>
+<pre class="result notranslate">
+if True:
+   print "True"
+else:
+   print "False"
+</pre>
+<p>However, the following block generates an error &minus;</p>
+<pre class="prettyprint notranslate">
+if True:
+print "Answer"
+print "True"
+else:
+print "Answer"
+print "False"
+</pre>
+<p>Thus, in Python all the continuous lines indented with same number of spaces would form a block. The following example has various statement blocks &minus;</p>
+<p><b>Note</b> &minus; Do not try to understand the logic at this point of time. Just make sure you understood various blocks even if they are without braces.</p>
+<pre class="prettyprint notranslate">
+#!/usr/bin/python
+
+import sys
+
+try:
+   # open file stream
+   file = open(file_name, "w")
+except IOError:
+   print "There was an error writing to", file_name
+   sys.exit()
+print "Enter '", file_finish,
+print "' When finished"
+while file_text != file_finish:
+   file_text = raw_input("Enter text: ")
+   if file_text == file_finish:
+      # close the file
+      file.close
+      break
+   file.write(file_text)
+   file.write("\n")
+file.close()
+file_name = raw_input("Enter filename: ")
+if len(file_name) == 0:
+   print "Next time please enter something"
+   sys.exit()
+try:
+   file = open(file_name, "r")
+except IOError:
+   print "There was an error reading file"
+   sys.exit()
+file_text = file.read()
+file.close()
+print file_text
+</pre>
+<h2 align="center">Multi-Line Statements</h2>
+<p>Statements in Python typically end with a new line. Python does, however, allow the use of the line continuation character (\) to denote that the line should continue. For example &minus;</p>
+<pre class="result notranslate">
+total = item_one + \
+        item_two + \
+        item_three
+</pre>
+<p>Statements contained within the [], {}, or () brackets do not need to use the line continuation character. For example &minus;</p>
+<pre class="result notranslate">
+days = ['Monday', 'Tuesday', 'Wednesday',
+        'Thursday', 'Friday']
+</pre>
+<h2 align="center">Quotation in Python</h2>
+<p>Python accepts single ('), double (") and triple (''' or """) quotes to denote string literals, as long as the same type of quote starts and ends the string.</p>
+<p>The triple quotes are used to span the string across multiple lines. For example, all the following are legal &minus;</p>
+<pre class="result notranslate">
+word = 'word'
+sentence = "This is a sentence."
+paragraph = """This is a paragraph. It is
+made up of multiple lines and sentences."""
+</pre>
+<h2 align="center">Comments in Python</h2>
+<p>A hash sign (#) that is not inside a string literal begins a comment. All characters after the # and up to the end of the physical line are part of the comment and the Python interpreter ignores them.</p>
+<a  target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+<pre class="prettyprint notranslate">
+#!/usr/bin/python
+
+# First comment
+print "Hello, Python!" # second comment
+</pre>
+<p>This produces the following result &minus;</p>
+<pre class="result notranslate">
+Hello, Python!
+</pre>
+<p>You can type a comment on the same line after a statement or expression &minus;</p>
+<pre class="result notranslate">
+name = "Madisetti" # This is again comment
+</pre>
+<p>You can comment multiple lines as follows &minus;</p>
+<pre class="result notranslate">
+# This is a comment.
+# This is a comment, too.
+# This is a comment, too.
+# I said that already.
+</pre>
+<p>Following triple-quoted string is also ignored by Python interpreter and can be used as a multiline comments:</p>
+<pre class="result notranslate">
+'''
+This is a multiline
+comment.
+'''
+</pre>
+<h2 align="center">Using Blank Lines</h2>
+<p>A line containing only whitespace, possibly with a comment, is known as a blank line and Python totally ignores it.</p>
+<p>In an interactive interpreter session, you must enter an empty physical line to terminate a multiline statement.</p>
+<h2 align="center">Waiting for the User</h2>
+<p>The following line of the program displays the prompt, the statement saying “Press the enter key to exit”, and waits for the user to take action &minus;</p>
+<pre class="prettyprint notranslate">
+#!/usr/bin/python
+
+raw_input("\n\nPress the enter key to exit.")
+</pre>
+<p>Here, "\n\n" is used to create two new lines before displaying the actual line. Once the user presses the key, the program ends. This is a nice trick to keep a console window open until the user is done with an application.</p>
+<h2 align="center">Multiple Statements on a Single Line</h2>
+<p>The semicolon ( ; ) allows multiple statements on the single line given that neither statement starts a new code block. Here is a sample snip using the semicolon &minus;</p>
+<pre class="prettyprint notranslate">
+import sys; x = 'foo'; sys.stdout.write(x + '\n')
+</pre>
+<h2 align="center">Multiple Statement Groups as Suites</h2>
+<p>A group of individual statements, which make a single code block are called <b>suites</b> in Python. Compound or complex statements, such as if, while, def, and class require a header line and a suite.</p>
+<p>Header lines begin the statement (with the keyword) and terminate with a colon ( : ) and are followed by one or more lines which make up the suite. For example &minus;</p>
+<pre class="result notranslate">
+if expression : 
+   suite
+elif expression : 
+   suite 
+else : 
+   suite
+</pre>
+<h2 align="center">Command Line Arguments</h2>
+<p>Many programs can be run to provide you with some basic information about how they should be run. Python enables you to do this with -h &minus;</p>
+<pre class="prettyprint notranslate">
+$ python -h
+usage: python [option] ... [-c cmd | -m mod | file | -] [arg] ...
+Options and arguments (and corresponding environment variables):
+-c cmd : program passed in as string (terminates option list)
+-d     : debug output from parser (also PYTHONDEBUG=x)
+-E     : ignore environment variables (such as PYTHONPATH)
+-h     : print this help message and exit
+
+[ etc. ]
+</pre>
+<p>You can also program your script in such a way that it should accept various options. Command Line Arguments is an advanced topic and should be studied a bit later once you have gone through rest of the Python concepts.</p> 
+</div>
+</div>
+
+<a href="variable.html"> <button class="buttonN" style="vertical-align:middle"><span>Next </span></button></a>
+
+<div class="vertical-menu">
+<a class="_vertical-menu" href="home.html">PYTHON Home</a>
+<a class="_vertical-menu" href="syntax.html">PYTHON Syntax</a>
+<a class="_vertical-menu" href="variable.html">PYTHON Variable Types</a>
+<a class="_vertical-menu" href="decision.html">PYTHON Decision Making</a>
+<a class="_vertical-menu" href="loops.html">PYTHON Loops</a>
+<a class="_vertical-menu" href="strings.html">PYTHON Strings</a>
+<a class="_vertical-menu" href="lists.html">PYTHON Lists</a>
+<a class="_vertical-menu" href="tuples.html">PYTHON Tuples</a>
+<a class="_vertical-menu" href="dict.html">PYTHON Dictionary</a>
+<a class="_vertical-menu" href="date.html">PYTHON Date and Time</a>
+<a class="_vertical-menu" href="funct.html">PYTHON Functions</a>
+<a class="_vertical-menu" href="modules.html">PYTHON Modules</a>
+<a class="_vertical-menu" href="files.html">PYTHON Files I/O</a>
+<a class="_vertical-menu" href="exceptions.html">PYTHON Exceptions</a>
+<a class="_vertical-menu" href="multithread.html">PYTHON Regular Expressions</a>
+<a class="_vertical-menu" href="multithread.html">PYTHON Networking</a>
+<a class="_vertical-menu" href="xyz.html">PYTHON XYZ</a>
+
+</div>
+
+
+</body>
+</html>

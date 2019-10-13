@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="Xml.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<title>XML SCHEMA</title>
+<style>
+@CHARSET "ISO-8859-1";
+
+.vertical-menu {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+ 
+  margin-top:48px;
+
+  margin-left:10px;
+}
+
+.vertical-menu a {
+  padding: 6px 8px 6px 2px;
+  text-decoration: none;
+  font-size: 17px;
+  color: #818181;
+  display: block;
+}
+
+.vertical-menu a:hover {
+  color: dark gray;
+}
+
+
+
+.vertical-menu a {
+
+  background-color: #eee;
+
+  color: black;
+
+  display: block;
+
+  padding: 10px;
+
+  text-decoration: none;
+
+}
+
+ 
+
+.vertical-menu a:hover {
+
+  background-color: #ccc;   
+
+}
+
+ 
+
+.vertical-menu a.active {
+
+  background-color: #4CAF50;
+
+  color: white;
+
+}
+
+ 
+
+form.example input[type=text] {
+
+  padding: 10px;
+
+  font-size: 17px;
+
+  border: 2px solid white;
+
+  float: left;
+
+  width: 75%;
+
+  background: #f1f1f1;
+
+}
+
+ 
+
+form.example button {
+
+  float: left;
+
+  width: 15%;
+
+  padding: 20px;
+
+  background: #2196F3;
+
+  color: white;
+
+  font-size: 17px;
+
+  border: 2px solid white;
+
+  border-left: none;
+
+  cursor: pointer;
+  
+
+}
+
+ 
+
+form.example button:hover {
+
+  background: #0b7dda;
+
+}
+
+ 
+
+form.example::after {
+
+  content: "";
+
+  clear: both;
+
+  display: table;
+
+}
+
+ 
+
+.new {
+
+       margin-left:350px;
+
+       margin-right:400px;
+
+       margin-top:50px;
+
+       marging-bottom:10px;
+
+       width:500px;
+
+}
+
+ 
+
+.column{
+
+  float: left;
+
+  padding: 0px;
+
+  height: 300px;
+
+  width:50%;
+
+  content: "";
+
+  display: table;
+
+  clear: both;
+
+  <!--font-family:elephant;-->
+
+ 
+
+}
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+body {
+  font-family: Arial;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+form.example input[type=text] {
+  padding: 10px;
+  font-size: 18px;
+ margin-top:50px;
+  float: left;
+  width: 80%;
+  background: #f1f1f1;
+}
+
+form.example button {
+  float: left;
+  width: 15%;
+  padding: 10px;
+  background: #2196F3;
+  color: white;
+  font-size: 17px;
+  
+  border-left: none;
+  cursor: pointer;
+  margin-top:50px;
+}
+
+form.example button:hover {
+  background: #0b7dda;
+}
+
+form.example::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.buttonN {
+  display: inline-block;
+  border-radius: 4px;
+  background-color:black;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  font-size: 18px;
+  padding: 10px;
+  width: 100px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin-left:750px;
+  margin-right:200px;
+  margin-top:50px;
+  marging-bottom:10px;
+}
+
+.buttonN span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.buttonN span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.buttonN:hover span {
+  padding-right: 25px;
+}
+
+.buttonN:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.buttonP {
+  display: inline-block;
+  border-radius: 4px;
+  background-color:black;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  font-size: 18px;
+  padding: 10px;
+  width: 120px;
+  transition: all 0.5s;
+  cursor: pointer-left;
+  margin-left:350px;
+  margin-right:750px;
+  margin-top:50px;
+  marging-bottom:10px;
+}
+
+.buttonP span {
+  cursor: pointer;
+  display: inline-block;
+  transition: 0.5s;
+}
+
+.buttonP span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.buttonP:hover span {
+  
+  padding-right: 25px;
+}
+
+.buttonP:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.navbar {
+  width: 100%;
+  background-color:black;
+  overflow: auto;
+  position:fixed;
+}
+
+.navbar a {
+  float:left;
+  padding: 10px;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+}
+.navbar a:hover {
+  background-color: #000;
+}
+
+.active {
+  background-color:black;
+}
+
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+  }
+}
+</style>
+</head>
+<body>
+<div class="navbar">
+
+  <a class="active" href="../index.jsp"><i class="fa fa-fw fa-home"></i> Home</a>  
+  <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
+
+</div>
+
+<form class="example" action="keywordSearchServlet" style="margin:auto;max-width:650px" method="post">
+  <input type="text" placeholder="Search.." name="search2">
+  <button type="submit"><i class="fa fa-search"></i></button>
+</form>
+
+<a href="dtd.html"> <button class="buttonP" style="vertical-align:middle"><span>Previous </span></button></a>
+
+<div class="column">
+<div class="new">
+<h2 align="center">XML Schema</h2>
+<p class="intro">An XML Schema describes the structure of an XML document, just 
+like a DTD.</p>
+<p class="intro">An XML document with correct syntax is called &quot;Well Formed&quot;.</p>
+<p class="intro">An XML document validated against an XML Schema is both &quot;Well 
+Formed&quot; and &quot;Valid&quot;.</p>
+
+<h2 align="center">XML Schema</h2>
+<p>XML Schema is an XML-based alternative to DTD:</p>
+
+<div class="w3-example">
+<div class="w3-code notranslate htmlHigh">
+&lt;xs:element name=&quot;note&quot;&gt;<br><br>
+&lt;xs:complexType&gt;<br>
+&nbsp; &lt;xs:sequence&gt;<br>
+&nbsp;&nbsp;&nbsp; &lt;xs:element name=&quot;to&quot;&nbsp;type=&quot;xs:string&quot;/&gt;<br>
+&nbsp;&nbsp;&nbsp; &lt;xs:element name=&quot;from&quot;&nbsp;type=&quot;xs:string&quot;/&gt;<br>
+&nbsp;&nbsp;&nbsp; &lt;xs:element name=&quot;heading&quot; type=&quot;xs:string&quot;/&gt;<br>
+&nbsp;&nbsp;&nbsp; &lt;xs:element name=&quot;body&quot;&nbsp;type=&quot;xs:string&quot;/&gt;<br>
+&nbsp; &lt;/xs:sequence&gt;<br>
+&lt;/xs:complexType&gt;<br><br>
+&lt;/xs:element&gt;</div></div>
+
+<p>The Schema above is interpreted like this:</p>
+<ul>
+  <li>&lt;xs:element name=&quot;note&quot;&gt; defines the element called &quot;note&quot;</li>
+  <li>&lt;xs:complexType&gt; the &quot;note&quot; element is a complex type</li>
+  <li>&lt;xs:sequence&gt; the complex type is a sequence of elements</li>
+  <li>&lt;xs:element name=&quot;to&quot;&nbsp;type=&quot;xs:string&quot;&gt; the element &quot;to&quot; is of type string (text)</li>
+  <li>&lt;xs:element name=&quot;from&quot;&nbsp;type=&quot;xs:string&quot;&gt; the element &quot;from&quot; is of type string</li>
+  <li>&lt;xs:element name=&quot;heading&quot;&nbsp;type=&quot;xs:string&quot;&gt; the element &quot;heading&quot; is of type string</li>
+  <li>&lt;xs:element name=&quot;body&quot;&nbsp;type=&quot;xs:string&quot;&gt; the element &quot;body&quot; is of type string</li>
+</ul>
+
+
+<h2 align="center">XML Schemas are More Powerful than DTD</h2>
+
+<ul>
+    <li>XML Schemas are written in XML</li>
+  <li>XML Schemas are extensible to additions</li>
+  <li>XML Schemas support data types</li>
+  <li>XML Schemas support namespaces</li>
+</ul>
+
+<div id="midcontentadcontainer" style="overflow:auto;text-align:center">
+<!-- MidContent -->
+
+  <div id='div-gpt-ad-1493883843099-0' style="display: inline-block">
+    <script>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1493883843099-0'); });
+    </script>
+  </div>
+    
+</div>
+<h2 align="center">Why Use an XML Schema?</h2>
+<p>With XML Schema, your XML files can carry a description of its own format.</p>
+<p>With XML Schema, independent groups of people can agree on a standard for interchanging data.</p>
+<p>With XML Schema, you can verify data.</p>
+
+<h2 align="center">XML Schemas Support Data Types</h2>
+
+<p>One of the greatest strengths of XML Schemas is the support for data types:</p>
+<ul>
+  <li>It is easier to describe document content</li>
+  <li>It is easier to define restrictions on data</li>
+  <li>It is easier to validate the correctness of data</li>
+  <li>It is easier to convert data between different data types</li>
+</ul>
+
+<h2 align="center">XML Schemas use XML Syntax</h2>
+<p>Another great strength about XML Schemas is that they are written in XML:</p>
+<ul>
+  <li>You don't have to learn a new language</li>
+  <li>You can use your XML editor to edit your Schema files</li>
+  <li>You can use your XML parser to parse your Schema files</li>
+  <li>You can manipulate your Schemas with the XML DOM</li>
+  <li>You can transform your Schemas with XSLT</li>
+</ul>
+
+</div>
+</div>
+
+<a href="dom.html"> <button class="buttonN" style="vertical-align:middle"><span>Next </span></button></a>
+
+<div class="vertical-menu">
+<a class="_vertical-menu" href="home1.html">XML Home</a>
+<a class="_vertical-menu" href="overview1.html">XML Overview</a>
+<a class="_vertical-menu" href="syntax1.html">XML Syntax</a>
+<a class="_vertical-menu" href="tags1.html">XML Tags</a>
+<a class="_vertical-menu" href="elements1.html">XML Elements</a>
+<a class="_vertical-menu" href="attributes1.html">XML Attributes</a>
+<a class="_vertical-menu" href="namespaces1.html">XML Namespaces</a>
+<a class="_vertical-menu" href="characterent1.html">XML Character Entities</a>
+<a class="_vertical-menu" href="parser1.html">XML Parser</a>
+<a class="_vertical-menu" href="cdta1.html">XML CDATA Section</a>
+<a class="_vertical-menu" href="dtd1.html">XML DTD</a>
+<a class="_vertical-menu" href="schema1.html">XML Schema</a>
+<a class="_vertical-menu" href="dom1.html">XML DOM</a>
+<a class="_vertical-menu" href="tree1.html">XML Tree</a>
+<a class="_vertical-menu" href="xpath1.html">XML XPath</a>
+<a class="_vertical-menu" href="xslt1.html">XML XSLT</a>
+<a class="_vertical-menu" href="xquery1.html">XML XQuery</a>
+<a class="_vertical-menu" href="xlink1.html">XML XLink</a>
+<a class="_vertical-menu" href="xserver1.html">XML XServer</a>
+<a class="_vertical-menu" href="database1.html">XML Database</a>
+<a class="_vertical-menu" href="processor1.html">XML Processor</a>
+</div>
+
+</body>
+</html>

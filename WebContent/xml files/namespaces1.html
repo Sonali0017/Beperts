@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="Xml.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<title>XML NAMESPACES</title>
+<style>
+@CHARSET "ISO-8859-1";
+
+.vertical-menu {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+ 
+  margin-top:48px;
+
+  margin-left:10px;
+}
+
+.vertical-menu a {
+  padding: 6px 8px 6px 2px;
+  text-decoration: none;
+  font-size: 17px;
+  color: #818181;
+  display: block;
+}
+
+.vertical-menu a:hover {
+  color: dark gray;
+}
+
+
+
+.vertical-menu a {
+
+  background-color: #eee;
+
+  color: black;
+
+  display: block;
+
+  padding: 10px;
+
+  text-decoration: none;
+
+}
+
+ 
+
+.vertical-menu a:hover {
+
+  background-color: #ccc;   
+
+}
+
+ 
+
+.vertical-menu a.active {
+
+  background-color: #4CAF50;
+
+  color: white;
+
+}
+
+ 
+
+form.example input[type=text] {
+
+  padding: 10px;
+
+  font-size: 17px;
+
+  border: 2px solid white;
+
+  float: left;
+
+  width: 75%;
+
+  background: #f1f1f1;
+
+}
+
+ 
+
+form.example button {
+
+  float: left;
+
+  width: 15%;
+
+  padding: 20px;
+
+  background: #2196F3;
+
+  color: white;
+
+  font-size: 17px;
+
+  border: 2px solid white;
+
+  border-left: none;
+
+  cursor: pointer;
+  
+
+}
+
+ 
+
+form.example button:hover {
+
+  background: #0b7dda;
+
+}
+
+ 
+
+form.example::after {
+
+  content: "";
+
+  clear: both;
+
+  display: table;
+
+}
+
+ 
+
+.new {
+
+       margin-left:350px;
+
+       margin-right:400px;
+
+       margin-top:50px;
+
+       marging-bottom:10px;
+
+       width:500px;
+
+}
+
+ 
+
+.column{
+
+  float: left;
+
+  padding: 0px;
+
+  height: 300px;
+
+  width:50%;
+
+  content: "";
+
+  display: table;
+
+  clear: both;
+
+  <!--font-family:elephant;-->
+
+ 
+
+}
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+body {
+  font-family: Arial;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+form.example input[type=text] {
+  padding: 10px;
+  font-size: 18px;
+ margin-top:50px;
+  float: left;
+  width: 80%;
+  background: #f1f1f1;
+}
+
+form.example button {
+  float: left;
+  width: 15%;
+  padding: 10px;
+  background: #2196F3;
+  color: white;
+  font-size: 17px;
+  
+  border-left: none;
+  cursor: pointer;
+  margin-top:50px;
+}
+
+form.example button:hover {
+  background: #0b7dda;
+}
+
+form.example::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.buttonN {
+  display: inline-block;
+  border-radius: 4px;
+  background-color:black;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  font-size: 18px;
+  padding: 10px;
+  width: 100px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin-left:750px;
+  margin-right:200px;
+  margin-top:50px;
+  marging-bottom:10px;
+}
+
+.buttonN span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.buttonN span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.buttonN:hover span {
+  padding-right: 25px;
+}
+
+.buttonN:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.buttonP {
+  display: inline-block;
+  border-radius: 4px;
+  background-color:black;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  font-size: 18px;
+  padding: 10px;
+  width: 120px;
+  transition: all 0.5s;
+  cursor: pointer-left;
+  margin-left:350px;
+  margin-right:750px;
+  margin-top:50px;
+  marging-bottom:10px;
+}
+
+.buttonP span {
+  cursor: pointer;
+  display: inline-block;
+  transition: 0.5s;
+}
+
+.buttonP span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.buttonP:hover span {
+  
+  padding-right: 25px;
+}
+
+.buttonP:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.navbar {
+  width: 100%;
+  background-color:black;
+  overflow: auto;
+  position:fixed;
+}
+
+.navbar a {
+  float:left;
+  padding: 10px;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+}
+.navbar a:hover {
+  background-color: #000;
+}
+
+.active {
+  background-color:black;
+}
+
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+  }
+}
+</style>
+</head>
+<body>
+<div class="navbar">
+
+  <a class="active" href="../index.jsp"><i class="fa fa-fw fa-home"></i> Home</a>  
+  <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
+
+</div>
+ 
+
+<form class="example" action="../keywordSearchServlet" style="margin:auto;max-width:650px"  method="post">
+  <input type="text" placeholder="Search.." name="search2">
+  <button type="submit"><i class="fa fa-search"></i></button>
+</form>
+
+<a href="attributes.html"> <button class="buttonP" style="vertical-align:middle"><span>Previous </span></button></a>
+
+<div class="column">
+<div class="new">
+<h2 align="center">XML Namespaces</h2>
+<p class="intro">XML Namespaces provide a method to avoid element name conflicts.</p>
+<h2  align="center">Name Conflicts</h2>
+<p>In XML, element names are defined by the developer. This often results in a conflict when trying to mix XML documents from different XML applications.</p>
+<p>This XML carries HTML table information:</p>
+
+<div class="w3-example">
+<div class="w3-code notranslate htmlHigh">
+&lt;table&gt;<br>
+   &nbsp;
+   &lt;tr&gt;<br>
+   &nbsp;&nbsp;&nbsp;
+   &lt;td&gt;Apples&lt;/td&gt;<br>
+   &nbsp;&nbsp;&nbsp;
+   &lt;td&gt;Bananas&lt;/td&gt;<br>
+   &nbsp;
+   &lt;/tr&gt;<br>
+&lt;/table&gt;</div></div>  
+
+<p>This XML carries information about a table (a piece of furniture):</p>
+
+<div class="w3-example">
+<div class="w3-code notranslate htmlHigh">
+&lt;table&gt;<br>
+   &nbsp;
+   &lt;name&gt;African Coffee Table&lt;/name&gt;<br>
+   &nbsp;
+   &lt;width&gt;80&lt;/width&gt;<br>
+   &nbsp;
+   &lt;length&gt;120&lt;/length&gt;<br>
+&lt;/table&gt;</div></div>
+
+<p>If these XML fragments were added together, there would be a name conflict. Both contain a &lt;table&gt; element, but the elements have different content and meaning.</p>
+<p>A user or an XML application will not know how to handle these differences.</p>
+
+
+<h2  align="center">Solving the Name Conflict Using a Prefix</h2>
+<p>Name conflicts in XML can easily be avoided using a name prefix.</p>
+<p>This XML carries information about an HTML table, and a piece of furniture:</p>
+
+<div class="w3-example">
+<div class="w3-code notranslate htmlHigh">
+&lt;h:table&gt;<br>
+   &nbsp;
+   &lt;h:tr&gt;<br>
+   &nbsp;&nbsp;&nbsp;
+   &lt;h:td&gt;Apples&lt;/h:td&gt;<br>
+   &nbsp;&nbsp;&nbsp;
+   &lt;h:td&gt;Bananas&lt;/h:td&gt;<br>
+   &nbsp;
+   &lt;/h:tr&gt;<br>
+&lt;/h:table&gt;<br><br>
+&lt;f:table&gt;<br>
+&nbsp; &lt;f:name&gt;African Coffee Table&lt;/f:name&gt;<br>
+&nbsp;&nbsp;&lt;f:width&gt;80&lt;/f:width&gt;<br>
+&nbsp;&nbsp;&lt;f:length&gt;120&lt;/f:length&gt;<br>
+&lt;/f:table&gt;
+</div></div>
+
+<p>In the example above, there will be no conflict because the two &lt;table&gt; elements have different names.</p>
+
+<div id="midcontentadcontainer" style="overflow:auto;text-align:center">
+<!-- MidContent -->
+
+  <div id='div-gpt-ad-1493883843099-0' style="display: inline-block">
+    <script>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1493883843099-0'); });
+    </script>
+  </div>
+    
+</div>
+
+<h2  align="center">XML Namespaces - The xmlns Attribute</h2>
+
+<p>When using prefixes in XML, a <b>namespace</b> for the prefix must be defined.</p>
+<p>The namespace can be defined by an <b>xmlns</b> attribute in the start tag of an element.</p>
+<p>The namespace declaration has the following syntax. xmlns:<i>prefix</i>=&quot;<i>URI</i>&quot;.</p>
+
+<div class="w3-example">
+<div class="w3-code notranslate htmlHigh">
+&lt;root&gt;<br><br>
+&lt;h:table xmlns:h=&quot;http://www.Bepert's.com/TR/html4/&quot;&gt;<br>
+&nbsp;&nbsp;&lt;h:tr&gt;<br>
+&nbsp;&nbsp;&nbsp; &lt;h:td&gt;Apples&lt;/h:td&gt;<br>
+&nbsp;&nbsp;&nbsp; &lt;h:td&gt;Bananas&lt;/h:td&gt;<br>
+&nbsp;&nbsp;&lt;/h:tr&gt;<br>
+&lt;/h:table&gt;<br><br>
+&lt;f:table xmlns:f=&quot;https://www.Bepert's.com/furniture&quot;&gt;<br>
+&nbsp;&nbsp;&lt;f:name&gt;African Coffee Table&lt;/f:name&gt;<br>
+&nbsp;&nbsp;&lt;f:width&gt;80&lt;/f:width&gt;<br>
+&nbsp;&nbsp;&lt;f:length&gt;120&lt;/f:length&gt;<br>
+&lt;/f:table&gt;<br><br>
+&lt;/root&gt;
+</div></div>
+
+<p>In the example above:</p>
+<p>The xmlns attribute in the first &lt;table&gt; element gives the h: prefix a qualified namespace.</p>
+<p>The xmlns attribute in the second &lt;table&gt; element gives the f: prefix a qualified namespace.</p>
+<p>When a namespace is defined for an element, all child elements with the same prefix are associated with the same namespace.</p>
+<p>Namespaces can also be declared in the XML root element:</p>
+
+<div class="w3-example">
+<div class="w3-code notranslate htmlHigh">
+&lt;root xmlns:h=&quot;http://www.Bepert's.com/TR/html4/&quot;<br>
+xmlns:f=&quot;https://www.Bepert's.com/furniture&quot;&gt;<br><br>
+&lt;h:table&gt;<br>
+&nbsp;&nbsp;&lt;h:tr&gt;<br>
+&nbsp;&nbsp;&nbsp; &lt;h:td&gt;Apples&lt;/h:td&gt;<br>
+&nbsp;&nbsp;&nbsp; &lt;h:td&gt;Bananas&lt;/h:td&gt;<br>
+&nbsp;&nbsp;&lt;/h:tr&gt;<br>
+&lt;/h:table&gt;<br><br>
+&lt;f:table&gt;<br>
+&nbsp;&nbsp;&lt;f:name&gt;African Coffee Table&lt;/f:name&gt;<br>
+&nbsp;&nbsp;&lt;f:width&gt;80&lt;/f:width&gt;<br>
+&nbsp;&nbsp;&lt;f:length&gt;120&lt;/f:length&gt;<br>
+&lt;/f:table&gt;<br><br>
+&lt;/root&gt;
+</div></div>
+
+<p><b>Note:</b> The namespace URI is not used by the parser to look up information.</p>
+<p>The purpose of using an URI is to give the namespace a unique name.</p>
+<p>However, companies often use the namespace as a pointer to a
+web page containing namespace information.</p>
+
+
+<h2  align="center">Uniform Resource Identifier (URI)</h2><p>A <b>Uniform Resource Identifier</b> (URI) is a string of characters which identifies an Internet Resource.</p>
+<p>The most common URI is the <b>Uniform Resource Locator</b> (URL) which identifies an Internet domain address. Another, not so common type of URI is the <b>Uniform Resource Name</b> (URN).</p>
+
+
+<h2  align="center">Default Namespaces</h2>
+<p>Defining a default namespace for an element saves us from using prefixes in all the child elements. It has the following syntax:</p>
+
+<div class="w3-example">
+<div class="w3-code notranslate htmlHigh">
+xmlns=&quot;<i>namespaceURI</i>&quot;
+</div></div>
+
+<p>This XML carries HTML table information:</p>
+
+<div class="w3-example">
+<div class="w3-code notranslate htmlHigh">
+&lt;table xmlns=&quot;http://www.Bepert's.com/TR/html4/&quot;&gt;<br>
+&nbsp;
+&lt;tr&gt;<br>
+&nbsp;&nbsp;&nbsp;
+&lt;td&gt;Apples&lt;/td&gt;<br>
+&nbsp;&nbsp;&nbsp;
+&lt;td&gt;Bananas&lt;/td&gt;<br>
+&nbsp;
+&lt;/tr&gt;<br>
+&lt;/table&gt;
+</div></div>
+
+<p>This XML carries information about a piece of furniture:</p>
+
+<div class="w3-example">
+<div class="w3-code notranslate htmlHigh">
+&lt;table xmlns=&quot;https://www.Bepert's.com/furniture&quot;&gt;<br>
+&nbsp;
+&lt;name&gt;African Coffee Table&lt;/name&gt;<br>
+&nbsp;
+&lt;width&gt;80&lt;/width&gt;<br>
+&nbsp;
+&lt;length&gt;120&lt;/length&gt;<br>
+&lt;/table&gt;
+</div></div>
+
+
+<h2  align="center">Namespaces in Real Use</h2>
+<p>XSLT is a language that can be used to transform XML documents into other formats.</p>
+<p>The XML document below, is a document used to transform XML into HTML.</p>
+<p>The namespace &quot;http://www.Bepert's.com/1999/XSL/Transform&quot; identifies XSLT 
+elements inside an HTML document:</p>
+
+<div class="w3-example">
+<div class="w3-code notranslate htmlHigh">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8<strong>"</strong>?&gt;<br><br>
+&lt;xsl:stylesheet version=&quot;1.0&quot;
+xmlns:xsl=&quot;http://www.Bepert's.com/1999/XSL/Transform&quot;&gt;<br><br>
+&lt;xsl:template match=&quot;/&quot;&gt;<br>
+&lt;html&gt;<br>
+&lt;body&gt;<br>
+&nbsp; &lt;h2&gt;My CD Collection&lt;/h2&gt;<br>
+&nbsp; &lt;table border=&quot;1&quot;&gt;<br>
+&nbsp;&nbsp;&nbsp; &lt;tr&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;th style=&quot;text-align:left&quot;&gt;Title&lt;/th&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;th style=&quot;text-align:left&quot;&gt;Artist&lt;/th&gt;<br>
+&nbsp;&nbsp;&nbsp; &lt;/tr&gt;<br>
+&nbsp;&nbsp;&nbsp; &lt;xsl:for-each select=&quot;catalog/cd&quot;&gt;<br>
+&nbsp;&nbsp;&nbsp; &lt;tr&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;td&gt;&lt;xsl:value-of select=&quot;title&quot;/&gt;&lt;/td&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;td&gt;&lt;xsl:value-of select=&quot;artist&quot;/&gt;&lt;/td&gt;<br>
+&nbsp;&nbsp;&nbsp; &lt;/tr&gt;<br>
+&nbsp;&nbsp;&nbsp; &lt;/xsl:for-each&gt;<br>
+&nbsp; &lt;/table&gt;<br>
+&lt;/body&gt;<br>
+&lt;/html&gt;<br>
+&lt;/xsl:template&gt;<br><br>
+&lt;/xsl:stylesheet&gt;
+</div></div>
+</div>
+</div>
+
+<a href="characterent.html"> <button class="buttonN" style="vertical-align:middle"><span>Next </span></button></a>
+
+<div class="vertical-menu">
+<a class="_vertical-menu" href="home1.html">XML Home</a>
+<a class="_vertical-menu" href="overview1.html">XML Overview</a>
+<a class="_vertical-menu" href="syntax1.html">XML Syntax</a>
+<a class="_vertical-menu" href="tags1.html">XML Tags</a>
+<a class="_vertical-menu" href="elements1.html">XML Elements</a>
+<a class="_vertical-menu" href="attributes1.html">XML Attributes</a>
+<a class="_vertical-menu" href="namespaces1.html">XML Namespaces</a>
+<a class="_vertical-menu" href="characterent1.html">XML Character Entities</a>
+<a class="_vertical-menu" href="parser1.html">XML Parser</a>
+<a class="_vertical-menu" href="cdta1.html">XML CDATA Section</a>
+<a class="_vertical-menu" href="dtd1.html">XML DTD</a>
+<a class="_vertical-menu" href="schema1.html">XML Schema</a>
+<a class="_vertical-menu" href="dom1.html">XML DOM</a>
+<a class="_vertical-menu" href="tree1.html">XML Tree</a>
+<a class="_vertical-menu" href="xpath1.html">XML XPath</a>
+<a class="_vertical-menu" href="xslt1.html">XML XSLT</a>
+<a class="_vertical-menu" href="xquery1.html">XML XQuery</a>
+<a class="_vertical-menu" href="xlink1.html">XML XLink</a>
+<a class="_vertical-menu" href="xserver1.html">XML XServer</a>
+<a class="_vertical-menu" href="database1.html">XML Database</a>
+<a class="_vertical-menu" href="processor1.html">XML Processor</a>
+</div>
+
+</body>
+</html>
